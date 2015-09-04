@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.codehaus.groovy:groovy-ant:2.4.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-ant/2.4.4/86a8990d7dfe1266bc58f9015bc63051dc13145a/groovy-ant-2.4.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-ant/2.4.4/cb002025fbe405c1ddfb65c2103b20b13c32eec6/groovy-ant-2.4.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
