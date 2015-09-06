@@ -12,28 +12,59 @@
         @font-face { font-family: Abraham; src: url('fonts/AbrahamLincoln.ttf'); }
         @font-face { font-family: Cylburn; src: url('fonts/Cylburn.ttf'); }
         @font-face { font-family: GearedSlab; src: url('fonts/GearedSlab.ttf'); }
+        @font-face { font-family: GrandHotel; src: url('fonts/GrandHotel-Regular.otf'); }
+        @font-face { font-family: Liberator; src: url('fonts/Liberator-Light.ttf'); }
     </style>
 </head>
 <body>
 <div class="masthead container">
+
     <nav>
-        <ul class="nav nav-justified">
+        <ul class="nav nav-justified logo">
             <li><img src="Images/Logo.png"></li>
             <li>
-                <form class="navbar-form navbar-left">
-                    <input type="text" class="form-control" placeholder="Buscar...">
-                    <input type="submit" value="Buscar">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="srch-term" id="srch-term">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" id="lupa"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
                 </form>
             </li>
         </ul>
     </nav>
     <nav>
         <ul class="nav nav-justified">
-            <li class="active"><a href="Index.html" role="button">Inicio</a></li>
-            <li><a href="Busqueda.html" role="button">Búsqueda</a></li>
-            <li><a href="Categorias.html" role="button">Categorías</a></li>
-            <li><a href="Favoritos.html" role="button">Favoritos</a></li>
-            <li><a href="Perfil.html" role="button">Perfil</a></li>
+            <li><a href="Index.html" role="button">Inicio</a></li>
+            <li class="dropdown active"><a href="Busqueda.html" class="dropdown-toggle">Búsqueda</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Restaurantes</a></li>
+                    <li><a href="#">Platos típicos</a></li>
+                </ul>
+            </li>
+            <li class="dropdown active"><a href="Categorias.html" class="dropdown-toggle">Categorías</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Aperitivos</a></li>
+                    <li><a href="#">Bebidas</a></li>
+                    <li><a href="#">Carnes</a></li>
+                    <li><a href="#">Vegetariano</a></li>
+                    <li><a href="#">Postres</a></li>
+                    <li><a href="#">Pasabocas</a></li>
+                </ul>
+            </li>
+            <li class="dropdown active"><a href="Favoritos.html" class="dropdown-toggle">Favoritos</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Recetas</a></li>
+                    <li><a href="#">Usuarios</a></li>
+                </ul>
+            </li>
+            <li class="dropdown active"><a href="Perfil.html" class="dropdown-toggle">Acceder</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Registro</a></li>
+                    <li><a href="#">Ingreso</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </div>
@@ -52,30 +83,30 @@
         <div class="item active">
             <img class="first-slide imagen" src="Images/f1.jpg" alt="First slide">
             <div class="container">
-                <div class="carousel-caption">
-                    <h1>Camembert</h1>
-                    <p>Camembert, cheese specialty from Normandy</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                <div class="carousel-caption intro">
+                    <h1>¡Forma parte de Culinaire!</h1>
+                    <p>Regístrate y adéntrate en el mundo de la cocina.</p>
+                    <p><a class="btn btn-lg btn-primary botones" href="#" role="button">Regístrate</a></p>
                 </div>
             </div>
         </div>
         <div class="item">
             <img class="second-slide imagen" src="Images/f4.jpg" alt="Second slide">
             <div class="container">
-                <div class="carousel-caption">
-                    <h1>Nouvelle Cuisine</h1>
-                    <p>This dish consists of marinated crayfish on gazpacho asparagus and watercress</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                <div class="carousel-caption intro">
+                    <h1>Deléitate con los mejores sabores</h1>
+                    <p>Dentro del recetario encontrarás los mejores platos.</p>
+                    <p><a class="btn btn-lg btn-primary botones" href="#" role="button">Favoritos</a></p>
                 </div>
             </div>
         </div>
         <div class="item">
             <img class="third-slide imagen" src="Images/f3.jpg" alt="Third slide">
             <div class="container">
-                <div class="carousel-caption">
-                    <h1>Alsatian Flammekueche.</h1>
-                    <p>A Flammekueche, an speciality von Alsace.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                <div class="carousel-caption intro">
+                    <h1>Visita los mejores restaurantes</h1>
+                    <p>En nuestra sección de restaurantes encontrarás todos los restaurantes de tu ciudad.</p>
+                    <p><a class="btn btn-lg btn-primary botones" href="#" role="button">Restaurantes</a></p>
                 </div>
             </div>
         </div>
@@ -89,13 +120,14 @@
         <span class="sr-only">Next</span>
     </a>
 </div><!-- /.carousel -->
-
+<div class="texto">
     <div class="cuerpo">
         <p id="titulo">¡El centro de la comida ha llegado!</p>
         <p>Hemos elaborado la página de tus sueños, donde podrás conocer comida internacional, publicar
             y calificar recetas. <br> ¿Qué esperas?, regístrate o accede.<br> </p>
+        <p id="firma">Grupo Culinaire</p>
     </div>
-
+</div>
 <div class="masthead">
     <nav>
         <ul class="nav nav-justified">

@@ -70,9 +70,9 @@ display: block;
 .intro {
     font-family: 'GearedSlab', sans-serif;
     font-size: 30px;
-    color: white;
+    color: #fff;
     text-align:center;
-    text-shadow: rgb(71, 71, 71) 3px 5px 2px;
+    text-shadow: #404040 1px 1px 0;
 }
 
 .intro > h1 {
@@ -80,7 +80,7 @@ display: block;
 }
 
 .intro > p {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #titulo{
@@ -100,6 +100,7 @@ display: block;
 .input-group {
     width: 100%;
 }
+
 #lupa {
     background-color: transparent;
     border: none;
