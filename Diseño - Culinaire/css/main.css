@@ -1,0 +1,53 @@
+.nav-justified > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    font-family: 'Abraham', sans-serif;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    background-color: #27273f;
+    border-bottom: 1px solid #28283f;
+}
+
+.foot {
+    border-bottom: none;
+}
+
+#foot2, #foot3 {
+    font-family: 'Cylburn', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background-color: #27273f;
+}
+
+body {
+    background-color: #27273f;
+}
+
+.imagen {
+    zoom: 2;  //increase if you have very small images
+
+display: block;
+    margin: auto;
+
+    height: auto;
+    max-height: 100%;
+
+    width: auto;
+    max-width: 100%;
+}
+
+.cuerpo{
+    font-family: 'GearedSlab', sans-serif;
+    font-size: 30px;
+    color: black;
+    text-align:justify;
+    background-color: #fff;
+    padding: 5%;
+}
+
+#titulo{
+    font-weight: bold;
+}
