@@ -72,7 +72,7 @@ display: block;
     font-size: 30px;
     color: #fff;
     text-align:center;
-    text-shadow: #404040 1px 1px 0;
+    text-shadow: #404040 2px 2px 0;
 }
 
 .intro > h1 {
@@ -81,6 +81,14 @@ display: block;
 
 .intro > p {
     font-size: 25px;
+}
+
+.intro2 > a {
+    font-family: 'Liberator', sans-serif;
+    font-size: 12vw;
+    color: #03034c;
+    text-align:center;
+    text-shadow: #fff 2px 2px 0;
 }
 
 #titulo{
