@@ -127,3 +127,11 @@ display: block;
     border-radius: 0;
     font-family: 'Liberator', sans-serif;
 }
+
+#boton{
+    border: 1px solid #232323;
+}
+
+.icon-bar {
+    background-color: #fff;
+}
