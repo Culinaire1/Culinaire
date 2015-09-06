@@ -1,4 +1,4 @@
-.nav-justified > li > a {
+.nav-justified > li > a, .nav-justified > li > ul > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 0;
@@ -8,6 +8,25 @@
     text-align: center;
     background-color: #27273f;
     border-bottom: 1px solid #28283f;
+}
+
+.nav-justified > li > ul {
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-justified > li > ul > li > a:hover{
+    background-color: #333387;
+    color: white;
+}
+
+.nav-justified > li > a:hover {
+    background-color: #333387;
+    color: white;
 }
 
 .foot {
@@ -27,7 +46,7 @@ body {
 }
 
 .imagen {
-    zoom: 2;  //increase if you have very small images
+    zoom: 2;
 
 display: block;
     margin: auto;
@@ -48,6 +67,54 @@ display: block;
     padding: 5%;
 }
 
+.intro {
+    font-family: 'GearedSlab', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-align:center;
+    text-shadow: rgb(71, 71, 71) 3px 5px 2px;
+}
+
+.intro > h1 {
+    font-size: 35px;
+}
+
+.intro > p {
+    font-size: 30px;
+}
+
 #titulo{
     font-weight: bold;
+}
+
+#firma {
+    font-family: 'GrandHotel', sans-serif;
+    text-align: right;
+    color: #111160;
+}
+
+#srch-term{
+    background-color: #dbdbdb;
+    border: none;
+}
+.input-group {
+    width: 100%;
+}
+#lupa {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.botones {
+    background-color: #03034C;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    font-family: 'Liberator', sans-serif;
 }
