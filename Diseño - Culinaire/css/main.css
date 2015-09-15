@@ -135,3 +135,7 @@ display: block;
 .icon-bar {
     background-color: #fff;
 }
+
+.lista {
+    padding: 0;
+}
