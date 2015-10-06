@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CulinaireGrails.iml" filepath="$PROJECT_DIR$/CulinaireGrails.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CulinaireGrails-grailsPlugins.iml" filepath="$PROJECT_DIR$/CulinaireGrails-grailsPlugins.iml" />
     </modules>
   </component>
 </project>
