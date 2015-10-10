@@ -145,8 +145,9 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<asset:javascript src="bootstrap.js"/>
 <asset:javascript src="jquery-1.11.2.min.js"/>
+<asset:javascript src="bootstrap.js"/>
+
 <!g:javascript src="bootstrap.js" />
 <!g:javascript src="jquery-1.11.2.min.js" />
 </body>
