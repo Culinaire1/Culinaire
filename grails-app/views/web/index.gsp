@@ -69,13 +69,13 @@
                         <li><a href="#">Pasabocas</a></li>
                     </ul>
                 </li>
-                <li class="dropdown active"><a href="${createLink(action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
+                <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Recetas</a></li>
                         <li><a href="#">Usuarios</a></li>
                     </ul>
                 </li>
-                <li class="dropdown active"><a href="${createLink(action: 'perfil')}" class="dropdown-toggle">Acceder</a>
+                <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'perfil')}" class="dropdown-toggle">Acceder</a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Registro</a></li>
                         <li><a href="#">Ingreso</a></li>

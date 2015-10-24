@@ -7,7 +7,11 @@ class UrlMappings {
             }
         }
 
-        "/"(controller:'hello')
+        "/"(controller: 'web', action: 'index')
+        "/busqueda"(controller: 'web', action: 'busqueda')
+        "/categorias"(controller: 'web', action: 'categorias')
+        "/favoritos"(controller: 'web', action: 'favoritos')
+        "/perfil"(controller: 'web', action: 'perfil')
         "500"(view:'/error')
 	}
 }
