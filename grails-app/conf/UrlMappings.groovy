@@ -18,5 +18,6 @@ class UrlMappings {
         "/contacto"(controller: 'web', action: 'contacto')
         "/acerca"(controller: 'web', action: 'acerca')
         "500"(view:'/error')
+        "/conf"(view: "/index")
 	}
 }
