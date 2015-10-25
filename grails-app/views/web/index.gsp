@@ -32,7 +32,7 @@
                     <div class="carousel-caption intro">
                         <h1>Deléitate con los mejores sabores</h1>
                         <p>Dentro del recetario encontrarás los mejores platos.</p>
-                        <p><a class="btn btn-lg btn-primary botones" href="#" role="button">Favoritos</a></p>
+                        <p><a class="btn btn-lg btn-primary botones" href="${createLink(action: 'favoritos')}" role="button">Favoritos</a></p>
                     </div>
                 </div>
             </div>
