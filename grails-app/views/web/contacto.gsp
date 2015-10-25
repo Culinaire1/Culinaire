@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="base"/>
-    <title>Favoritos</title>
+    <title>Contáctenos</title>
 </head>
 <body>
 <div class="container">

@@ -4,13 +4,21 @@ class WebController {
     def index() {
     }
     def busqueda() {
-        render('Not finished')
     }
     def categorias() {
     }
     def favoritos() {
     }
     def perfil() {
-        render('Not finished')
+    }
+    def comentarios() {
+    }
+    def faq() {
+    }
+    def nosotros() {
+    }
+    def contacto() {
+    }
+    def acerca() {
     }
 }
