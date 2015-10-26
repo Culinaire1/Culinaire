@@ -21,7 +21,7 @@
                     <div class="carousel-caption intro">
                         <h1>¡Forma parte de Culinaire!</h1>
                         <p>Regístrate y adéntrate en el mundo de la cocina.</p>
-                        <p><a class="btn btn-lg btn-primary botones" href="#" role="button">Regístrate</a></p>
+                        <p><a class="btn btn-lg btn-primary botones" href="${createLink(action: 'ingresar')}" role="button">Regístrate</a></p>
                     </div>
                 </div>
             </div>

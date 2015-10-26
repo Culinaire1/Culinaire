@@ -21,4 +21,6 @@ class WebController {
     }
     def acerca() {
     }
+    def ingresar() {
+    }
 }

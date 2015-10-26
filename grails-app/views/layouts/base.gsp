@@ -79,8 +79,8 @@
                 </li>
                 <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'perfil')}" class="dropdown-toggle">Acceder</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Registro</a></li>
-                        <li><a href="#">Ingreso</a></li>
+                        <li><a href="${createLink(action: 'ingresar')}">Registro</a></li>
+                        <li><a href="${createLink(action: 'ingresar')}">Ingreso</a></li>
                     </ul>
                 </li>
             </ul>

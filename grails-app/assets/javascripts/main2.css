@@ -139,3 +139,34 @@ display: block;
 .lista {
     padding: 0;
 }
+
+.b2 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+}
+
+
+.fill {
+    background-color: #fff;
+}
+
+.input-group-addon {
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-family: 'GearedSlab', sans-serif;
+    font-size: 30px;
+}
+
+.campo {
+    border-color: #27273f;
+    border-radius: 0;
+}
+
+.tit {
+    font-family: 'Liberator', sans-serif;
+    color: #111160;
+    font-size: 30px;
+    padding-left: 5%;
+}
