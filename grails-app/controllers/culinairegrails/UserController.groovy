@@ -35,4 +35,20 @@ class UserController {
 
         render("User Updated:" + userInstance)
     }
+
+    def login(){
+        if (params.username=="admin" && params.password=="pass"){
+            flash.message="Login Succeed"
+            session.user="admin"
+        }else {
+            flash.message = "Failed Login"
+        }
+        redirect(uri: "/ingresar")
+
+    }
+
+    def logout(){
+        session.user=null
+        redirect(uri: "/ingresar")
+    }
 }

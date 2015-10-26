@@ -19,4 +19,5 @@ class User {
         rating(nullable: false, range: 1..5)
         website(nullable: true, url: true)
     }
+
 }
