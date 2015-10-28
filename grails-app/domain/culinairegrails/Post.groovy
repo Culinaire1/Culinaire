@@ -14,6 +14,6 @@ class Post {
 
     static constraints = {
         dateCreated(nullable: false)
-        content(nullable: false, blank: false)
+        content( blank: false)
     }
 }

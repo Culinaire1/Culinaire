@@ -5,6 +5,6 @@ class Category {
     String name
 
     static constraints = {
-        name(nullable: false, size: 3..20)
+        name(blank: false,nullable: false, size: 3..20)
     }
 }

@@ -15,7 +15,7 @@ class User {
         password(nullable: false, minSize: 8, validator: {it.find(/[A-Z]/) && it.find(/\d/) && it.find(/[a-z]/)})
         email(nullable: false, email: true)
         description(nullable: false, blank: false)
-        photo(nullable: true, blank: false, maxSize: 1048576)
+        photo(nullable: true, blank: true, maxSize: 1048576)//blank true
         rating(nullable: false, range: 1..5)
         website(nullable: true, url: true)
     }
