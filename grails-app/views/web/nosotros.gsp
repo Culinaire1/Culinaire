@@ -6,13 +6,43 @@
 </head>
 <body>
 <div class="container">
-    <div class="texto">
-        <div class="cuerpo">
-            <p id="titulo">¡El centro de la comida ha llegado!</p>
-            <p>Hemos elaborado la página de tus sueños, donde podrás conocer comida internacional, publicar
-            y calificar recetas. <br> ¿Qué esperas?, regístrate o accede.<br> </p>
-            <p id="firma">Grupo Culinaire</p>
+    <div class="fill nosotros">
+        <br>
+        <br>
+        <div class="texto">
+            <div class="center-block ing" style="width:50%;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <g:img dir="images" file="af.png" class="img-circle img-responsive"/>
+                        <!img src="Images/af.jpg" class="img-responsive img-circle" alt="af">
+                    </div>
+                    <p class="firma">Andrés Felipe De Orcajo</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <g:img dir="images" file="jc.png" class="img-circle img-responsive"/>
+                        <!img src="Images/jc.jpg" class="img-responsive img-circle" alt="jc">
+                    </div>
+                    <p class="firma">Juan Camilo Calero</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <g:img dir="images" file="coso.png" class="img-circle img-responsive"/>
+                        <!img src="Images/coso.jpg" class="img-responsive img-circle" alt="coso">
+                    </div>
+                    <p class="firma">Carlos Orlando Solórzano</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <g:img dir="images" file="od.png" class="img-circle img-responsive"/>
+                        <!img src="Images/od.jpg" class="img-responsive img-circle" alt="od">
+                    </div>
+                    <p class="firma">Oscar Darío Parra</p>
+                </div>
+            </div>
         </div>
+        <br>
+        <br>
     </div>
 </div>
 </body>

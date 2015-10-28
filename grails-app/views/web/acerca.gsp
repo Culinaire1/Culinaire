@@ -6,13 +6,16 @@
 </head>
 <body>
 <div class="container">
-    <div class="texto">
-        <div class="cuerpo">
-            <p id="titulo">¡El centro de la comida ha llegado!</p>
-            <p>Hemos elaborado la página de tus sueños, donde podrás conocer comida internacional, publicar
-            y calificar recetas. <br> ¿Qué esperas?, regístrate o accede.<br> </p>
-            <p id="firma">Grupo Culinaire</p>
+    <div class="fill">
+        <br>
+        <div class="texto">
+            <div class="cuerpo">
+                <p id="titulo">Acerca de...</p>
+                <p>Culinaire es un proyecto para Ingeniería de Software II - 2015-2, desarrollado en Grails.<br> </p>
+                <p id="firma">Grupo Culinaire</p>
+            </div>
         </div>
+        <br>
     </div>
 </div>
 </body>
