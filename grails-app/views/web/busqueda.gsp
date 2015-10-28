@@ -38,10 +38,15 @@
                 <br>
                 <div class="input-group">
                     <div class="col-sm-3">
-                        <span class="input-group-addon" id="descripcion">País:</span>
+                        <span class="input-group-addon" id="pais">País:</span>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                        <label for="sel2"></label>
+                        <select class="form-control campo" id="sel2">
+                            <g:each var="country" in="${countries}">
+                                <option>${country.name}</option>
+                            </g:each>
+                        </select>
                     </div>
                 </div>
                 <div class="input-group">
@@ -50,8 +55,8 @@
                     </div>
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
-                        <label for="sel"></label>
-                        <select class="form-control campo" id="sel2">
+                        <label for="sel3"></label>
+                        <select class="form-control campo" id="sel3">
                             <g:each var="category" in="${categories}">
                                 <option>${category.name}</option>
                             </g:each>

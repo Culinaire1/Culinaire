@@ -5,7 +5,7 @@ class WebController {
         [categories:Category.list()]
     }
     def busqueda() {
-        [categories:Category.list()]
+        [categories:Category.list(), countries:Country.list()]
     }
     def categorias() {
         [categories:Category.list()]
