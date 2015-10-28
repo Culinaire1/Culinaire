@@ -57,32 +57,35 @@
                 <li><a href="${createLink(action: 'index')}" role="button">Inicio</a></li>
                 <li class="dropdown active"><a href="${createLink(action: 'busqueda')}" class="dropdown-toggle">Búsqueda</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Restaurantes</a></li>
+                        <li><a href="${createLink(action: 'restaurantes')}">Restaurantes</a></li>
                         <li><a href="#">Platos típicos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown active"><a href="${createLink(action: 'categorias')}" class="dropdown-toggle">Categorías</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Aperitivos</a></li>
-                        <li><a href="#">Bebidas</a></li>
-                        <li><a href="#">Carnes</a></li>
-                        <li><a href="#">Vegetariano</a></li>
-                        <li><a href="#">Postres</a></li>
-                        <li><a href="#">Pasabocas</a></li>
+                        <g:each var="category" in="${categories}">
+                            <li><a href="#">${category.name}</a></li>
+                        </g:each>
                     </ul>
                 </li>
                 <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Recetas</a></li>
+                        <li><a href="${createLink(action: 'recetas')}">Recetas</a></li>
                         <li><a href="#">Usuarios</a></li>
                     </ul>
                 </li>
-                <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'perfil')}" class="dropdown-toggle">Acceder</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="${createLink(action: 'ingresar')}">Registro</a></li>
-                        <li><a href="${createLink(action: 'ingresar')}">Ingreso</a></li>
-                    </ul>
-                </li>
+                <g:if test="${session.user}">
+                    <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'perfil')}" class="dropdown-toggle">${session.user}</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${createLink(action: 'perfil')}">Perfil</a></li>
+                            <li><a href="${createLink(action: 'publicar')}">Publicar</a></li>
+                            <li><g:link controller="user" action="logout">Salir</g:link></li>
+                        </ul>
+                    </li>
+                </g:if>
+                <g:else>
+                    <li><a href="${createLink(controller: 'web', action: 'ingresar')}" class="dropdown-toggle">Acceder</a></li>
+                </g:else>
             </ul>
         </div>
     </nav>
