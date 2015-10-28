@@ -156,6 +156,7 @@ display: block;
     border: none;
     font-family: 'GearedSlab', sans-serif;
     font-size: 30px;
+    text-align: right;
 }
 
 .campo {
@@ -195,7 +196,7 @@ display: block;
 
 .textarea {
     padding-top: 0;
-    margin-top: -20px;
+    margin-top: -5px;
     width: 100%;
     max-width: 100%;
     margin-bottom:5px;

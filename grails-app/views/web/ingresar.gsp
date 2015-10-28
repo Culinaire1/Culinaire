@@ -212,10 +212,10 @@
                     <g:form controller="user" action="login">
                         <div class="input-group">
                             <div class="col-sm-5">
-                                <span class="input-group-addon" id="user3">Usuario:</span>
+                                <span class="input-group-addon" id="user5">Usuario:</span>
                             </div>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control campo" placeholder="Usuario" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="username">
                             </div>
                         </div>
                         <div class="input-group">
