@@ -2,16 +2,17 @@ package culinairegrails
 
 class Recipe {
 
-    Integer rating
     String name
-    String description
+    Integer rating
     Date dateCreated
     Date lastUpdate
-    boolean typical
+    String description
+    byte[] photo
+    String video
 
-    static hasMany = [posts: Post]
-    static belongsTo = [person: Person]
-    static hasOne = [food: Food,ingrediente:Ingredients]
+    static hasMany = [posts: Post, ingredients: Ingredient, instructions: Instruction]
+    static belongsTo = [person: Person, country: Country]
+    static hasOne = [food: Food, difficulty: Difficulty, duration: Duration]
 
     Recipe(){
         dateCreated = new Date()
@@ -19,12 +20,13 @@ class Recipe {
     }
 
     static constraints = {
-        rating(nullable: false, range: 1..5)
         name(nullable: false, minSize: 3)
-        description(nullable: false)
+        rating(nullable: false, range: 1..5)
         dateCreated(nullable: false)
         lastUpdate(nullable: false)
-        typical(null:false)
+        photo(nullable: false)
+        description(nullable: false)
+        video(nullable: true, url: true)
     }
 
     static mapping = {

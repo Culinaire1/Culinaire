@@ -17,7 +17,7 @@ class PersonController {
 
         personInstance.save flush: true
 
-        render("Person Created:" + personInstance)
+        redirect action: 'show', id: personInstance.id
     }
 
     def update(Person personInstance) {
@@ -33,6 +33,6 @@ class PersonController {
 
         personInstance.save flush: true
 
-        render("Person Updated:" + personInstance)
+        redirect action: 'show', id: personInstance.id
     }
 }

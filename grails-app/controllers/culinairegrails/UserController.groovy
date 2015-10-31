@@ -17,7 +17,7 @@ class UserController {
 
         userInstance.save flush: true
 
-        render("User Created:" + userInstance)
+        redirect action: 'show', id: userInstance.id
     }
 
     def update(User userInstance) {
@@ -33,7 +33,7 @@ class UserController {
 
         userInstance.save flush: true
 
-        render("User Updated:" + userInstance)
+        redirect action: 'show', id: userInstance.id
     }
 
     def login(){

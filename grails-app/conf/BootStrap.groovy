@@ -1,9 +1,38 @@
 import culinairegrails.Category
 import culinairegrails.Country
+import culinairegrails.Difficulty
+import culinairegrails.Duration
+import culinairegrails.Food
+import culinairegrails.Ingredient
+import culinairegrails.Instruction
+import culinairegrails.Person
+import culinairegrails.Plate
+import culinairegrails.Recipe
+import culinairegrails.Restaurant
 
 class BootStrap {
 
     def init = { servletContext ->
+        if( Duration.count() == 0){
+            new Duration(duration: "Menos de 15 minutos").save()
+            new Duration(duration: "Entre 15 y 30 minutos").save()
+            new Duration(duration: "entre 30 y 60 minutos").save()
+            new Duration(duration: "Entre 1 y 2 horas").save()
+            new Duration(duration: "Mas de 2 horas").save()
+        }
+        if( Person.count() == 0){
+            new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new Date(1996, 11, 14), username: "SpaceCode4",
+                    password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "hola", rating: 2).save()
+            new Person(name:"Carlos", lastname: "Solorzano", birthdate: new Date(1995, 11, 14), username: "Cosolo",
+                    password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "hola", rating: 2).save()
+        }
+
+        if( Difficulty.count() == 0){
+            new Difficulty(level: "Facil").save()
+            new Difficulty(level: "Medio").save()
+            new Difficulty(level: "Dificil").save()
+            new Difficulty(level: "Master Chef").save()
+        }
         if ( Category.count() == 0 ) {
             new Category(name:'Aperitivos').save()
             new Category(name:'Arroces').save()
@@ -239,6 +268,29 @@ class BootStrap {
             new Country(name:'Yemen').save()
             new Country(name:'Zambia').save()
             new Country(name:'Zimbabwe').save()
+        }
+        if(Restaurant.count() == 0){
+            new Restaurant(name: "Calero's", city: "Bogotá", address: "Bulevar Niza", username: "CaleroGrails", password: "SpacePhoenix23TheBest",
+                    email:"jccaleroe@unal.edu.co", description: "Muy buena comida", rating: 5, country: Country.findByName('Colombia'), photo: [0,0,0,0]).save()
+            new Restaurant(name: "Orlando's", city: "Une", address: "Centro del pueblo", username: "CarlosGrails", password: "SpacePhoenix23TheBest",
+                    email:"cosolozanov@unal.edu.co", description: "Lo mejor de Une", rating: 2, country: Country.findByName('Colombia'), photo: [0,0,0,0]).save()
+        }
+        if(Food.count() == 0){
+            new Food(name: 'Ravioli', category: Category.findByName('Platos principales')).save()
+            new Food(name: 'Espinaca', category: Category.findByName('Verduras')).save()
+        }
+        if( Plate.count() == 0){
+            new Plate(description: 'Ravioli de la casa', photo: [0,0,0,0], food: Food.findByName('Ravioli'), restaurant: Restaurant.findByName("Calero's")).save()
+        }
+
+        if(Recipe.count() == 0){
+            Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
+                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
+                    duration: Duration.findByDuration("Menos de 15 minutos"), food: Food.findByName('Ravioli'),
+                    person: Person.get(1), photo: [0,0,0,0]).save()
+
+            new Ingredient(name: 'Pasta', quantity: 100, units: 'gramos', recipe: recipe).save()
+            new Instruction(description: 'Calentar 15 minutos la pasta', recipe: recipe, paso: 1).save()
         }
     }
     def destroy = {

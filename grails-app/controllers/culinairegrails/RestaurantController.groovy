@@ -17,7 +17,7 @@ class RestaurantController {
 
         restaurantInstance.save flush: true
 
-        render("Restaurant Created:" + restaurantInstance)
+        redirect action: 'show', id: restaurantInstance.id
     }
 
     def update(Restaurant restaurantInstance) {
@@ -33,6 +33,6 @@ class RestaurantController {
 
         restaurantInstance.save flush: true
 
-        render("Restaurant Updated:" + restaurantInstance)
+        redirect action: 'show', id: restaurantInstance.id
     }
 }
