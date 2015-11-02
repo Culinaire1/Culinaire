@@ -38,4 +38,15 @@ class PersonController {
 
         redirect action: 'show', id: personInstance.id
     }
+
+    def login(){
+        def person = Person.findByUsername((String) params.username)
+        if(person.password == params.password){
+            session.user = person.username
+            redirect(controller: 'web', action: 'perfil', params: [username: person.username])
+        }else{
+            flash.message = "Contraseña incorrecta"
+            redirect(controller: 'web', action: 'ingresar')
+        }
+    }
 }

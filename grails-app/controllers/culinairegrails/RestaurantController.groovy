@@ -57,4 +57,15 @@ class RestaurantController {
         out.write(resPhoto.photo)
         out.close()
     }
+
+    def login(){
+        def restaurant = Restaurant.findByUsername((String) params.username)
+        if(restaurant.password == params.password){
+            session.user = restaurant.username
+            redirect(controller: 'web', action: 'perfil', params: [username: restaurant.username])
+        }else{
+            flash.message = "Contraseña incorrecta"
+            redirect(controller: 'web', action: 'ingresar')
+        }
+    }
 }

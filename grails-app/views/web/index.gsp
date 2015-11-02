@@ -21,7 +21,7 @@
                     <div class="carousel-caption intro">
                         <h1>¡Forma parte de Culinaire!</h1>
                         <p>Regístrate y adéntrate en el mundo de la cocina.</p>
-                        <p><a class="btn btn-lg btn-primary botones" href="${createLink(action: 'ingresar')}" role="button">Regístrate</a></p>
+                        <p><a class="btn btn-lg btn-primary botones" href="ingresar#registro" role="button">Regístrate</a></p>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <div class="carousel-caption intro">
                         <h1>Visita los mejores restaurantes</h1>
                         <p>En nuestra sección de restaurantes encontrarás todos los restaurantes de tu ciudad.</p>
-                        <p><a class="btn btn-lg btn-primary botones" href="#" role="button">Restaurantes</a></p>
+                        <p><a class="btn btn-lg btn-primary botones" href="${createLink(action: 'restaurantes')}" role="button">Restaurantes</a></p>
                     </div>
                 </div>
             </div>

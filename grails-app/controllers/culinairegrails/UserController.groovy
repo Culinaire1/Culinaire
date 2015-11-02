@@ -37,18 +37,22 @@ class UserController {
     }
 
     def login(){
-        if (params.username=="admin" && params.password=="pass"){
-            flash.message="Login Succeed"
-            session.user="admin"
-        }else {
-            flash.message = "Failed Login"
+        def person = Person.findByUsername((String) params.username)
+        def restaurant = Restaurant.findByUsername((String) params.username)
+        if (person){
+            redirect(controller: 'person', action: 'login', params: params)
         }
-        redirect(uri: "/ingresar")
-
+        else if (restaurant) {
+            redirect(controller: 'restaurant', action: 'login', params: params)
+        }
+        else {
+            flash.message = "No existe el usuario"
+            redirect(controller: 'web', action: 'ingresar')
+        }
     }
 
     def logout(){
-        session.user=null
+        session.user = null
         redirect(uri: "/ingresar")
     }
 }

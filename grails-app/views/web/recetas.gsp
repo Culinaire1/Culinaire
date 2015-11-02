@@ -17,7 +17,7 @@
                             <g:img dir="images" file="rav.jpg" class="img-responsive img-thumbnail"/>
                             <!img src="Images/f2.jpg" class="img-responsive img-thumbnail" alt="af">
                             <!figure>
-                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe', action:'displayGraph', params: [name:recipe.name])}" />
+                                <!img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe', action:'displayGraph', params: [name:recipe.name])}" />
                             <!/figure>
                         </div>
                         <div class="col-sm-6">
@@ -33,7 +33,7 @@
                                     <p id="titulo">Preparación:</p>
                                     <p>
                                     <g:each var="instruction" in="${recipe.instructions}" status="counter">
-                                        ${counter+1}. ${instruction.description}<br>
+                                        ${counter+1}. ${instruction.description}.<br>
                                     </g:each>
                                     </p>
                                 </div>

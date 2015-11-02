@@ -315,7 +315,7 @@ class BootStrap {
 
             /*File fi2 = new File("web-app/images/pi.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())*/
-            Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 2, description: 'Exquisito!',
+            Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 4, description: 'Exquisito!',
                     country: Country.findByName('Italia'), difficulty: Difficulty.findByLevel("Medio"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), food: Food.findByName('Pizza'),
                     person: Person.get(3), photo: [0,0,0,0]).save()
