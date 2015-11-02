@@ -36,4 +36,17 @@ class RecipeController {
         recipe.save flush: true
         redirect action: 'show', id: recipe.id
     }
+
+    def displayGraph = {
+        def recPhoto = Recipe.findByName((String) params.name)
+        if (!recPhoto || !recPhoto.photo) {
+            response.sendError(404)
+            return
+        }
+        response.contentType = recPhoto.photo
+        response.contentLength = recPhoto.photo.size()
+        OutputStream out = response.outputStream
+        out.write(recPhoto.photo)
+        out.close()
+    }
 }

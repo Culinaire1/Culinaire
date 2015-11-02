@@ -3,7 +3,7 @@ var email = document.getElementById("email")
 
 function validatePassword(){
     if(email.value != confirm_email.value) {
-        confirm_email.setCustomValidity("Passwords Don't Match");
+        confirm_email.setCustomValidity("Los correos no coinciden");
     } else {
         confirm_email.setCustomValidity('');
     }
@@ -17,7 +17,7 @@ var emailR = document.getElementById("emailR")
 
 function validatePassword2(){
     if(emailR.value != confirm_emailR.value) {
-        confirm_emailR.setCustomValidity("Passwords Don't Match");
+        confirm_emailR.setCustomValidity("Los correos no coinciden");
     } else {
         confirm_emailR.setCustomValidity('');
     }

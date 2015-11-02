@@ -20,4 +20,7 @@ class User {
         website(nullable: true, url: true)
     }
 
+    String toString(){
+        "${username}"
+    }
 }

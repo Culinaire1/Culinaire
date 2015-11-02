@@ -30,4 +30,8 @@ class Person extends User{
 
         return c.get(Calendar.YEAR) - birth.get(Calendar.YEAR) - 1
     }
+
+    String toString(){
+        "${name} ${lastname}"
+    }
 }

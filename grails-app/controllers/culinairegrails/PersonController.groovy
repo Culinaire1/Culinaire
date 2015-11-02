@@ -10,7 +10,7 @@ class PersonController {
             return
         }
 
-        def a = params.birthdate2.split("-")
+        String a = params.birthdate2.split("-")
         personInstance.birthdate = new Date(a[0].toInteger(), a[1].toInteger(), a[2].toInteger())
 
         if (!personInstance.validate()) {

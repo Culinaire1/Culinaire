@@ -13,4 +13,8 @@ class Instruction{
         paso(nullable: false, min: 1)
         photo(nullable: true)
     }
+
+    String toString(){
+        "${description}"
+    }
 }

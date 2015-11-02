@@ -9,6 +9,7 @@ import culinairegrails.Person
 import culinairegrails.Plate
 import culinairegrails.Recipe
 import culinairegrails.Restaurant
+import java.nio.file.Files;
 
 class BootStrap {
 
@@ -16,15 +17,17 @@ class BootStrap {
         if( Duration.count() == 0){
             new Duration(duration: "Menos de 15 minutos").save()
             new Duration(duration: "Entre 15 y 30 minutos").save()
-            new Duration(duration: "entre 30 y 60 minutos").save()
+            new Duration(duration: "Entre 30 y 60 minutos").save()
             new Duration(duration: "Entre 1 y 2 horas").save()
             new Duration(duration: "Mas de 2 horas").save()
         }
         if( Person.count() == 0){
             new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new Date(1996, 11, 14), username: "SpaceCode4",
-                    password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "hola", rating: 2).save()
+                    password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3).save()
             new Person(name:"Carlos", lastname: "Solorzano", birthdate: new Date(1995, 11, 14), username: "Cosolo",
-                    password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "hola", rating: 2).save()
+                    password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3).save()
+            new Person(name:"Andres Felipe", lastname: "De Orcajo", birthdate: new Date(1996, 05, 02), username: "afdev",
+                    password: "Test1234", email:"afdev@unal.edu.co", description: "Creador", rating: 3).save()
         }
 
         if( Difficulty.count() == 0){
@@ -269,21 +272,39 @@ class BootStrap {
             new Country(name:'Zambia').save()
             new Country(name:'Zimbabwe').save()
         }
+
         if(Restaurant.count() == 0){
-            new Restaurant(name: "Calero's", city: "Bogotá", address: "Bulevar Niza", username: "CaleroGrails", password: "SpacePhoenix23TheBest",
-                    email:"jccaleroe@unal.edu.co", description: "Muy buena comida", rating: 5, country: Country.findByName('Colombia'), photo: [0,0,0,0]).save()
-            new Restaurant(name: "Orlando's", city: "Une", address: "Centro del pueblo", username: "CarlosGrails", password: "SpacePhoenix23TheBest",
-                    email:"cosolozanov@unal.edu.co", description: "Lo mejor de Une", rating: 2, country: Country.findByName('Colombia'), photo: [0,0,0,0]).save()
+            File fi = new File("web-app/images/f3.jpg");
+            byte[] fileContent = Files.readAllBytes(fi.toPath())
+
+            new Restaurant(name: "Culinaire's", city: "Bogota", address: "Cll 52 #45-16", username: "culinaire", password: "Test1234",
+                    email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'), photo: fileContent).save()
+            File fi2 = new File("web-app/images/f4.jpg");
+            byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
+
+            new Restaurant(name: "Wok", city: "Bogota", address: "Cll 96 #28-67", username: "wokfood", password: "Test1234",
+                    email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'), photo: fileContent2).save()
+            File fi3 = new File("web-app/images/f5.jpg");
+            byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
+
+            new Restaurant(name: "Archie's", city: "Bogota", address: "Cll 123 #45-67", username: "archies", password: "Test1234",
+                    email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'), photo: fileContent3).save()
         }
+
         if(Food.count() == 0){
             new Food(name: 'Ravioli', category: Category.findByName('Platos principales')).save()
+            new Food(name: 'Pizza', category: Category.findByName('Platos principales')).save()
             new Food(name: 'Espinaca', category: Category.findByName('Verduras')).save()
         }
+
         if( Plate.count() == 0){
-            new Plate(description: 'Ravioli de la casa', photo: [0,0,0,0], food: Food.findByName('Ravioli'), restaurant: Restaurant.findByName("Calero's")).save()
+            new Plate(description: 'Ravioli de la casa', photo: [0,0,0,0], food: Food.findByName('Ravioli'), restaurant: Restaurant.findByName("Culinaire's")).save()
+            new Plate(description: 'Pizza casera', photo: [0,0,0,0], food: Food.findByName('Pizza'), restaurant: Restaurant.findByName("Archie's")).save()
         }
 
         if(Recipe.count() == 0){
+            /*File fi = new File("web-app/images/rav.jpg");
+            byte[] fileContent = Files.readAllBytes(fi.toPath())*/
             Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Menos de 15 minutos"), food: Food.findByName('Ravioli'),
@@ -291,6 +312,16 @@ class BootStrap {
 
             new Ingredient(name: 'Pasta', quantity: 100, units: 'gramos', recipe: recipe).save()
             new Instruction(description: 'Calentar 15 minutos la pasta', recipe: recipe, paso: 1).save()
+
+            /*File fi2 = new File("web-app/images/pi.jpg");
+            byte[] fileContent2 = Files.readAllBytes(fi2.toPath())*/
+            Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 2, description: 'Exquisito!',
+                    country: Country.findByName('Italia'), difficulty: Difficulty.findByLevel("Medio"),
+                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), food: Food.findByName('Pizza'),
+                    person: Person.get(3), photo: [0,0,0,0]).save()
+
+            new Ingredient(name: 'Queso', quantity: 500, units: 'gramos', recipe: recipe2).save()
+            new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
         }
     }
     def destroy = {

@@ -14,4 +14,8 @@ class Ingredient{
         units(nullable: false)
         photo(nullable: true)
     }
+
+    String toString(){
+        "${name}"
+    }
 }

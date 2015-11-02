@@ -3,7 +3,7 @@ var password = document.getElementById("password")
 
 function validatePassword(){
     if(password.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords Don't Match");
+        confirm_password.setCustomValidity("Las contraseñas no coinciden");
     } else {
         confirm_password.setCustomValidity('');
     }
@@ -17,7 +17,7 @@ var passwordR = document.getElementById("passwordR")
 
 function validatePassword2(){
     if(passwordR.value != confirm_passwordR.value) {
-        confirm_passwordR.setCustomValidity("Passwords Don't Match");
+        confirm_passwordR.setCustomValidity("Las contraseñas no coinciden");
     } else {
         confirm_passwordR.setCustomValidity('');
     }

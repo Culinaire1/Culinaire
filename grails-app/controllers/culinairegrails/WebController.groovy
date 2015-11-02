@@ -38,9 +38,9 @@ class WebController {
         [categories:Category.list(), countries:Country.list()]
     }
     def restaurantes() {
-        [categories:Category.list()]
+        [categories:Category.list(), restaurants:Restaurant.list()]
     }
     def recetas() {
-        [categories:Category.list()]
+        [categories:Category.list(), recipes:Recipe.list()]
     }
 }

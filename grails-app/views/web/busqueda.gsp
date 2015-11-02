@@ -34,6 +34,15 @@
                     </div>
                 </div>
                 <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-left: 2%">Aleatorio</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%">Buscar</button>
+                    </div>
+                </div>
+                <br>
                 <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                 <br>
                 <div class="input-group">
@@ -65,9 +74,7 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-left: 2%">Aleatorio</button>
-                    </div>
+                    <div class="col-sm-6"></div>
                     <div class="col-sm-6">
                         <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%">Buscar</button>
                     </div>

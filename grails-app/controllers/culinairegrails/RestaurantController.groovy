@@ -17,7 +17,7 @@ class RestaurantController {
         restaurant.email = params.emailR
         restaurant.website = params.websiteR
         restaurant.rating = 1
-        restaurant.country = Country.findByName(params.countryR)
+        restaurant.country = Country.findByName((String) params.countryR)
 
         if (!restaurant.validate()) {
             respond restaurant.errors, view: 'create'
@@ -43,5 +43,18 @@ class RestaurantController {
         restaurantInstance.save flush: true
 
         redirect action: 'show', id: restaurantInstance.id
+    }
+
+    def displayGraph = {
+        def resPhoto = Restaurant.findByName((String) params.name)
+        if (!resPhoto || !resPhoto.photo) {
+            response.sendError(404)
+            return
+        }
+        response.contentType = resPhoto.photo
+        response.contentLength = resPhoto.photo.size()
+        OutputStream out = response.outputStream
+        out.write(resPhoto.photo)
+        out.close()
     }
 }

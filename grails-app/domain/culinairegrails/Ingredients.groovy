@@ -13,4 +13,8 @@ class Ingredients {
         ingredientes(nullable: false)
         pasoapaso(nullable: false)
     }
+
+    String toString(){
+        "${ingredientes}"
+    }
 }
