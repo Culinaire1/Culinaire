@@ -6,6 +6,10 @@ class Person extends User{
     String lastname
     Date birthdate
 
+    Person(){
+        rating = 1
+    }
+
     static hasMany = [posts: Post, recipes: Recipe, favorites: User]
 
     static constraints = {

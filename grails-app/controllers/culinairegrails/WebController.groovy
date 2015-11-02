@@ -32,7 +32,7 @@ class WebController {
         [categories:Category.list()]
     }
     def ingresar() {
-        [categories:Category.list()]
+        [categories:Category.list(), countries:Country.list()]
     }
     def publicar() {
         [categories:Category.list(), countries:Country.list()]
