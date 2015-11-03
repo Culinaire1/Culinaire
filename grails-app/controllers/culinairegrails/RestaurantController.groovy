@@ -62,7 +62,7 @@ class RestaurantController {
         def restaurant = Restaurant.findByUsername((String) params.username)
         if(restaurant.password == params.password){
             session.user = restaurant.username
-            redirect(controller: 'web', action: 'perfil', params: [username: restaurant.username])
+            redirect(controller: 'web', action: 'perfil2', params: [username: restaurant.username])
         }else{
             flash.message = "Contraseña incorrecta"
             redirect(controller: 'web', action: 'ingresar')

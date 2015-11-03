@@ -39,6 +39,19 @@ class PersonController {
         redirect action: 'show', id: personInstance.id
     }
 
+    def displayGraph = {
+        def perFoto = Person.findByName((String) params.name)
+        if (!perFoto || !perFoto.photo) {
+            response.sendError(404)
+            return
+        }
+        response.contentType = perFoto.photo
+        response.contentLength = perFoto.photo.size()
+        OutputStream out = response.outputStream
+        out.write(perFoto.photo)
+        out.close()
+    }
+
     def login(){
         def person = Person.findByUsername((String) params.username)
         if(person.password == params.password){

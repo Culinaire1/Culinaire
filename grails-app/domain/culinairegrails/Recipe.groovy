@@ -32,4 +32,8 @@ class Recipe {
     static mapping = {
         posts cascade: "all-delete-orphan"
     }
+
+    String toString(){
+        "${name}"
+    }
 }

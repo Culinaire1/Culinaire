@@ -27,7 +27,7 @@
                                     <p id="titulo">Ingredientes:</p>
                                     <p>
                                     <g:each var="ingredient" in="${recipe.ingredients}">
-                                        - ${ingredient.name} ${ingredient.quantity} ${ingredient.units}<br>
+                                        - ${ingredient.quantity} ${ingredient.units} de ${ingredient.name}<br>
                                     </g:each>
                                     </p>
                                     <p id="titulo">Preparación:</p>

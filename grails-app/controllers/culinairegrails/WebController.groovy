@@ -5,7 +5,7 @@ class WebController {
         [categories:Category.list()]
     }
     def busqueda() {
-        [categories:Category.list(), countries:Country.list()]
+        [categories:Category.list(), countries:Country.list(), difficulties:Difficulty.list(), ingredients:Ingredient.list(), durations: Duration.list()]
     }
     def categorias() {
         [categories:Category.list()]
@@ -14,6 +14,12 @@ class WebController {
         [categories:Category.list()]
     }
     def perfil() {
+        if(session.user == null) {
+            redirect(action: 'ingresar')
+        }
+        render(view: 'perfil',model:[person:Person.findByUsername((String) session.user), categories:Category.list()])
+    }
+    def perfil2() {
         [categories:Category.list()]
     }
     def comentarios() {

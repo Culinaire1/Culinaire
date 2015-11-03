@@ -13,10 +13,16 @@
             <div class="center-block ing" style="width:80%">
                 <div class="input-group">
                     <div class="col-sm-3">
-                        <span class="input-group-addon" id="ingredientes">Ingredientes:</span>
+                        <span class="input-group-addon" id="ingredientes">Ingrediente:</span>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                        <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                        <label for="sel6"></label>
+                        <select class="form-control campo" id="sel6">
+                            <g:each var="ingredient" in="${ingredients}">
+                                <option>${ingredient.name}</option>
+                            </g:each>
+                        </select>
                     </div>
                 </div>
                 <div class="input-group">
@@ -29,6 +35,34 @@
                         <select class="form-control campo" id="sel">
                             <g:each var="category" in="${categories}">
                                 <option>${category.name}</option>
+                            </g:each>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col-sm-3">
+                        <span class="input-group-addon" id="tiempo">Duración:</span>
+                    </div>
+                    <div class="col-sm-9">
+                        <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                        <label for="sel4"></label>
+                        <select class="form-control campo" id="sel4">
+                            <g:each var="duration" in="${durations}">
+                                <option>${duration.duration}</option>
+                            </g:each>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col-sm-3">
+                        <span class="input-group-addon" id="dificultad">Dificultad:</span>
+                    </div>
+                    <div class="col-sm-9">
+                        <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                        <label for="sel5"></label>
+                        <select class="form-control campo" id="sel5">
+                            <g:each var="difficult" in="${difficulties}">
+                                <option>${difficult.level}</option>
                             </g:each>
                         </select>
                     </div>

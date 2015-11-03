@@ -22,12 +22,20 @@ class BootStrap {
             new Duration(duration: "Mas de 2 horas").save()
         }
         if( Person.count() == 0){
+            File fi = new File("web-app/images/jc.jpg");
+            byte[] fileContent = Files.readAllBytes(fi.toPath())
             new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new Date(1996, 11, 14), username: "SpaceCode4",
-                    password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3).save()
+                    password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3, photo: fileContent).save()
+
+            File fi2 = new File("web-app/images/coso.jpg");
+            byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
             new Person(name:"Carlos", lastname: "Solorzano", birthdate: new Date(1995, 11, 14), username: "Cosolo",
-                    password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3).save()
+                    password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3, photo: fileContent2).save()
+
+            File fi3 = new File("web-app/images/af.jpg");
+            byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
             new Person(name:"Andres Felipe", lastname: "De Orcajo", birthdate: new Date(1996, 05, 02), username: "afdev",
-                    password: "Test1234", email:"afdev@unal.edu.co", description: "Creador", rating: 3).save()
+                    password: "Test1234", email:"afdev@unal.edu.co", description: "Creador", rating: 3, photo: fileContent3).save()
         }
 
         if( Difficulty.count() == 0){
