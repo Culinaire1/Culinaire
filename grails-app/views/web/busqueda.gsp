@@ -19,6 +19,7 @@
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel6"></label>
                         <select class="form-control campo" id="sel6">
+                            <option>Ninguna</option>
                             <g:each var="ingredient" in="${ingredients}">
                                 <option>${ingredient.name}</option>
                             </g:each>
@@ -33,6 +34,7 @@
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel"></label>
                         <select class="form-control campo" id="sel">
+                            <option>Ninguna</option>
                             <g:each var="category" in="${categories}">
                                 <option>${category.name}</option>
                             </g:each>
@@ -47,6 +49,7 @@
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel4"></label>
                         <select class="form-control campo" id="sel4">
+                            <option>Ninguna</option>
                             <g:each var="duration" in="${durations}">
                                 <option>${duration.duration}</option>
                             </g:each>
@@ -61,6 +64,7 @@
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel5"></label>
                         <select class="form-control campo" id="sel5">
+                            <option>Ninguna</option>
                             <g:each var="difficult" in="${difficulties}">
                                 <option>${difficult.level}</option>
                             </g:each>
@@ -86,6 +90,7 @@
                     <div class="col-sm-9">
                         <label for="sel2"></label>
                         <select class="form-control campo" id="sel2">
+                            <option>Ninguna</option>
                             <g:each var="country" in="${countries}">
                                 <option>${country.name}</option>
                             </g:each>
@@ -100,6 +105,7 @@
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel3"></label>
                         <select class="form-control campo" id="sel3">
+                            <option>Ninguna</option>
                             <g:each var="category" in="${categories}">
                                 <option>${category.name}</option>
                             </g:each>
