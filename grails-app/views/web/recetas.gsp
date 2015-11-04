@@ -26,16 +26,16 @@
                                 <div class="cuerpo">
                                     <p id="titulo">Ingredientes:</p>
                                     <p>
-                                    <g:each var="ingredient" in="${recipe.ingredients}">
-                                        <!-- - ${ingredient.quantity} ${ingredient.units} de ${ingredient.name}<br>-->
-                                        - ${ingredient.name}<br>
-                                    </g:each>
+                                        <g:each var="ingredient" in="${recipe.ingredients}">
+                                            ${ingredient.quantity} de ${ingredient.name}.<br>
+                                        </g:each>
+
                                     </p>
                                     <p id="titulo">Preparación:</p>
                                     <p>
-                                    <g:each var="instruction" in="${recipe.instructions}" status="counter">
-                                        ${counter+1}. ${instruction.description}.<br>
-                                    </g:each>
+                                        <g:each var="instruction" in="${recipe.instructions}" status="counter">
+                                            ${counter+1}. ${instruction.description}.<br>
+                                        </g:each>
                                     </p>
                                 </div>
                             </div>
