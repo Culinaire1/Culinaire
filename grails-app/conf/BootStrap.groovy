@@ -2,7 +2,7 @@ import culinairegrails.Category
 import culinairegrails.Country
 import culinairegrails.Difficulty
 import culinairegrails.Duration
-import culinairegrails.Food
+
 import culinairegrails.Ingredient
 import culinairegrails.Instruction
 import culinairegrails.Person
@@ -287,28 +287,27 @@ class BootStrap {
             byte[] fileContent = Files.readAllBytes(fi.toPath())
 
             new Restaurant(name: "Culinaire's", city: "Bogota", address: "Cll 52 #45-16", username: "culinaire", password: "Test1234",
-                    email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'), photo: fileContent).save()
+                    email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'),
+                    photo: fileContent).save()
             File fi2 = new File("web-app/images/f4.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
 
             new Restaurant(name: "Wok", city: "Bogota", address: "Cll 96 #28-67", username: "wokfood", password: "Test1234",
-                    email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'), photo: fileContent2).save()
+                    email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'),
+                    photo: fileContent2).save()
             File fi3 = new File("web-app/images/f5.jpg");
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
 
             new Restaurant(name: "Archie's", city: "Bogota", address: "Cll 123 #45-67", username: "archies", password: "Test1234",
-                    email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'), photo: fileContent3).save()
-        }
-
-        if(Food.count() == 0){
-            new Food(name: 'Ravioli', category: Category.findByName('Platos principales')).save()
-            new Food(name: 'Pizza', category: Category.findByName('Platos principales')).save()
-            new Food(name: 'Espinaca', category: Category.findByName('Verduras')).save()
+                    email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'),
+                    photo: fileContent3).save()
         }
 
         if( Plate.count() == 0){
-            new Plate(description: 'Ravioli de la casa', photo: [0,0,0,0], food: Food.findByName('Ravioli'), restaurant: Restaurant.findByName("Culinaire's")).save()
-            new Plate(description: 'Pizza casera', photo: [0,0,0,0], food: Food.findByName('Pizza'), restaurant: Restaurant.findByName("Archie's")).save()
+            new Plate(description: 'Ravioli de la casa', photo: [0,0,0,0], category: Category.findByName('Pastas'),
+                    restaurant: Restaurant.findByName("Culinaire's")).save()
+            new Plate(description: 'Pizza casera', photo: [0,0,0,0], category: Category.findByName('Pastas'),
+                    restaurant: Restaurant.findByName("Archie's")).save()
         }
 
         if(Recipe.count() == 0){
@@ -316,7 +315,7 @@ class BootStrap {
             byte[] fileContent = Files.readAllBytes(fi.toPath())
             Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
-                    duration: Duration.findByDuration("Menos de 15 minutos"), food: Food.findByName('Ravioli'),
+                    duration: Duration.findByDuration("Menos de 15 minutos"), category: Category.findByName('Pastas'),
                     person: Person.get(1), photo: fileContent).save()
 
             Ingredient ingredient1 = new Ingredient(name: 'Pasta').save()
@@ -327,7 +326,7 @@ class BootStrap {
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
             Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 4, description: 'Exquisito!',
                     country: Country.findByName('Italia'), difficulty: Difficulty.findByLevel("Medio"),
-                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), food: Food.findByName('Pizza'),
+                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Aperitivos'),
                     person: Person.get(3), photo: fileContent2).save()
 
             Ingredient ingredient = new Ingredient(name: 'Queso').save()
