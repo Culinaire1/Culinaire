@@ -6,10 +6,6 @@ class Restaurant extends User{
     String city
     String address
 
-    Restaurant(){
-        rating = 1
-    }
-
     static hasMany = [plates: Plate]
 
     static belongsTo = [country: Country]

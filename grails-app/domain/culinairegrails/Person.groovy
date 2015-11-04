@@ -4,11 +4,7 @@ class Person extends User{
 
     String name
     String lastname
-    Date birthdate
-
-    Person(){
-        rating = 1
-    }
+    Calendar birthdate
 
     static hasMany = [posts: Post, recipes: Recipe, favorites: User]
 
@@ -20,15 +16,14 @@ class Person extends User{
 
     int getAge(){
         Calendar c = Calendar.getInstance()
-        Calendar birth = Calendar.getInstance(birthdate)
 
-        if(c.get(c.MONTH) > birth.get(Calendar.MONTH))
-            return c.get(c.YEAR) - birth.get(Calendar.YEAR)
+        if(c.get(c.MONTH) > birthdate.get(Calendar.MONTH))
+            return c.get(c.YEAR) - birthdate.get(Calendar.YEAR)
 
-        else if(birth.get(Calendar.MONTH) == c.get(Calendar.MONTH) && c.get(Calendar.DATE) > birth.get(Calendar.DATE))
-            return c.get(Calendar.YEAR) - birth.get(Calendar.YEAR)
+        else if(birthdate.get(birthdate.MONTH) == c.get(c.MONTH) && c.get(c.DATE) > birthdate.get(birthdate.DATE))
+            return c.get(c.YEAR) - birthdate.get(Calendar.YEAR)
 
-        return c.get(Calendar.YEAR) - birth.get(Calendar.YEAR) - 1
+        return c.get(c.YEAR) - birthdate.get(Calendar.YEAR) - 1
     }
 
     String toString(){

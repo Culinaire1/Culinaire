@@ -17,7 +17,7 @@ class WebController {
         if(session.user == null) {
             redirect(action: 'ingresar')
         }
-        render(view: 'perfil',model:[person:Person.findByUsername((String) session.user), categories:Category.list()])
+        render(view: 'perfil', model:[person:Person.findByUsername(session.user), categories:Category.list()])
     }
     def perfil2() {
         [categories:Category.list()]

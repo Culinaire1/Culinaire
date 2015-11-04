@@ -75,11 +75,18 @@
                     </ul>
                 </li>
                 <g:if test="${session.user}">
-                    <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'perfil')}" class="dropdown-toggle">${session.user}</a>
+                    <li class="dropdown active"><a class="dropdown-toggle">${session.user}</a>
                         <ul class="dropdown-menu">
-                            <li><a href="${createLink(action: 'perfil')}">Perfil</a></li>
-                            <li><a href="${createLink(action: 'publicar')}">Publicar</a></li>
-                            <li><g:link controller="user" action="logout">Salir</g:link></li>
+                            <g:if test="${session.tu}">
+                                <li><a href="${createLink(action: 'perfil')}">Perfil</a></li>
+                                <li><a href="${createLink(action: 'publicar')}">Publicar</a></li>
+                                <li><g:link controller="user" action="logout">Salir</g:link></li>
+                            </g:if>
+                            <g:else>
+                                <li><a>Perfil</a></li>
+                                <li><a>Añadir PLato</a></li>
+                                <li><g:link controller="user" action="logout">Salir</g:link></li>
+                            </g:else>
                         </ul>
                     </li>
                 </g:if>

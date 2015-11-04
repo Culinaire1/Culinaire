@@ -26,7 +26,7 @@ class RestaurantController {
 
         restaurant.save flush: true
 
-        redirect action: 'show', id: restaurant.id
+        redirect action: 'login', id: restaurant.id
     }
 
     def update(Restaurant restaurantInstance) {
@@ -42,7 +42,7 @@ class RestaurantController {
 
         restaurantInstance.save flush: true
 
-        redirect action: 'show', id: restaurantInstance.id
+        redirect action: 'login', id: restaurant.id
     }
 
     def displayGraph = {
@@ -58,14 +58,10 @@ class RestaurantController {
         out.close()
     }
 
-    def login(){
-        def restaurant = Restaurant.findByUsername((String) params.username)
-        if(restaurant.password == params.password){
-            session.user = restaurant.username
-            redirect(controller: 'web', action: 'perfil2', params: [username: restaurant.username])
-        }else{
-            flash.message = "Contraseña incorrecta"
-            redirect(controller: 'web', action: 'ingresar')
-        }
+    def login(long id){
+        def restaurant = Restaurant.get(id)
+        session.user = restaurant.username
+        session.tu = false
+        redirect controller: 'web', action: 'index'
     }
 }

@@ -10,48 +10,32 @@
         <br>
         <p class="tit" id="acceso">Acceso:</p>
         <br>
-        <g:if test="${flash.message}">
-            <div class="col-md-4 col-md-offset-4 ">
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>${flash.message}</strong>
-                </div>
-            </div>
-        </g:if>
-        <g:if test="${session.user}">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="alert alert-success" role="alert">Login as: ${session.user}</div>
-                    <g:link controller="user" action="logout">Logout</g:link>
-                </div>
-            </div>
-        </g:if>
-        <g:else>
-            <div class="row">
-                <div class="center-block" style="width:50%;">
-                    <g:form controller="user" action="login">
-                        <div class="input-group">
-                            <div class="col-sm-5">
-                                <span class="input-group-addon" id="user5">Usuario:</span>
-                            </div>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="username">
-                            </div>
+        <div class="row">
+            <div class="center-block" style="width:50%;">
+                <g:form controller="user" action="login" method="post" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <div class="col-sm-5">
+                            <span class="input-group-addon" id="user5">Usuario:</span>
                         </div>
-                        <div class="input-group">
-                            <div class="col-sm-5">
-                                <span class="input-group-addon" id="password5">Contraseña:</span>
-                            </div>
-                            <div class="col-sm-7">
-                                <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="password">
-                            </div>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" id="usernameL"
+                                   name="usernameL" required>
                         </div>
-                        <br>
-                        <input type="submit" class="btn btn-primary btn-lg center-block botones b2" value="Ingresar"><br/>
-                    </g:form>
-                </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="col-sm-5">
+                            <span class="input-group-addon" id="password5">Contraseña:</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="passwordL"
+                            required id="passwordL">
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-lg center-block botones b2" value="Ingresar"><br/>
+                </g:form>
             </div>
-        </g:else>
+        </div>
 
         <br>
         <hr style="width: 90%; color: #111160; height: 4px; background-color:#111160;" />
@@ -145,7 +129,7 @@
                                     <span class="input-group-addon" id="foto">Imagen:</span>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="file" name="photo" id="photo" />
+                                    <input type="file" name="photo" id="photo" accept="image/*"/>
                                 </div>
                             </div>
                             <div class="input-group">
@@ -264,7 +248,7 @@
                                     <span class="input-group-addon" id="foto2">Imagen:</span>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="file" name="photoR" id="photoR" />
+                                    <input type="file" name="photoR" id="photoR" accept="image/*"/>
                                 </div>
                             </div>
                             <div class="input-group">

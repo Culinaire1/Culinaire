@@ -11,7 +11,7 @@ class Instruction{
     static constraints = {
         description (nullable: false)
         paso(nullable: false, min: 1)
-        photo(nullable: true)
+        photo(nullable: true, maxSize: 4194304)
     }
 
     String toString(){

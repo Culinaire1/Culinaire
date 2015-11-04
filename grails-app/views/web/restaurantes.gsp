@@ -27,7 +27,7 @@
                                 <div class="cuerpo">
                                     <p id="titulo">Dirección:</p>
                                     <p>${restaurant.city} - ${restaurant.address}<br> </p>
-                                    <p id="titulo">Descripción:</p>
+                                    <p id="titulo2">Descripción:</p>
                                     <p>${restaurant.description}<br> </p>
                                 </div>
                             </div>

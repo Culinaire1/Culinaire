@@ -7,6 +7,7 @@ import culinairegrails.Ingredient
 import culinairegrails.Instruction
 import culinairegrails.Person
 import culinairegrails.Plate
+import culinairegrails.Quantity
 import culinairegrails.Recipe
 import culinairegrails.Restaurant
 import java.nio.file.Files;
@@ -24,17 +25,17 @@ class BootStrap {
         if( Person.count() == 0){
             File fi = new File("web-app/images/jc.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
-            new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new Date(1996, 11, 14), username: "SpaceCode4",
+            new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new GregorianCalendar(1996, 11, 14), username: "SpaceCode4",
                     password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3, photo: fileContent).save()
 
             File fi2 = new File("web-app/images/coso.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
-            new Person(name:"Carlos", lastname: "Solorzano", birthdate: new Date(1995, 11, 14), username: "Cosolo",
+            new Person(name:"Carlos", lastname: "Solorzano", birthdate: new GregorianCalendar(1995, 11, 14), username: "Cosolo",
                     password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3, photo: fileContent2).save()
 
             File fi3 = new File("web-app/images/af.jpg");
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
-            new Person(name:"Andres Felipe", lastname: "De Orcajo", birthdate: new Date(1996, 05, 02), username: "afdev",
+            new Person(name:"Andres Felipe", lastname: "De Orcajo", birthdate: new GregorianCalendar(1996, 05, 02), username: "afdev",
                     password: "Test1234", email:"afdev@unal.edu.co", description: "Creador", rating: 3, photo: fileContent3).save()
         }
 
@@ -318,7 +319,8 @@ class BootStrap {
                     duration: Duration.findByDuration("Menos de 15 minutos"), food: Food.findByName('Ravioli'),
                     person: Person.get(1), photo: [0,0,0,0]).save()
 
-            new Ingredient(name: 'Pasta', quantity: 100, units: 'gramos', recipe: recipe).save()
+            Ingredient ingredient1 = new Ingredient(name: 'Pasta').save()
+            new Quantity(quantity: "100 gramos", recipe: recipe, ingredient: ingredient1).save()
             new Instruction(description: 'Calentar 15 minutos la pasta', recipe: recipe, paso: 1).save()
 
             /*File fi2 = new File("web-app/images/pi.jpg");
@@ -328,7 +330,8 @@ class BootStrap {
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), food: Food.findByName('Pizza'),
                     person: Person.get(3), photo: [0,0,0,0]).save()
 
-            new Ingredient(name: 'Queso', quantity: 500, units: 'gramos', recipe: recipe2).save()
+            Ingredient ingredient = new Ingredient(name: 'Queso').save()
+            new Quantity(quantity: "500 gramos", recipe: recipe2, ingredient: ingredient).save()
             new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
         }
     }

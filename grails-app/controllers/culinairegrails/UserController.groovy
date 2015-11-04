@@ -37,22 +37,43 @@ class UserController {
     }
 
     def login(){
-        def person = Person.findByUsername((String) params.username)
-        def restaurant = Restaurant.findByUsername((String) params.username)
-        if (person){
-            redirect(controller: 'person', action: 'login', params: params)
+        def person = Person.findByUsername(params.usernameL)
+        if (person) {
+            if(person.password == params.passwordL){
+                session.user = person.username
+                session.tu = true
+                redirect controller: 'web', action: 'perfil'
+                return
+            }else{
+                redirect controller: 'web', action: 'ingresar'
+                flash.message = "Contraseña incorrecta"
+                return
+            }
         }
-        else if (restaurant) {
-            redirect(controller: 'restaurant', action: 'login', params: params)
+
+        def restaurant = Restaurant.findByUsername(params.usernameL)
+        if (restaurant) {
+            if(restaurant.password == params.passwordL){
+                session.user = restaurant.username
+                session.tu = false
+                redirect controller: 'web', action: 'index'
+                return
+            }
+            else{
+                redirect controller: 'web', action: 'ingresar'
+                flash.message = "Contraseña incorrecta"
+                return
+            }
         }
         else {
+            redirect controller: 'web', action: 'ingresar'
             flash.message = "No existe el usuario"
-            redirect(controller: 'web', action: 'ingresar')
+            return
         }
     }
 
     def logout(){
         session.user = null
-        redirect(uri: "/ingresar")
+        redirect controller: 'web', action: 'index'
     }
 }
