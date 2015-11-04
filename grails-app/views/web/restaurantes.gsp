@@ -14,8 +14,6 @@
                 <g:each var="restaurant" in="${restaurants}">
                     <div class="row">
                         <div class="col-sm-6">
-                            <!g:img dir="images" file="f4.jpg" class="img-responsive img-thumbnail"/>
-                            <!img src="${createLink(controller:'web', action:'displayGraph', params: [name:restaurant.name])}"/>
                             <figure>
                                 <img class="img-responsive img-thumbnail" src="${createLink(controller:'restaurant', action:'displayGraph', params: [name:restaurant.name])}" />
                             </figure>
@@ -27,7 +25,7 @@
                                 <div class="cuerpo">
                                     <p id="titulo">Dirección:</p>
                                     <p>${restaurant.city} - ${restaurant.address}<br> </p>
-                                    <p id="titulo2">Descripción:</p>
+                                    <p id="titulo">Descripción:</p>
                                     <p>${restaurant.description}<br> </p>
                                 </div>
                             </div>

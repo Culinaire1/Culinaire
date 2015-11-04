@@ -43,7 +43,7 @@ class PersonController {
     }
 
     def displayGraph = {
-        def perFoto = Person.findByName(params.name)
+        def perFoto = Person.findByName((String) params.name)
         if (!perFoto || !perFoto.photo) {
             response.sendError(404)
             return

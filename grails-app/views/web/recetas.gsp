@@ -14,11 +14,11 @@
                 <g:each var="recipe" in="${recipes}">
                     <div class="row">
                         <div class="col-sm-6">
-                            <g:img dir="images" file="rav.jpg" class="img-responsive img-thumbnail"/>
+                            <!g:img dir="images" file="rav.jpg" class="img-responsive img-thumbnail"/>
                             <!img src="Images/f2.jpg" class="img-responsive img-thumbnail" alt="af">
-                            <!figure>
-                                <!img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe', action:'displayGraph', params: [name:recipe.name])}" />
-                            <!/figure>
+                            <figure>
+                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe', action:'displayGraph', params: [name:recipe.name])}" />
+                            </figure>
                         </div>
                         <div class="col-sm-6">
                             <p class="tit" style="font-size: 40px">${recipe.name}</p>
@@ -27,7 +27,8 @@
                                     <p id="titulo">Ingredientes:</p>
                                     <p>
                                     <g:each var="ingredient" in="${recipe.ingredients}">
-                                        - ${ingredient.quantity} ${ingredient.units} de ${ingredient.name}<br>
+                                        <!-- - ${ingredient.quantity} ${ingredient.units} de ${ingredient.name}<br>-->
+                                        - ${ingredient.name}<br>
                                     </g:each>
                                     </p>
                                     <p id="titulo">Preparación:</p>

@@ -26,12 +26,12 @@ class BootStrap {
             File fi = new File("web-app/images/jc.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
             new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new GregorianCalendar(1996, 11, 14), username: "SpaceCode4",
-                    password: "SpacePhoenix2TheBest", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3, photo: fileContent).save()
+                    password: "Test1234", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3, photo: fileContent).save()
 
             File fi2 = new File("web-app/images/coso.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
             new Person(name:"Carlos", lastname: "Solorzano", birthdate: new GregorianCalendar(1995, 11, 14), username: "Cosolo",
-                    password: "SpacePhoenix2TheBest", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3, photo: fileContent2).save()
+                    password: "Test1234", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3, photo: fileContent2).save()
 
             File fi3 = new File("web-app/images/af.jpg");
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
@@ -312,23 +312,23 @@ class BootStrap {
         }
 
         if(Recipe.count() == 0){
-            /*File fi = new File("web-app/images/rav.jpg");
-            byte[] fileContent = Files.readAllBytes(fi.toPath())*/
+            File fi = new File("web-app/images/rav.jpg");
+            byte[] fileContent = Files.readAllBytes(fi.toPath())
             Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Menos de 15 minutos"), food: Food.findByName('Ravioli'),
-                    person: Person.get(1), photo: [0,0,0,0]).save()
+                    person: Person.get(1), photo: fileContent).save()
 
             Ingredient ingredient1 = new Ingredient(name: 'Pasta').save()
             new Quantity(quantity: "100 gramos", recipe: recipe, ingredient: ingredient1).save()
             new Instruction(description: 'Calentar 15 minutos la pasta', recipe: recipe, paso: 1).save()
 
-            /*File fi2 = new File("web-app/images/pi.jpg");
-            byte[] fileContent2 = Files.readAllBytes(fi2.toPath())*/
+            File fi2 = new File("web-app/images/pi.jpg");
+            byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
             Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 4, description: 'Exquisito!',
                     country: Country.findByName('Italia'), difficulty: Difficulty.findByLevel("Medio"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), food: Food.findByName('Pizza'),
-                    person: Person.get(3), photo: [0,0,0,0]).save()
+                    person: Person.get(3), photo: fileContent2).save()
 
             Ingredient ingredient = new Ingredient(name: 'Queso').save()
             new Quantity(quantity: "500 gramos", recipe: recipe2, ingredient: ingredient).save()

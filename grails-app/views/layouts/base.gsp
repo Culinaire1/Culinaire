@@ -83,8 +83,8 @@
                                 <li><g:link controller="user" action="logout">Salir</g:link></li>
                             </g:if>
                             <g:else>
-                                <li><a>Perfil</a></li>
-                                <li><a>Añadir PLato</a></li>
+                                <li><a href="#">Perfil</a></li>
+                                <li><a href="#">Añadir Plato</a></li>
                                 <li><g:link controller="user" action="logout">Salir</g:link></li>
                             </g:else>
                         </ul>
