@@ -7,7 +7,7 @@ import culinairegrails.Ingredient
 import culinairegrails.Instruction
 import culinairegrails.Person
 import culinairegrails.Plate
-import culinairegrails.Quantity
+
 import culinairegrails.Recipe
 import culinairegrails.Restaurant
 import java.nio.file.Files;
@@ -311,6 +311,9 @@ class BootStrap {
         }
 
         if(Recipe.count() == 0){
+
+
+
             File fi = new File("web-app/images/rav.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
             Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
@@ -318,8 +321,6 @@ class BootStrap {
                     duration: Duration.findByDuration("Menos de 15 minutos"), category: Category.findByName('Pastas'),
                     person: Person.get(1), photo: fileContent).save()
 
-            Ingredient ingredient1 = new Ingredient(name: 'Pasta').save()
-            new Quantity(quantity: "100 gramos", recipe: recipe, ingredient: ingredient1).save()
             new Instruction(description: 'Calentar 15 minutos la pasta', recipe: recipe, paso: 1).save()
 
             File fi2 = new File("web-app/images/pi.jpg");
@@ -327,10 +328,11 @@ class BootStrap {
             Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 4, description: 'Exquisito!',
                     country: Country.findByName('Italia'), difficulty: Difficulty.findByLevel("Medio"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Aperitivos'),
-                    person: Person.get(3), photo: fileContent2).save()
+                    person: Person.get(3), photo: fileContent2 ).save()
 
-            Ingredient ingredient = new Ingredient(name: 'Queso').save()
-            new Quantity(quantity: "500 gramos", recipe: recipe2, ingredient: ingredient).save()
+            Ingredient ingredient = new Ingredient(name: 'Queso',quantity: "1 Lb",recipe: recipe2).save()
+            Ingredient ingredient1 = new Ingredient(name: 'Piña',quantity: "1/2 Lb",recipe:recipe2).save()
+            Ingredient ingredient2 = new Ingredient(name: 'pollo',quantity: "2 Lb",recipe:recipe).save()
             new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
         }
     }
