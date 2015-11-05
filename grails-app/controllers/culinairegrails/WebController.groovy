@@ -49,4 +49,8 @@ class WebController {
     def recetas() {
         [categories:Category.list(), recipes:Recipe.list()]
     }
+
+    def barraBusqueda(){
+        render(view: 'resultadoBusqueda',  model:[personas:Person.getAll(), restaurantes:Restaurant.getAll(), recetas:Recipe.getAll()])
+    }
 }

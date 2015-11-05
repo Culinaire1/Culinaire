@@ -37,6 +37,11 @@ class BootStrap {
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
             new Person(name:"Andres Felipe", lastname: "De Orcajo", birthdate: new GregorianCalendar(1996, 05, 02), username: "afdev",
                     password: "Test1234", email:"afdev@unal.edu.co", description: "Creador", rating: 3, photo: fileContent3).save()
+
+            File fi4 = new File("web-app/images/od.jpg");
+            byte[] fileContent4 = Files.readAllBytes(fi4.toPath())
+            new Person(name:"Oscar Dario", lastname: "Parra", birthdate: new GregorianCalendar(1994, 12, 19), username: "odparraj",
+                    password: "Test1234", email:"odparraj@unal.edu.co", description: "Creador", rating: 3, photo: fileContent4).save()
         }
 
         if( Difficulty.count() == 0){
@@ -312,8 +317,6 @@ class BootStrap {
 
         if(Recipe.count() == 0){
 
-
-
             File fi = new File("web-app/images/rav.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
             Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
@@ -331,7 +334,7 @@ class BootStrap {
                     person: Person.get(3), photo: fileContent2 ).save()
 
             Ingredient ingredient = new Ingredient(name: 'Queso',quantity: "1 Lb",recipe: recipe2).save()
-            Ingredient ingredient1 = new Ingredient(name: 'Piña',quantity: "1/2 Lb",recipe:recipe2).save()
+            Ingredient ingredient1 = new Ingredient(name: 'Piï¿½a',quantity: "1/2 Lb",recipe:recipe2).save()
             Ingredient ingredient2 = new Ingredient(name: 'pollo',quantity: "2 Lb",recipe:recipe).save()
             new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
         }

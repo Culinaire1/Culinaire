@@ -21,6 +21,8 @@ class UrlMappings {
         "/publicar"(controller: 'web', action: 'publicar')
         "/restaurantes"(controller: 'web', action: 'restaurantes')
         "/recetas"(controller: 'web', action: 'recetas')
+        "/barraBusqueda"(controller: 'web', action: 'barraBusqueda')
+
         "500"(view:'/error')
         "/conf"(view: "/index")
     }

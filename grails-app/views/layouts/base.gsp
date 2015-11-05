@@ -30,7 +30,7 @@
             <li><g:img dir="images" file="Logo.png"/>
             <!img src="../../../web-app/images/Logo.png"></li>
             <li>
-                <form class="navbar-form" role="search">
+                <form class="navbar-form" role="search" controller="web" action="barraBusqueda" method="post">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Buscar..." name="srch-term" id="srch-term">
                         <div class="input-group-btn">
