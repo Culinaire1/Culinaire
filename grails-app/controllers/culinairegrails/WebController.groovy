@@ -5,7 +5,11 @@ class WebController {
         [categories:Category.list()]
     }
     def busqueda() {
-        [categories:Category.list(), countries:Country.list(), difficulties:Difficulty.list(), ingredients:Ingredient.list(), durations: Duration.list()]
+
+        TreeSet<String> ingredi= []
+        Ingredient.list().each {ingredi.add(it.name)}
+
+        [categories:Category.list(), countries:Country.list(), difficulties:Difficulty.list(), ingredients:ingredi, durations: Duration.list()]
     }
     def categorias() {
         [categories:Category.list()]

@@ -21,7 +21,7 @@
                         <select class="form-control campo" id="sel6">
                             <option>Ninguna</option>
                             <g:each var="ingredient" in="${ingredients}">
-                                <option>${ingredient.name}</option>
+                                <option>${ingredient}</option>
                             </g:each>
                         </select>
                     </div>
