@@ -16,4 +16,8 @@ class Post {
         dateCreated(nullable: false)
         content( blank: false)
     }
+
+    String toString(){
+        "${content}"
+    }
 }

@@ -9,4 +9,8 @@ class Difficulty {
     static constraints = {
         level (nullable: false)
     }
+
+    String toString(){
+        "${level}"
+    }
 }

@@ -10,4 +10,8 @@ class Plate{
         description(nullable: false)
         photo(nullable: false)
     }
+
+    String toString(){
+        "${description}"
+    }
 }

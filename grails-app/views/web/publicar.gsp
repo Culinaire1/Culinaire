@@ -37,7 +37,21 @@
                         <span class="input-group-addon tit" id="ingredientes">Ingredientes:</span>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                        <div class="row">
+                            <li class="nada">
+                                <ul>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-xs center-block botones b2" style="margin-right: 2%; font-size: 20px; margin-top: 2px">Agregar</button>
+                        </div>
                     </div>
                 </div>
                 <div class="input-group">
@@ -45,8 +59,21 @@
                         <span class="input-group-addon tit" id="descripcion">Preparacion:</span>
                     </div>
                     <div class="col-sm-9">
-                        <label for="textarea"></label>
-                        <textarea id="textarea" rows="2" class="campo textarea"></textarea>
+                        <div class="row">
+                            <li class="nada">
+                                <ul>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-xs center-block botones b2" style="margin-right: 2%; font-size: 20px; margin-top: 2px; margin-bottom: 4px">Agregar</button>
+                        </div>
                     </div>
                 </div>
                 <div class="input-group">

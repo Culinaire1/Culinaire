@@ -17,4 +17,8 @@ class Restaurant extends User{
         photo(nullable: false, minSize: 1)
         description(nullable: false)
     }
+
+    String toString(){
+        "${name}"
+    }
 }

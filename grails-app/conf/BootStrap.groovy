@@ -331,8 +331,8 @@ class BootStrap {
                     person: Person.get(3), photo: fileContent2 ).save()
 
             Ingredient ingredient = new Ingredient(name: 'Queso',quantity: "1 Lb",recipe: recipe2).save()
-            Ingredient ingredient1 = new Ingredient(name: 'Piña',quantity: "1/2 Lb",recipe:recipe2).save()
-            Ingredient ingredient2 = new Ingredient(name: 'pollo',quantity: "2 Lb",recipe:recipe).save()
+            Ingredient ingredient1 = new Ingredient(name: 'Pina',quantity: "1/2 Lb",recipe:recipe2).save()
+            Ingredient ingredient2 = new Ingredient(name: 'Pollo',quantity: "2 Lb",recipe:recipe).save()
             new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
         }
     }

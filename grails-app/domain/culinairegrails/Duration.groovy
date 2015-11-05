@@ -9,4 +9,8 @@ class Duration {
     static constraints = {
         duration(nullable: false)
     }
+
+    String toString(){
+        "${duration}"
+    }
 }

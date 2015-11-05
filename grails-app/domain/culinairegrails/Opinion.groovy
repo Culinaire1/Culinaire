@@ -7,4 +7,8 @@ class Opinion {
     static constraints = {
         description(blank: false,nullable: false)
     }
+
+    String toString(){
+        "${description}"
+    }
 }

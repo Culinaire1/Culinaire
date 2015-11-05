@@ -10,4 +10,8 @@ class Category {
         name(blank: false,nullable: false, size: 3..20)
         photo(nullable: true)
     }
+
+    String toString(){
+        "${name}"
+    }
 }

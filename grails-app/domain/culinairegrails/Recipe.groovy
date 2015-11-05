@@ -11,7 +11,7 @@ class Recipe {
     String video
 
     static hasMany = [posts: Post, ingredients: Ingredient, instructions: Instruction]
-    static belongsTo = [person: Person, country: Country]
+    static belongsTo = [person: Person, country: Country, category: Category]
     static hasOne = [difficulty: Difficulty, duration: Duration]
 
     Recipe(){

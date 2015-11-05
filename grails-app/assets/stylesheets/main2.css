@@ -201,3 +201,14 @@ display: block;
     max-width: 100%;
     margin-bottom:5px;
 }
+
+.cuerpo2 {
+    font-size: 30px;
+    padding: 0 0 0 0;
+}
+
+.nada, .nada > ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -1%;
+}
