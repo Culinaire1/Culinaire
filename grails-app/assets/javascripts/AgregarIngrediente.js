@@ -1,3 +1,12 @@
+window.onload = init;
+
+var button;
+
+function init(){
+    button = document.getElementById("add");
+    button.onclick = addIngredientToDOM;
+}
+
 function addIngredientToDOM() {
 
     var ingredients = document.getElementById("ingredientes");
@@ -18,7 +27,7 @@ function addIngredientToDOM() {
     var input2 = document.createElement("input");
     input2.setAttribute("class", "form-control campo publicar");
     input2.setAttribute("aria-describedby", "basic-addon1");
-    input2.setAttribute("placeholder", "200 gramos de ...");
+    input2.setAttribute("placeholder", "100 gramos de ...");
     input2.setAttribute("type", "text");
 
     div.appendChild(input);
@@ -27,7 +36,3 @@ function addIngredientToDOM() {
     li.appendChild(div2);
     ingredients.appendChild(li);
 }
-
-var button = document.getElementById("add2");
-
-button.onchange = addIngredientToDOM();
