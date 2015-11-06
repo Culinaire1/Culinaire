@@ -9,9 +9,9 @@ class Instruction{
     static belongsTo = [recipe: Recipe]
 
     static constraints = {
-        description (nullable: false)
+        description (nullable: false, blank: false)
         paso(nullable: false, min: 1)
-        photo(nullable: true, maxSize: 4194304)
+        photo(nullable: true, maxSize: 4194304, minSize: 1)
     }
 
     String toString(){

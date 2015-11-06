@@ -34,48 +34,79 @@
                 </div>
                 <div class="input-group">
                     <div class="col-sm-3">
-                        <span class="input-group-addon tit" id="ingredientes">Ingredientes:</span>
+                        <span class="input-group-addon tit">Ingredientes:</span>
                     </div>
                     <div class="col-sm-9">
                         <div class="row">
-                            <li class="nada">
-                                <ul>
+                            <ul class="nada" id="ingredientes">
+                                <li>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                        <span class="input-group-addon tit">Nombre:</span>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                        <span class="input-group-addon tit">Cantidad:</span>
                                     </div>
-                                </ul>
-                            </li>
+                                </li>
+                                <li>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo publicar" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo publicar" placeholder="100 gramos de ..." aria-describedby="basic-addon1">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo publicar" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control campo publicar" placeholder="100 gramos de ..." aria-describedby="basic-addon1">
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
+                        <br>
                         <div class="row">
-                            <button type="button" class="btn btn-primary btn-xs center-block botones b2" style="margin-right: 2%; font-size: 20px; margin-top: 2px">Agregar</button>
+                            <button type="button" class="btn btn-primary btn-xs center-block botones b2" id="add" style="margin-right: 2%;
+                            font-size: 20px; margin-top: 2px" value="agregar">Agregar</button>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="input-group">
                     <div class="col-sm-3">
                         <span class="input-group-addon tit" id="descripcion">Preparacion:</span>
                     </div>
                     <div class="col-sm-9">
                         <div class="row">
-                            <li class="nada">
-                                <ul>
+                            <ul class="nada">
+                                <li>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                        <span class="input-group-addon tit">Paso 1:</span>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
+                                        <span class="input-group-addon tit">Foto:</span>
                                     </div>
-                                </ul>
-                            </li>
+                                </li>
+                                <li>
+                                    <div class="col-sm-6">
+                                        <label for="description"></label>
+                                        <textarea id="description" rows="2" class="campo textarea" name="description" required></textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="file" name="photoR" id="photoR" accept="image/*"/>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
+                        <br>
                         <div class="row">
-                            <button type="button" class="btn btn-primary btn-xs center-block botones b2" style="margin-right: 2%; font-size: 20px; margin-top: 2px; margin-bottom: 4px">Agregar</button>
+                            <button type="button" class="btn btn-primary btn-xs center-block botones b2" style="margin-right: 2%;
+                            font-size: 20px; margin-top: 2px; margin-bottom: 4px">Agregar</button>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="input-group">
                     <div class="col-sm-3">
                         <span class="input-group-addon tit" id="pais">Pais:</span>
@@ -102,6 +133,7 @@
         </div>
         <br>
     </div>
+    <asset:javascript src="AgregarIngrediente.js"></asset:javascript>
 </div>
 </body>
 </html>

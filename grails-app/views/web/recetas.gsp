@@ -17,21 +17,22 @@
                             <!g:img dir="images" file="rav.jpg" class="img-responsive img-thumbnail"/>
                             <!img src="Images/f2.jpg" class="img-responsive img-thumbnail" alt="af">
                             <figure>
-                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe', action:'displayGraph', params: [name:recipe.name])}" />
+                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
+                                        action:'displayGraph', params: [name:recipe.name])}" />
                             </figure>
                         </div>
                         <div class="col-sm-6">
                             <p class="tit" style="font-size: 40px">${recipe.name}</p>
                             <div class="texto row">
                                 <div class="cuerpo">
-                                    <p id="titulo">Ingredientes:</p>
+                                    <p>Ingredientes:</p>
                                     <p>
-                                        <g:each var="ingredient" in="${recipe.ingredients}">
-                                            - ${ingredient.quantity} de ${ingredient.name}.<br>
+                                        <g:each var="quantity" in="${recipe.quantities}">
+                                            - ${quantity.quantity} de ${quantity.ingredient}.<br>
                                         </g:each>
 
                                     </p>
-                                    <p id="titulo">Preparación:</p>
+                                    <p>Preparación:</p>
                                     <p>
                                         <g:each var="instruction" in="${recipe.instructions}" status="counter">
                                             ${counter+1}. ${instruction.description}.<br>

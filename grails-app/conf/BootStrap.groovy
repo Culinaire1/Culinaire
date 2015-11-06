@@ -7,7 +7,7 @@ import culinairegrails.Ingredient
 import culinairegrails.Instruction
 import culinairegrails.Person
 import culinairegrails.Plate
-
+import culinairegrails.Quantity
 import culinairegrails.Recipe
 import culinairegrails.Restaurant
 import java.nio.file.Files;
@@ -333,17 +333,17 @@ class BootStrap {
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Aperitivos'),
                     person: Person.get(3), photo: fileContent2 ).save()
 
-            Ingredient ingredient = new Ingredient(name: 'Queso',quantity: "1 Lb",recipe: recipe2).save()
-<<<<<<< HEAD
-            Ingredient ingredient1 = new Ingredient(name: 'Pina',quantity: "1/2 Lb",recipe:recipe2).save()
-            Ingredient ingredient2 = new Ingredient(name: 'Pollo',quantity: "2 Lb",recipe:recipe).save()
-=======
-            Ingredient ingredient1 = new Ingredient(name: 'Pi�a',quantity: "1/2 Lb",recipe:recipe2).save()
-            Ingredient ingredient2 = new Ingredient(name: 'pollo',quantity: "2 Lb",recipe:recipe).save()
->>>>>>> Barra_busqueda
+            Ingredient ingredient = new Ingredient(name: 'Queso').save()
+            Ingredient ingredient1 = new Ingredient(name: 'Piña').save()
+            Ingredient ingredient2 = new Ingredient(name: 'Pollo').save()
             new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
+
+            new Quantity(quantity: '10 gramos', recipe: recipe2, ingredient: ingredient).save()
+            new Quantity(quantity: '1/2 Lb', recipe: recipe, ingredient: ingredient1).save()
+            new Quantity(quantity: "2 Lb", recipe: recipe, ingredient: ingredient2).save()
         }
     }
     def destroy = {
     }
 }
+

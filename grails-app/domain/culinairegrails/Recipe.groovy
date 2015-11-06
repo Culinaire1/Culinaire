@@ -10,7 +10,7 @@ class Recipe {
     byte[] photo
     String video
 
-    static hasMany = [posts: Post, ingredients: Ingredient, instructions: Instruction]
+    static hasMany = [posts: Post, quantities: Quantity, instructions: Instruction]
     static belongsTo = [person: Person, country: Country, category: Category]
     static hasOne = [difficulty: Difficulty, duration: Duration]
 
@@ -24,8 +24,8 @@ class Recipe {
         rating(nullable: false, range: 1..5)
         dateCreated(nullable: false)
         lastUpdate(nullable: false)
-        photo(nullable: false, blank: true, minSize: 1, maxSize: 4194304)
-        description(nullable: false)
+        photo(nullable: false, minSize: 1, maxSize: 4194304)
+        description(nullable: false, blank: false)
         video(nullable: true, url: true)
     }
 

@@ -51,7 +51,7 @@ class WebController {
         [categories:Category.list(), restaurants:Restaurant.list()]
     }
     def recetas() {
-        [categories:Category.list(), recipes:Recipe.list()]
+        [categories: Category.list(), recipes: Recipe.list()]
     }
 
     def barraBusqueda(){
