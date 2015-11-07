@@ -5,11 +5,8 @@ class WebController {
         [categories:Category.list()]
     }
     def busqueda() {
-
-        TreeSet<String> ingredi= []
-        Ingredient.list().each {ingredi.add(it.name)}
-
-        [categories:Category.list(), countries:Country.list(), difficulties:Difficulty.list(), ingredients:ingredi, durations: Duration.list()]
+        [categories:Category.list(), countries:Country.list(), difficulties:Difficulty.list(), ingredients:Ingredient.list(),
+         durations: Duration.list()]
     }
     def categorias() {
         [categories:Category.list()]
@@ -45,7 +42,7 @@ class WebController {
         [categories:Category.list(), countries:Country.list()]
     }
     def publicar() {
-        [categories:Category.list(), countries:Country.list()]
+        [categories:Category.list(), countries:Country.list(), difficulties: Difficulty.list(), durations: Duration.list()]
     }
     def restaurantes() {
         [categories:Category.list(), restaurants:Restaurant.list()]

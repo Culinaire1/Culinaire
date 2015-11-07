@@ -34,8 +34,8 @@
                                     </p>
                                     <p>Preparación:</p>
                                     <p>
-                                        <g:each var="instruction" in="${recipe.instructions}" status="counter">
-                                            ${counter+1}. ${instruction.description}.<br>
+                                        <g:each var="instruction" in="${recipe.instructions}">
+                                            ${instruction.paso}. ${instruction.description}.<br>
                                         </g:each>
                                     </p>
                                 </div>

@@ -15,7 +15,7 @@
                 <g:form controller="user" action="login" method="post" enctype="multipart/form-data">
                     <div class="input-group">
                         <div class="col-sm-5">
-                            <span class="input-group-addon" id="user5">Usuario:</span>
+                            <span class="input-group-addon">Usuario:</span>
                         </div>
                         <div class="col-sm-7">
                             <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" id="usernameL"
@@ -24,7 +24,7 @@
                     </div>
                     <div class="input-group">
                         <div class="col-sm-5">
-                            <span class="input-group-addon" id="password5">Contraseña:</span>
+                            <span class="input-group-addon">Contraseña:</span>
                         </div>
                         <div class="col-sm-7">
                             <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="passwordL"
@@ -54,7 +54,7 @@
                         <g:form controller="Person" action="save" method="post" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="nombre">Nombre:</span>
+                                    <span class="input-group-addon">Nombre:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="name"
@@ -63,7 +63,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="apellido">Apellido:</span>
+                                    <span class="input-group-addon">Apellido:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="lastname"
@@ -72,7 +72,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="user">Usuario:</span>
+                                    <span class="input-group-addon">Usuario:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="username"
@@ -81,7 +81,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="clave">Contraseña:</span>
+                                    <span class="input-group-addon">Contraseña:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="password"
@@ -90,7 +90,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="clave2">Repetir contraseña:</span>
+                                    <span class="input-group-addon">Repetir contraseña:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="password2"
@@ -99,7 +99,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="correo">Correo:</span>
+                                    <span class="input-group-addon">Correo:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="email"
@@ -108,7 +108,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="correo2">Repetir correo:</span>
+                                    <span class="input-group-addon">Repetir correo:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="email2"
@@ -117,16 +117,15 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="fecha">Cumpleaños:</span>
+                                    <label for="birthdate2" class="input-group-addon" id="fecha">Cumpleaños:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <label for="birthdate2"></label>
                                     <input type="date" name='birthdate2' class="form-control campo" id="birthdate2" value="2015-12-12">
                                 </div>
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="foto">Imagen:</span>
+                                    <span class="input-group-addon">Imagen:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="file" name="photo" id="photo" accept="image/*"/>
@@ -151,7 +150,7 @@
                         <g:form controller="Restaurant" action="save" method="post" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="name2">Nombre:</span>
+                                    <span class="input-group-addon">Nombre:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="nameR"
@@ -160,10 +159,9 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="pais">Pais:</span>
+                                    <label for="countryR" class="input-group-addon">Pais:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <label for="countryR"></label>
                                     <select class="form-control campo" id="countryR" name="countryR" required>
                                         <g:each var="country" in="${countries}">
                                             <option>${country.name}</option>
@@ -173,7 +171,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="ciudad">Ciudad:</span>
+                                    <span class="input-group-addon">Ciudad:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" id="city"
@@ -182,7 +180,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="direccion">Dirección:</span>
+                                    <span class="input-group-addon">Dirección:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="address"
@@ -191,16 +189,15 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="descripcion">Descripción:</span>
+                                    <label for="description" class="input-group-addon">Descripción:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <label for="description"></label>
                                     <textarea id="description" rows="2" class="campo textarea" name="description" required></textarea>
                                 </div>
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="user2">Usuario:</span>
+                                    <span class="input-group-addon">Usuario:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="usernameR"
@@ -209,16 +206,16 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="password3">Contraseña:</span>
+                                    <span class="input-group-addon">Contraseña:</span>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="passwordR"
-                                           required value id="passwordR">
+                                    <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1"
+                                           name="passwordR" required value id="passwordR">
                                 </div>
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="password4">Repetir contraseña:</span>
+                                    <span class="input-group-addon">Repetir contraseña:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="password2R"
@@ -227,7 +224,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="email3">Correo:</span>
+                                    <span class="input-group-addon">Correo:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="emailR"
@@ -236,7 +233,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="email4">Repetir correo:</span>
+                                    <span class="input-group-addon">Repetir correo:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="email2R"
@@ -245,7 +242,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="foto2">Imagen:</span>
+                                    <span class="input-group-addon">Imagen:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="file" name="photoR" id="photoR" accept="image/*"/>
@@ -253,7 +250,7 @@
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon" id="pagina2">Pagina Web:</span>
+                                    <span class="input-group-addon">Pagina Web:</span>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="url" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="websiteR"

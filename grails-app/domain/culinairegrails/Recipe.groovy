@@ -17,6 +17,7 @@ class Recipe {
     Recipe(){
         dateCreated = new Date()
         lastUpdate = new Date()
+        rating = 1
     }
 
     static constraints = {
