@@ -290,7 +290,6 @@ class BootStrap {
         if(Restaurant.count() == 0){
             File fi = new File("web-app/images/f3.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
-
             new Restaurant(name: "Culinaire's", city: "Bogota", address: "Cll 52 #45-16", username: "culinaire", password: "Test1234",
                     email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'),
                     photo: fileContent).save()
@@ -333,14 +332,80 @@ class BootStrap {
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Aperitivos'),
                     person: Person.get(3), photo: fileContent2 ).save()
 
+            new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
+
             Ingredient ingredient = new Ingredient(name: 'Queso').save()
             Ingredient ingredient1 = new Ingredient(name: 'Piña').save()
             Ingredient ingredient2 = new Ingredient(name: 'Pollo').save()
-            new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
-
             new Quantity(quantity: '10 gramos', recipe: recipe2, ingredient: ingredient).save()
             new Quantity(quantity: '1/2 Lb', recipe: recipe, ingredient: ingredient1).save()
             new Quantity(quantity: "2 Lb", recipe: recipe, ingredient: ingredient2).save()
+            //--------------------------------------------
+            File fotoNatilla = new File("web-app/images/natilla.jpg");
+            byte[] fileContent1 = Files.readAllBytes(fotoNatilla.toPath())
+            Recipe natilla = new Recipe(name: 'Natilla', rating: 3, description: 'Disfruta de la navidad',
+                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
+                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Postres'),
+                    person: Person.get(2), photo: fileContent1).save()
+
+            new Instruction(description: 'Se pone a hervir un litro y medio de leche con la canela en astillas y la panela, sacándole la espuma que valla formando', recipe: natilla, paso: 1).save()
+            new Instruction(description: 'Se añade la fécula de maíz (que se ha disuelto previamente en medio litro de leche) y la mantequilla', recipe: natilla, paso: 2).save()
+            new Instruction(description: 'En el momento de servir la porción individual, se espolvorea un poco de canela en polvo', recipe: natilla, paso: 3).save()
+            new Instruction(description: 'Se va revolviendo lentamente y se cocina a fuego lento por diez minutos o hasta que de su punto (que se reconoce poniendo una cucharada de la mezcla en un plato, se deja enfriar, pudiendo despegarlo fácilmente)', recipe: natilla, paso: 4).save()
+            new Instruction(description: ' Justo antes de bajarla del fuego se le añade el coco, se revuelve y se vierte en los moldes', recipe: natilla, paso: 5).save()
+            new Instruction(description: 'Como opcional se puede agregar a cada porción una cucharada de dulce de mora', recipe: natilla, paso: 6).save()
+
+            Ingredient leche = new Ingredient(name: 'leche').save()
+            Ingredient Fecula = new Ingredient(name: 'fécuna de maíz').save()
+            Ingredient panela = new Ingredient(name: 'panela raspada').save()
+            Ingredient mantequilla = new Ingredient(name: 'mantequilla').save()
+            Ingredient coco = new Ingredient(name: 'coco fresco rallado').save()
+            Ingredient canela = new Ingredient(name: 'canela').save()
+            Ingredient canela1 = new Ingredient(name: 'canela en polvo').save()
+
+            new Quantity(quantity: '2 Litros', recipe: natilla, ingredient: leche).save()
+            new Quantity(quantity: '2 Tazas', recipe: natilla, ingredient: Fecula).save()
+            new Quantity(quantity: "1 Libra", recipe: natilla, ingredient: panela).save()
+            new Quantity(quantity: '4 astillas', recipe: natilla, ingredient: canela).save()
+            new Quantity(quantity: '2 cucharadas', recipe: natilla, ingredient: mantequilla).save()
+            new Quantity(quantity: "1", recipe: natilla, ingredient: coco).save()
+            new Quantity(quantity: "1 cucharada", recipe: natilla, ingredient: canela1).save()
+            //--------------------------------------------------------------------------------------------------------
+            File fotodomburi = new File("web-app/images/domburi.jpg");
+            byte[] fileContent3 = Files.readAllBytes(fotodomburi.toPath())
+            Recipe domburi = new Recipe(name: 'Domburi de pollo y lomo', rating: 4, description: 'Delicioso :)',
+                    country: Country.findByName('Japon'), difficulty: Difficulty.findByLevel("Medio"),
+                    duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Carnes'),
+                    person: Person.get(1), photo: fileContent3).save()
+
+            new Instruction(description: 'En una olla precalentamos el aceite. Cuando esté caliente ponemos a sofreír la ralladura de limón y el jengibre para darle sabor al aceite', recipe: domburi, paso: 1).save()
+            new Instruction(description: 'Ponemos en la olla el arroz, mezclándolo con la ralladura de limón y el jengibre por 2 minutos, colocamos la sal y el agua. Dejamos hervir y tapamos por 12 minutos', recipe: domburi, paso: 2).save()
+            new Instruction(description: 'Colocamos una sartén a calentar, cuando tenga buena temperatura colocamos un poco de aceite y sellamos la carne y el pollo en cubos, ponemos un poco de sal, pimienta y togarashi', recipe: domburi, paso: 3).save()
+            new Instruction(description: 'Cuando estén bien sellados los cubos, colocamos la salsa teriyaki y dejamos caramelizar las piezas', recipe: domburi, paso: 4).save()
+
+            Ingredient pechuga = new Ingredient(name: 'Pechuga de pollo').save()
+            Ingredient lomo = new Ingredient(name: 'lomo fino de res').save()
+            Ingredient cebollin = new Ingredient(name: 'Cebollin').save()
+            Ingredient ajonjoli = new Ingredient(name: 'ajonjoli').save()
+            Ingredient togarashi = new Ingredient(name: 'togarashi').save()
+            Ingredient pimienta = new Ingredient(name: 'pimienta').save()
+            Ingredient salsa = new Ingredient(name: 'salsa teriyaki').save()
+            Ingredient arroz = new Ingredient(name: 'arroz blanco').save()
+            Ingredient aceite = new Ingredient(name: 'aceite').save()
+
+            new Quantity(quantity: '180 gramos', recipe: domburi, ingredient: pechuga).save()
+            new Quantity(quantity: '180 gramos', recipe: domburi, ingredient: lomo).save()
+            new Quantity(quantity: "8 gramos", recipe: domburi, ingredient: cebollin).save()
+            new Quantity(quantity: '5 gramos', recipe: domburi, ingredient: ajonjoli).save()
+            new Quantity(quantity: '3 gramos', recipe: domburi, ingredient: togarashi).save()
+            new Quantity(quantity: "1 gramo", recipe: domburi, ingredient: pimienta).save()
+            new Quantity(quantity: "70 onzas", recipe: domburi, ingredient: salsa).save()
+            new Quantity(quantity: "250 gramos", recipe: domburi, ingredient: arroz).save()
+            new Quantity(quantity: "3 onzas", recipe: domburi, ingredient: aceite).save()
+            //---------------------------------------------------------------------------------------------------------
+
+
+
         }
     }
     def destroy = {
