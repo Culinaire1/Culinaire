@@ -52,6 +52,15 @@ class WebController {
     }
 
     def barraBusqueda(){
-        render(view: 'resultadoBusqueda',  model:[personas:Person.getAll(), restaurantes:Restaurant.getAll(), recetas:Recipe.getAll()])
+        render(view: 'resultadoBusqueda',  model:[personas:Person.getAll(), restaurantes:Restaurant.getAll(), recetas:Recipe.getAll(), categories: Category.list()])
+    }
+
+    def findCategory(){
+        def category = Category.findByName(params.category)
+        render(view: 'recetas',  model:[recipes: Recipe.findByCategory(category), categories: Category.list()])
+    }
+
+    def abrirReceta(){
+        render(view: 'receta',  model:[recipe: Recipe.findByName(params.name), categories: Category.list()])
     }
 }

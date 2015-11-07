@@ -11,50 +11,47 @@
         <br>
         <div class="texto">
             <div class="center-block ing" style="width:80%;">
-                <g:each var="recipe" in="${recipes}">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <figure>
-                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
-                                        action:'displayGraph', params: [name:recipe.name])}" />
-                            </figure>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="tit" style="font-size: 40px">${recipe.name}</p>
-                            <div class="texto row">
-                                <div class="cuerpo">
-                                    <p>Ingredientes:</p>
-                                    <p>
-                                        <g:each var="quantity" in="${recipe.quantities}">
-                                            - ${quantity.quantity} de ${quantity.ingredient}.<br>
-                                        </g:each>
+                <g:if test="${recipes == null}">
+                    <p class="cuerpo">Recetas no encontradas para esa categoría.</p>
+                </g:if>
+                <g:else>
+                    <g:each var="recipe" in="${recipes}">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <figure>
+                                    <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
+                                            action:'displayGraph', params: [name:recipe.name])}" />
+                                </figure>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="tit" style="font-size: 40px"><a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">${recipe.name}</a></p>
+                                <div class="texto row">
+                                    <div class="cuerpo">
+                                        <p>Ingredientes:</p>
+                                        <p>
+                                            <g:each var="quantity" in="${recipe.quantities}">
+                                                - ${quantity.quantity} de ${quantity.ingredient}.<br>
+                                            </g:each>
 
-                                    </p>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row texto cuerpo">
-                            <p>Preparación:</p>
-                            <p>
-                                <g:each var="instruction" in="${recipe.instructions.sort({it.paso})}">
-                                    ${instruction.paso}. ${instruction.description}<br>
-                                </g:each>
-                            </p>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="firma">Autor: ${recipe.person.username}</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-primary btn-lg center-block botones b2">Comentarios</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="firma">Popularidad: ${recipe.rating}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <p class="firma">Autor: ${recipe.person.username}</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-primary btn-lg center-block botones b2">Comentarios</button>
-                        </div>
-                        <div class="col-sm-4">
-                            <p class="firma">Popularidad: ${recipe.rating}</p>
-                        </div>
-                    </div>
-                    <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
-                </g:each>
+                        <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
+                    </g:each>
+                </g:else>
             <!--<div class="row">
                     <div class="col-sm-6">
                         <!g:img dir="images" file="f2.jpg" class="img-responsive img-thumbnail"/>
