@@ -1,6 +1,6 @@
 package culinairegrails
 
-class Instruction{
+class Instruction {
 
     String description
     Integer paso
