@@ -32,6 +32,7 @@ class Recipe {
 
     static mapping = {
         posts cascade: "all-delete-orphan"
+        sort rating: 'desc'
     }
 
     String toString(){

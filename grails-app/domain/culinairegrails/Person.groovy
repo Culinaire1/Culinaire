@@ -14,6 +14,10 @@ class Person extends User{
         birthdate(nullable: false)
     }
 
+    static mapping = {
+        sort rating: 'desc'
+    }
+
     int getAge(){
         Calendar c = Calendar.getInstance()
 

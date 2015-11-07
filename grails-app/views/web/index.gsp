@@ -15,7 +15,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <g:img dir="images" file="f1.jpg" class="first-slide imagen" alt="First slide"/>
+                <g:img dir="images" file="f1.jpg" class="first-slide img-responsive" alt="First slide" style="width: 100%"/>
                 <!img class="first-slide imagen" src="Images/f1.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption intro">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="item">
-                <g:img dir="images" file="f4.jpg" class="second-slide imagen" alt="Second slide"/>
+                <g:img dir="images" file="f4.jpg" class="second-slide img-responsive" alt="Second slide" style="width: 100%"/>
                 <!img class="second-slide imagen" src="Images/f4.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption intro">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="item">
-                <g:img dir="images" file="f3.jpg" class="third-slide imagen" alt="Third slide"/>
+                <g:img dir="images" file="f3.jpg" class="third-slide img-responsive" alt="Third slide" style="width: 100%"/>
                 <!img class="third-slide imagen" src="Images/f3.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption intro">

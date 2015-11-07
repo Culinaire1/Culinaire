@@ -14,6 +14,10 @@ class Instruction {
         photo(nullable: true, maxSize: 4194304, minSize: 1)
     }
 
+    static mapping = {
+        sort id: 'asc'
+    }
+
     String toString(){
         "${description}"
     }

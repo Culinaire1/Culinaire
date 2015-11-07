@@ -14,8 +14,6 @@
                 <g:each var="recipe" in="${recipes}">
                     <div class="row">
                         <div class="col-sm-6">
-                            <!g:img dir="images" file="rav.jpg" class="img-responsive img-thumbnail"/>
-                            <!img src="Images/f2.jpg" class="img-responsive img-thumbnail" alt="af">
                             <figure>
                                 <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
                                         action:'displayGraph', params: [name:recipe.name])}" />
@@ -32,14 +30,16 @@
                                         </g:each>
 
                                     </p>
-                                    <p>Preparación:</p>
-                                    <p>
-                                        <g:each var="instruction" in="${recipe.instructions}">
-                                            ${instruction.paso}. ${instruction.description}.<br>
-                                        </g:each>
-                                    </p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row texto cuerpo">
+                            <p>Preparación:</p>
+                            <p>
+                                <g:each var="instruction" in="${recipe.instructions.sort({it.paso})}">
+                                    ${instruction.paso}. ${instruction.description}<br>
+                                </g:each>
+                            </p>
                         </div>
                     </div>
                     <div class="row">

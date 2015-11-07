@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!title>Inicio<!/title>
     <title><g:layoutTitle default="Page"/></title>
-    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+
+    <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon2.ico')}" type="image/x-icon" />
 
     <!link rel="stylesheet" href="${resource(dir: 'css', file: 'main2.css')}" type="text/css">
     <asset:stylesheet src="bootstrap.css"/>
     <asset:stylesheet src="main2.css"/>
     <!link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css.css')}" type="text/css">
     <style>
-    @font-face { font-family: Abraham; src: url('../fonts/AbrahamLincoln.ttf'); }
-    @font-face { font-family: Cylburn; src: url('../fonts/Cylburn.ttf'); }
-    @font-face { font-family: GearedSlab; src: url('../fonts/GearedSlab.ttf'); }
-    @font-face { font-family: GrandHotel; src: url('../fonts/GrandHotel-Regular.otf'); }
-    @font-face { font-family: Liberator; src: url('../fonts/Liberator-Light.ttf'); }
+    @font-face { font-family: Abraham; src: url(${resource(dir: 'fonts', file: 'AbrahamLincoln.ttf')})}
+    @font-face { font-family: Cylburn; src: url(${resource(dir: 'fonts', file: 'Cylburn.ttf')})}
+    @font-face { font-family: GearedSlab; src: url(${resource(dir: 'fonts', file: 'GearedSlab.ttf')})}
+    @font-face { font-family: GrandHotel; src: url(${resource(dir: 'fonts', file: 'GrandHotel-Regular.otf')})}
+    @font-face { font-family: Liberator; src: url(${resource(dir: 'fonts', file: 'Liberator-Light.ttf')})}
     </style>
     <g:layoutHead/>
 </head>
