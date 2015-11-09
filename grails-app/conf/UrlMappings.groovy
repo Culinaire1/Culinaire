@@ -25,6 +25,6 @@ class UrlMappings {
         "/barraBusqueda"(controller: 'web', action: 'barraBusqueda')
 
         "500"(view:'/error')
-        "/conf"(view: "/index")
+        "/conf"(controller: "conf", action: 'index')
     }
 }

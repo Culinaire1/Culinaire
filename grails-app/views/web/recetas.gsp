@@ -24,7 +24,9 @@
                                 </figure>
                             </div>
                             <div class="col-sm-6">
-                                <p class="tit" style="font-size: 40px"><a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">${recipe.name}</a></p>
+                                <p class="tit" style="font-size: 40px">
+                                    <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">${recipe.name}</a>
+                                </p>
                                 <div class="texto row">
                                     <div class="cuerpo">
                                         <p>Ingredientes:</p>

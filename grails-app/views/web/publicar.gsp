@@ -106,7 +106,7 @@
                                             id="ing1" name="ing1" required>
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control campo publicar" placeholder="100 gramos de ..."
+                                            <input type="text" class="form-control campo publicar" placeholder="100 gramos"
                                                    aria-describedby="basic-addon1" id="quantity1" name="quantity1" required>
                                         </div>
                                     </li>

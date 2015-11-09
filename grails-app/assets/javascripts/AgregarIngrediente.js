@@ -37,7 +37,7 @@ function addIngredientToDOM() {
     var input2 = document.createElement("input");
     input2.setAttribute("class", "form-control campo publicar");
     input2.setAttribute("aria-describedby", "basic-addon1");
-    input2.setAttribute("placeholder", "100 gramos de ...");
+    input2.setAttribute("placeholder", "100 gramos");
     input2.setAttribute("type", "text");
     input2.setAttribute("id", "quantity" + button.value);
     input2.setAttribute("name", "quantity" + button.value);

@@ -28,6 +28,11 @@ class RecipeController {
             return
         }
 
+        if(recipe.validate()){
+            recipe.save flush: true
+            return
+        }
+
         recipe = new Recipe(name: params.name, description: params.description,
                 country: Country.findByName(params.country), difficulty: Difficulty.findByLevel(params.difficulty),
                 duration: Duration.findByDuration(params.duration), category: Category.findByName(params.category),

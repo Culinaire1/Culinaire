@@ -51,11 +51,11 @@ class UserController {
             }
         }
 
-        def restaurant = Restaurant.findByUsername(params.usernameL)
-        if (restaurant) {
-            if(restaurant.password == params.passwordL){
-                session.user = restaurant.username
-                session.tu = false
+        def admin = Admin.findByUsername(params.usernameL)
+        if (admin) {
+            if(admin.password == params.passwordL){
+                session.user = admin.username
+                session.tu = 'admin'
                 redirect controller: 'web', action: 'index'
                 return
             }
@@ -65,15 +65,28 @@ class UserController {
                 return
             }
         }
+
+        def restaurant = Restaurant.findByUsername(params.usernameL)
+        if (restaurant) {
+            if(restaurant.password == params.passwordL){
+                session.user = restaurant.username
+                session.tu = false
+                redirect controller: 'web', action: 'index'
+            }
+            else{
+                redirect controller: 'web', action: 'ingresar'
+                flash.message = "Contraseña incorrecta"
+            }
+        }
         else {
             redirect controller: 'web', action: 'ingresar'
             flash.message = "No existe el usuario"
-            return
         }
     }
 
     def logout(){
         session.user = null
+        session.tu = null
         redirect controller: 'web', action: 'index'
     }
 }

@@ -1,3 +1,4 @@
+import culinairegrails.Admin
 import culinairegrails.Category
 import culinairegrails.Country
 import culinairegrails.Difficulty
@@ -375,7 +376,8 @@ class BootStrap {
             //--------------------------------------------------------------------------------------------------------
             File fotodonburi = new File("web-app/images/donburi.jpg");
             byte[] fileContent3 = Files.readAllBytes(fotodonburi.toPath())
-            Recipe donburi = new Recipe(name: 'Donburi de pollo y lomo', rating: 4, description: 'El donburi es un plato típico de Japon. Consiste en un cuenco que contiene pescado, carne, vegetales, u otros ingredientes cocinados juntos y servidos sobre arroz.',
+            Recipe donburi = new Recipe(name: 'Donburi de pollo y lomo', rating: 4, description: 'El donburi es un plato típico de Japon. ' +
+                    'Consiste en un cuenco que contiene pescado, carne, vegetales, u otros ingredientes cocinados juntos y servidos sobre arroz.',
                     country: Country.findByName('Japon'), difficulty: Difficulty.findByLevel("Medio"),
                     duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Carnes'),
                     person: Person.get(1), photo: fileContent3).save()
@@ -441,6 +443,12 @@ class BootStrap {
             new Quantity(quantity: "2 cucharadas", recipe: sorbete, ingredient: lechepolvo).save()
             new Quantity(quantity: "1 cucharada", recipe: sorbete, ingredient: estabilizante).save()
             new Quantity(quantity: "40 gramos", recipe: sorbete, ingredient: chocolate).save()
+        }
+        if( Admin.count() == 0){
+            new Admin(name:"Juan Camilo", lastname: "Calero", username: "admin1", email: "jccaleroe@unal.edu.co", password: "Test1234").save()
+            new Admin(name:"Andres Felipe", lastname: "De Orcajo",username: "admin2", password: "Test1234", email:"afdev@unal.edu.co").save()
+            new Admin(name:"Oscar Dario", lastname: "Parra", username: "admin4", password: "Test1234", email:"odparraj@unal.edu.co").save()
+            new Admin(name:"Carlos", lastname: "Solorzano", username: "admin3", password: "Test1234", email:"cosolorzanov@unal.edu.co").save()
         }
     }
     def destroy = {
