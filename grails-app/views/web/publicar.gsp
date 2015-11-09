@@ -100,7 +100,7 @@
                                             <span class="input-group-addon tit">Cantidad:</span>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li id="ingLi1">
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control campo publicar" placeholder="" aria-describedby="basic-addon1"
                                             id="ing1" name="ing1" required>
@@ -113,9 +113,9 @@
                                 </ul>
                             </div>
                             <br>
-                            <div class="row">
-                                <button type="button" class="btn btn-primary btn-xs center-block botones b2" id="add_ingredient"
-                                        style="margin-right: 2%; font-size: 20px; margin-top: 2px;" value="2">Agregar</button>
+                            <div class="row" id="ingDiv">
+                                <button type="button" class="btn btn-primary btn-xs center-block botones b2 publicarB" id="add_ingredient" value="2">
+                                    Agregar</button>
                                 <input value="1" id="ingNum" name="ingNum" hidden>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                             <label for="photo1" class="input-group-addon tit">Foto:</label>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li id="insLi1">
                                         <div class="col-sm-6">
                                             <textarea id="des1" rows="2" class="campo textarea" name="des1" required></textarea>
                                         </div>
@@ -147,9 +147,9 @@
                                 </ul>
                             </div>
                             <br>
-                            <div class="row">
-                                <button type="button" class="btn btn-primary btn-xs center-block botones b2" style="margin-right: 2%;
-                                font-size: 20px; margin-top: 2px; margin-bottom: 4px;" id="add_instruction" value="2">Agregar</button>
+                            <div class="row" id="insDiv">
+                                <button type="button" class="btn btn-primary btn-xs center-block botones b2 publicarB" id="add_instruction" value="2">
+                                    Agregar</button>
                                 <input value="1" id="insNum" hidden name="insNum">
                             </div>
                         </div>
