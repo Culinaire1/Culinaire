@@ -5,7 +5,7 @@ class PublishFilters {
     def filters = {
         all(controller:'web', action:'publicar') {
             before = {
-                if(session.user == null) {
+                if(session.tu != true) {
                     redirect controller: 'web', action: 'index'
                 }
             }

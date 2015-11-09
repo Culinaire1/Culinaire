@@ -59,7 +59,13 @@ class RecipeController {
         }
 
         for(int i = 1; i <= params.insNum.toInteger(); i++){
-            new Instruction(description: params.getProperty("des"+i), recipe: recipe, paso: i).save()
+            Instruction instruction = new Instruction(description: params.getProperty("des"+i), recipe: recipe, paso: i)
+            if(params.getProperty("photo"+i).getBytes().size() > 1){
+                instruction.photo = params.getProperty("photo"+i).getBytes()
+            }
+            instruction.save flush: true
+
+
         }
 
         redirect action: 'show', id: recipe.id

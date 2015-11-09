@@ -216,3 +216,9 @@ display: block;
 .publicar{
     margin-top: 20px;
 }
+
+.publicarB{
+    margin-right: 2%;
+    font-size: 20px;
+    margin-top: 2px;
+}
