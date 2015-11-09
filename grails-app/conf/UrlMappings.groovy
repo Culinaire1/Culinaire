@@ -23,6 +23,7 @@ class UrlMappings {
         "/recetas"(controller: 'web', action: 'recetas')
         "/receta"(controller: 'web', action: 'abrirReceta')
         "/barraBusqueda"(controller: 'web', action: 'barraBusqueda')
+        "/resultado"(controller: 'web', action: 'busquedaf')
 
         "500"(view:'/error')
         "/conf"(controller: "conf", action: 'index')

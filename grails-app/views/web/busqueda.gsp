@@ -9,6 +9,7 @@
     <div class="fill">
         <br>
         <p class="tit" id="" style="font-size: 40px">BUSCADOR</p>
+        <g:form controller="web" action="busquedaf" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="center-block ing" style="width:80%">
                 <div class="input-group">
@@ -18,7 +19,7 @@
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel6"></label>
-                        <select class="form-control campo" id="sel6">
+                        <select class="form-control campo" id="sel6" name="ingredienteB">
                             <option>Ninguna</option>
                             <g:each var="ingredient" in="${ingredients}">
                                 <option>${ingredient}</option>
@@ -33,7 +34,7 @@
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel"></label>
-                        <select class="form-control campo" id="sel">
+                        <select class="form-control campo" id="sel" name="categoriaB">
                             <option>Ninguna</option>
                             <g:each var="category" in="${categories}">
                                 <option>${category.name}</option>
@@ -48,7 +49,7 @@
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel4"></label>
-                        <select class="form-control campo" id="sel4">
+                        <select class="form-control campo" id="sel4" name="duracionB">
                             <option>Ninguna</option>
                             <g:each var="duration" in="${durations}">
                                 <option>${duration.duration}</option>
@@ -63,7 +64,7 @@
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel5"></label>
-                        <select class="form-control campo" id="sel5">
+                        <select class="form-control campo" id="sel5" name="dificultadB">
                             <option>Ninguna</option>
                             <g:each var="difficult" in="${difficulties}">
                                 <option>${difficult.level}</option>
@@ -74,12 +75,15 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-left: 2%">Aleatorio</button>
+                        <!--button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-left: 2%">Aleatorio</button-->
+                        <input type="submit" class="btn btn-primary btn-lg center-block botones b2" style="margin-left: 2%" name="bsubmit" value="Aleatorio" id="buscar1">
                     </div>
                     <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%">Buscar</button>
+                        <!--button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%">Buscar</button-->
+                        <input type="submit" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%" name="bsubmit" value="Buscar" id="buscar2">
                     </div>
                 </div>
+                </g:form>
                 <br>
                 <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                 <br>
