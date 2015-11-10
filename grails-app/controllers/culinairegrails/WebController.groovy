@@ -124,8 +124,9 @@ class WebController {
     }
 
     def findCategory(){
-        def category = Category.findByName(params.category)
-        render(view: 'recetas',  model:[recipes: Recipe.findByCategory(category), categories: Category.list()])
+        def category2 = Category.findByName(params.category)
+        def lis = Recipe.findAll{category == category2}
+        render(view: 'recetas',  model:[recipes: lis, categories: Category.list()])
     }
 
     def abrirReceta(){

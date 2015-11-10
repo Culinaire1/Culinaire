@@ -6,38 +6,71 @@
 </head>
 <body>
 <div class="container">
-    <div id="mycarousel0" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="item active">
-                <g:img dir="images" file="f7.jpg" class="img-responsive" alt="" style="width: 100%"/>
-                <!img src="Images/f7.jpg" alt="" class="img imagen">
-                <div class="carousel-caption intro intro2">
-                    <a href="#">Aperitivos</a>
-                </div>
+    <div class="fill">
+        <br>
+        <div class="texto row container">
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Aperitivos"])}"><g:img dir="images/iconos" file="aperitivos.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Arroces"])}"><g:img dir="images/iconos" file="arroces.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Aves"])}"><g:img dir="images/iconos" file="aves.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Bebidas"])}"><g:img dir="images/iconos" file="bebidas.png" class="img-responsive"/></a>
             </div>
         </div>
-    </div>
-    <div id="mycarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="item active">
-                <g:img dir="images" file="f8.jpg" class="img-responsive" alt="" style="width: 100%"/>
-                <!img src="Images/f8.jpg" alt="" class="img imagen">
-                <div class="carousel-caption intro intro2">
-                    <a href="#">Postres</a>
-                </div>
+        <br>
+
+        <div class="texto row container">
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Carnes"])}"><g:img dir="images/iconos" file="carnes.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Ensaladas"])}"><g:img dir="images/iconos" file="ensaladas.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Frutas"])}"><g:img dir="images/iconos" file="frutas.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Pan"])}"><g:img dir="images/iconos" file="pan.png" class="img-responsive"/></a>
             </div>
         </div>
-    </div>
-    <div id="mycarouse2" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="item active">
-                <g:img dir="images" file="f2.jpg" class=" img-responsive" alt="" style="width: 100%"/>
-                <!img src="Images/f2.jpg" alt="" class="img imagen">
-                <div class="carousel-caption intro intro2">
-                    <a href="#">Carnes</a>
-                </div>
+        <br>
+
+        <div class="texto row container">
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Pastas"])}"><g:img dir="images/iconos" file="pastas.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Pescados"])}"><g:img dir="images/iconos" file="pescados.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Platos"])}"><g:img dir="images/iconos" file="platos.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Postres"])}"><g:img dir="images/iconos" file="postres.png" class="img-responsive"/></a>
             </div>
         </div>
+        <br>
+
+        <div class="texto row container">
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Salsas"])}"><g:img dir="images/iconos" file="salsas.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Sopas"])}"><g:img dir="images/iconos" file="sopas.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="${createLink(controller:'web', action:'findCategory', params: [category: "Vegetales"])}"><g:img dir="images/iconos" file="vegetales.png" class="img-responsive"/></a>
+            </div>
+            <div class="col-sm-3">
+                <g:img dir="images" file="icono.jpg" class="img-responsive"/>
+            </div>
+        </div>
+        <br>
     </div>
 </div>
 </body>

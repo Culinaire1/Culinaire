@@ -12,7 +12,7 @@
         <div class="texto">
             <div class="center-block ing" style="width:80%;">
                 <g:if test="${recipe == null}">
-                    <p class="cuerpo">Recetas no encontrada con ese nombre.</p>
+                    <p class="cuerpo">Receta no encontrada con ese nombre.</p>
                 </g:if>
                 <g:else>
                     <div class="row">
@@ -45,9 +45,11 @@
                             </p>
                         </div>
                     </div>
-                    <div style="width: 60%; margin: 0px auto;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/m8l78LWyF4k" frameborder="0" allowfullscreen></iframe>
+                    <g:if test="${recipe.video != null}">
+                        <div style="width: 60%; margin: 0 auto;">
+                        <iframe width="560" height="315" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
                     </div>
+                    </g:if>
                     <br>
                     <div class="row">
                         <div class="col-sm-4">
@@ -65,7 +67,7 @@
                     <p class="tit" style="font-size: 40px">Comentarios:</p>
                     <g:if test="${recipe.posts.size() > 0}">
                         <g:each var="post" in="${recipe.posts}">
-                            ${post.content}<br>
+                            <p class="cuerpo">${post.content}</p><br>
                         </g:each>
                     </g:if>
                     <g:else>
