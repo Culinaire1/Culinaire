@@ -39,7 +39,12 @@ class RecipeController {
                 person: Person.findByUsername(session.user), photo: params.photo.getBytes())
 
         if (!recipe.validate()) {
-            respond recipe.errors, view: 'create'
+            TreeSet<String> tree = new TreeSet<String>()
+            for( i in recipe.errors.fieldErrors.field){
+                tree.add(i)
+            }
+            redirect(controller: 'web', action: 'publicar')
+            flash.error = tree
             return
         }
 
@@ -68,7 +73,7 @@ class RecipeController {
 
         }
 
-        redirect action: 'show', id: recipe.id
+        redirect controller:'web', action:'abrirReceta', params: [name: recipe.name]
     }
 
     def displayGraph = {

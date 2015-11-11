@@ -27,18 +27,17 @@
                                 <p class="tit" style="font-size: 40px">
                                     <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">${recipe.name}</a>
                                 </p>
-                                <div class="texto row">
-                                    <div class="cuerpo">
-                                        <p>Ingredientes:</p>
-                                        <p>
-                                            <g:each var="quantity" in="${recipe.quantities}">
-                                                - ${quantity.quantity} de ${quantity.ingredient}.<br>
-                                            </g:each>
-                                        </p>
+                                <div class="texto row" style="padding-top: 0">
+                                    <div class="cuerpo" style="padding-top: 0">
+                                        <p>${recipe.description}</p>
+                                        <p><span class="titulo">País: </span> ${recipe.country.name}</p>
+                                        <p><span class="titulo">Tiempo de preparación: </span>${recipe.duration.duration}</p>
+                                        <p><span class="titulo">Dificultad:</span> ${recipe.difficulty.level}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-sm-4">
                                 <p class="firma">Autor: ${recipe.person.username}</p>

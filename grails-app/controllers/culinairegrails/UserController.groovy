@@ -46,7 +46,7 @@ class UserController {
                 return
             }else{
                 redirect controller: 'web', action: 'ingresar'
-                flash.message = "Contraseña incorrecta"
+                flash.message = "Contraseï¿½a incorrecta"
                 return
             }
         }
@@ -61,7 +61,7 @@ class UserController {
             }
             else{
                 redirect controller: 'web', action: 'ingresar'
-                flash.message = "Contraseña incorrecta"
+                flash.message = "Contraseï¿½a incorrecta"
                 return
             }
         }
@@ -75,7 +75,7 @@ class UserController {
             }
             else{
                 redirect controller: 'web', action: 'ingresar'
-                flash.message = "Contraseña incorrecta"
+                flash.message = "ContraseÃ±a incorrecta"
             }
         }
         else {

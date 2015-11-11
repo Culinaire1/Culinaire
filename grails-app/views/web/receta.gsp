@@ -17,10 +17,8 @@
                 <g:else>
                     <div class="row">
                         <div class="col-sm-6">
-                            <figure>
                                 <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
-                                        action:'displayGraph', params: [name:recipe.name])}" />
-                            </figure>
+                                        action:'displayGraph', params: [name:recipe.name]) }" style="max-height: 600px;"/>
                         </div>
                         <div class="col-sm-6">
                             <p class="tit" style="font-size: 40px">${recipe.name}</p>
@@ -36,19 +34,32 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="row texto cuerpo">
                             <p>Preparación:</p>
-                            <p>
                                 <g:each var="instruction" in="${recipe.instructions.sort({it.paso})}">
-                                    ${instruction.paso}. ${instruction.description}<br>
+                                    <g:if test="${instruction.photo != null && instruction.photo.size() > 1}">
+                                        <div class="row" style="margin-bottom: 15px;">
+                                            <div class="col-sm-6">
+                                                <p>${instruction.paso}. ${instruction.description}</p><br>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
+                                                action:'displayGraph', params: [name:recipe.name])}" style="max-height: 500px;" />
+                                            </div>
+                                        </div>
+                                    </g:if>
+                                    <g:else>
+                                        <p>${instruction.paso}. ${instruction.description}</p><br>
+                                    </g:else>
                                 </g:each>
-                            </p>
                         </div>
                     </div>
                     <g:if test="${recipe.video != null}">
                         <div style="width: 60%; margin: 0 auto;">
-                        <iframe width="560" height="315" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
-                    </div>
+                            <iframe width="560" height="315" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </g:if>
                     <br>
                     <div class="row">
@@ -67,7 +78,8 @@
                     <p class="tit" style="font-size: 40px">Comentarios:</p>
                     <g:if test="${recipe.posts.size() > 0}">
                         <g:each var="post" in="${recipe.posts}">
-                            <p class="cuerpo">${post.content}</p><br>
+                            <p style="font-family: GearedSlab; font-size: 30px; color: black">${post.content}<br> - ${post.person.username},
+                                ${String.format("%tB %<td, %<tY", post.dateCreated)}</p><br>
                         </g:each>
                     </g:if>
                     <g:else>
@@ -77,7 +89,7 @@
                     <g:if test="${recipe.person.recipes.size() > 1}">
                         <p class="tit" style="font-size: 40px">Mas recetas del autor: ${recipe.person.username}</p>
                         <g:each var="recipe2" in="${recipe.person.recipes}">
-                            <p class="cuerpo">- <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe2])}">${recipe2.name}</a></p><br>
+                            <p style="font-family: GearedSlab; font-size: 30px">- <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe2])}">${recipe2.name}</a></p><br>
                         </g:each>
                     </g:if>
                     <g:else>

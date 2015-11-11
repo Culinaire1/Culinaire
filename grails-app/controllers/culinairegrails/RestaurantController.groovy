@@ -20,7 +20,12 @@ class RestaurantController {
         restaurant.country = Country.findByName((String) params.countryR)
 
         if (!restaurant.validate()) {
-            respond restaurant.errors, view: 'create'
+            TreeSet<String> tree = new TreeSet<String>()
+            for( i in restaurant.errors.fieldErrors.field){
+                tree.add(i)
+            }
+            redirect(controller: 'web', action: 'ingresar')
+            flash.error = tree
             return
         }
 

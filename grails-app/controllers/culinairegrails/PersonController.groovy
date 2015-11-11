@@ -10,11 +10,18 @@ class PersonController {
             return
         }
 
-        def a = params.birthdate2.split("-")
-        personInstance.birthdate = new GregorianCalendar(a[0].toInteger(), a[1].toInteger(), a[2].toInteger(), 0, 0)
+        if (params.birthdate2 != '') {
+            def a = params.birthdate2.split("-")
+            personInstance.birthdate = new GregorianCalendar(a[0].toInteger(), a[1].toInteger(), a[2].toInteger(), 0, 0)
+        }
 
         if (!personInstance.validate()) {
-            respond personInstance.errors, view: 'create'
+            TreeSet<String> tree = new TreeSet<String>()
+            for( i in personInstance.errors.fieldErrors.field){
+                tree.add(i)
+            }
+            redirect(controller: 'web', action: 'ingresar')
+            flash.error = tree
             return
         }
 
@@ -62,3 +69,4 @@ class PersonController {
         redirect controller: 'web', action: 'perfil'
     }
 }
+

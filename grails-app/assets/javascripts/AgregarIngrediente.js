@@ -56,7 +56,7 @@ function addIngredientToDOM() {
 
     if(aux == 2){
         buttonD = document.createElement("button");
-        buttonD.setAttribute("class", "btn btn-primary btn-xs center-block botones b2 publicarB");
+        buttonD.setAttribute("class", "btn btn-primary btn-xs botones b2 publicarB");
         buttonD.setAttribute("type", "button");
         buttonD.setAttribute("id", "del1");
         buttonD.setAttribute("name", "del1");
@@ -86,24 +86,30 @@ function addInstructionToDOM() {
     var div2 = document.createElement("div");
     div2.setAttribute("class", "col-sm-6");
 
+    var div3 = document.createElement("div");
+    div3.setAttribute("class", "row");
+
     var input = document.createElement("textarea");
-    input.setAttribute("class", "campo textarea");
+    input.setAttribute("class", "campo textarea publicar");
     input.setAttribute("rows", "2");
     input.setAttribute("id", "des" + button2.value);
     input.setAttribute("name", "des" + button2.value);
     input.setAttribute("required", "true");
+    input.setAttribute("required", "true");
+    input.setAttribute("maxlength", "400");
 
     var photo = document.createElement("input");
     photo.setAttribute("type", "file");
     photo.setAttribute("accept", "image/*");
     photo.setAttribute("id", "photo" + button2.value);
     photo.setAttribute("name", "photo" + button2.value);
+    photo.setAttribute("class", "publicar");
 
     var aux = parseInt(button2.value);
 
     if(aux == 2){
         buttonD2 = document.createElement("button");
-        buttonD2.setAttribute("class", "btn btn-primary btn-xs center-block botones b2 publicarB");
+        buttonD2.setAttribute("class", "btn btn-primary btn-xs botones b2 publicarB");
         buttonD2.setAttribute("type", "button");
         buttonD2.setAttribute("id", "del1");
         buttonD2.setAttribute("name", "del1");
@@ -117,8 +123,9 @@ function addInstructionToDOM() {
 
     div.appendChild(input);
     div2.appendChild(photo);
-    li.appendChild(div);
-    li.appendChild(div2);
+    div3.appendChild(div);
+    div3.appendChild(div2);
+    li.appendChild(div3);
     instructions.appendChild(li);
 }
 

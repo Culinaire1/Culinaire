@@ -62,11 +62,6 @@
                     </ul>
                 </li>
                 <li class="dropdown active"><a href="${createLink(action: 'categorias')}" class="dropdown-toggle">Categorías</a>
-                    <ul class="dropdown-menu">
-                        <g:each var="category" in="${categories}">
-                            <li><a href="${createLink(controller:'web', action:'findCategory', params: [category: category.name])}">${category.name}</a></li>
-                        </g:each>
-                    </ul>
                 </li>
                 <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
                     <ul class="dropdown-menu">

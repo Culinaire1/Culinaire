@@ -9,7 +9,7 @@ class Instruction {
     static belongsTo = [recipe: Recipe]
 
     static constraints = {
-        description (nullable: false, blank: false)
+        description (nullable: false, blank: false, maxSize: 400)
         paso(nullable: false, min: 1)
         photo(nullable: true, maxSize: 4194304, minSize: 1)
     }

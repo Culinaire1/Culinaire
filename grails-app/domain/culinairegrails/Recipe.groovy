@@ -26,7 +26,7 @@ class Recipe {
         dateCreated(nullable: false)
         lastUpdate(nullable: false)
         photo(nullable: false, minSize: 1, maxSize: 4194304)
-        description(nullable: false, blank: false)
+        description(nullable: false, blank: false, maxSize: 400)
         video(nullable: true, url: true)
     }
 

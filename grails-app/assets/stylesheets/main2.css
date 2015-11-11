@@ -222,3 +222,7 @@ display: block;
     font-size: 20px;
     margin-top: 2px;
 }
+
+.titulo {
+    font-weight: bold;
+}
