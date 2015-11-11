@@ -1,7 +1,5 @@
 package culinairegrails
 
-import com.oracle.jrockit.jfr.DurationEvent
-
 class WebController {
     def index() {
 
