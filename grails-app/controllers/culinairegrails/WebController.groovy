@@ -101,4 +101,8 @@ class WebController {
     def abrirReceta(){
         render(view: 'receta',  model:[recipe: Recipe.findByName(params.name)])
     }
+
+    def tipicos(){
+        [countries: Country.list()]
+    }
 }

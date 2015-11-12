@@ -58,7 +58,7 @@
                 <li class="dropdown active"><a href="${createLink(action: 'busqueda')}" class="dropdown-toggle">Búsqueda</a>
                     <ul class="dropdown-menu">
                         <li><a href="${createLink(action: 'restaurantes')}">Restaurantes</a></li>
-                        <li><a href="#">Platos típicos</a></li>
+                        <li><a href="${createLink(controller: 'web', action: 'tipicos')}">Platos típicos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown active"><a href="${createLink(action: 'categorias')}" class="dropdown-toggle">Categorías</a>

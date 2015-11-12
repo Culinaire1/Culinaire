@@ -3857,3 +3857,8 @@ n:311:org/codehaus/groovy/reflection/ClassInfo$ClassInfoAction
 n:2181:org/springframework/util/ConcurrentReferenceHashMap$2
 n:3377:org/springframework/util/ConcurrentReferenceHashMap$EntrySet
 n:3649:org/springframework/util/ConcurrentReferenceHashMap$EntryIterator
+n:3558:grails/validation/ValidationErrors
+n:2164:org/springframework/validation/BeanPropertyBindingResult
+n:4686:org/springframework/validation/AbstractPropertyBindingResult
+y:14761:org/codehaus/groovy/grails/commons/GrailsDomainConfigurationUtil
+n:3767:org/codehaus/groovy/grails/compiler/gorm/DirtyCheckingTransformer$_performInjectionOnAnnotatedClass_closure1

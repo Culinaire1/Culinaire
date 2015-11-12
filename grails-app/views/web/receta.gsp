@@ -86,6 +86,15 @@
                     <g:else>
                         <p class="cuerpo">No hay comentarios aún.</p>
                     </g:else>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <textarea id="des1" rows="2" class="campo textarea" name="des1" maxlength="400" required></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="submit" class="btn btn-primary btn-lg botones b2" style="margin-right: 2%; font-size: 30px" name="bsubmit" value="Comentar" id="buscar2">
+                        </div>
+                    </div>
+                    <br>
                     <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                     <g:if test="${recipe.person.recipes.size() > 1}">
                         <p class="tit" style="font-size: 40px">Mas recetas del autor: ${recipe.person.username}</p>
