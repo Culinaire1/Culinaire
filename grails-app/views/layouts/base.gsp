@@ -58,6 +58,7 @@
                 <li class="dropdown active"><a href="${createLink(action: 'busqueda')}" class="dropdown-toggle">Búsqueda</a>
                     <ul class="dropdown-menu">
                         <li><a href="${createLink(action: 'restaurantes')}">Restaurantes</a></li>
+                        <li><a href="${createLink(action: 'recetas')}">Recetas</a></li>
                         <li><a href="${createLink(controller: 'web', action: 'tipicos')}">Platos típicos</a></li>
                     </ul>
                 </li>
@@ -65,8 +66,8 @@
                 </li>
                 <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
                     <ul class="dropdown-menu">
-                        <li><a href="${createLink(action: 'recetas')}">Recetas</a></li>
                         <g:if test="${session.tu == true}">
+                            <li><a href="${createLink(action: 'recetas')}">Recetas</a></li>
                             <li><a href="${createLink(controller: 'web', action: 'usuarios')}">Usuarios</a></li>
                         </g:if>
                     </ul>

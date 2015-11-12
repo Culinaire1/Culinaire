@@ -44,7 +44,8 @@
                                 ${recipe.person.username}</a></p>
                             </div>
                             <div class="col-sm-4">
-                                <button type="button" class="btn btn-primary btn-lg center-block botones b2">Comentarios</button>
+                                <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}#comentarios">
+                                    <button type="button" class="btn btn-primary btn-lg center-block botones b2">Comentarios</button></a>
                             </div>
                             <div class="col-sm-4">
                                 <p class="firma">Popularidad: ${recipe.rating}</p>

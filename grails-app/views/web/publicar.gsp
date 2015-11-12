@@ -54,6 +54,15 @@
                     </div>
                     <div class="input-group">
                         <div class="col-sm-3">
+                            <label for="country" class="input-group-addon tit">Plato Tipico*</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="checkbox" style="transform: scale(1.5); margin-top: 2%; margin-left: 1%">
+                            <span class="campo" style="padding-left: 1%">¿Ésta receta es de un plato típico?</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="col-sm-3">
                             <label for="difficulty" class="input-group-addon tit">Dificultad*</label>
                         </div>
                         <div class="col-sm-9">
@@ -76,15 +85,15 @@
                             </select>
                         </div>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group" style="padding-top: 1%; padding-bottom: 1%">
                         <div class="col-sm-3">
                             <span class="input-group-addon tit">Imagen*</span>
                         </div>
                         <div class="col-sm-9">
-                            <input type="file" accept="image/*" id="photo" name="photo" required />
+                            <input type="file" accept="image/*" id="photo" name="photo" required style="font-family: 'GearedSlab', sans-serif; font-size: 19px;"/>
                         </div>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group" style="padding-bottom: 2%">
                         <div class="col-sm-3">
                             <label for="description" class="input-group-addon tit">Descripcion*</label>
                         </div>

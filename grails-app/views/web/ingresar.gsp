@@ -133,12 +133,12 @@
                                     <input type="date" name='birthdate2' class="form-control campo" id="birthdate2">
                                 </div>
                             </div>
-                            <div class="input-group">
+                            <div class="input-group" style="margin-top: -1%">
                                 <div class="col-sm-5">
                                     <span class="input-group-addon">Imagen</span>
                                 </div>
-                                <div class="col-sm-7">
-                                    <input type="file" name="photo" id="photo" accept="image/*"/>
+                                <div class="col-sm-7" style="margin-top: 1.5%">
+                                    <input type="file" name="photo" id="photo" accept="image/*" style="font-family: 'GearedSlab', sans-serif; font-size: 16px;"/>
                                 </div>
                             </div>
                             <div class="input-group">
@@ -250,12 +250,12 @@
                                            required value id="email2R">
                                 </div>
                             </div>
-                            <div class="input-group">
+                            <div class="input-group" style="margin-top: -1%">
                                 <div class="col-sm-5">
                                     <span class="input-group-addon">Imagen*</span>
                                 </div>
-                                <div class="col-sm-7">
-                                    <input type="file" name="photoR" id="photoR" required accept="image/*"/>
+                                <div class="col-sm-7" style="margin-top: 1.5%">
+                                    <input type="file" name="photoR" id="photoR" required accept="image/*" style="font-family: 'GearedSlab', sans-serif; font-size: 16px;"/>
                                 </div>
                             </div>
                             <div class="input-group">

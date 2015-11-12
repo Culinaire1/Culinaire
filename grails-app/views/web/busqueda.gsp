@@ -10,8 +10,11 @@
         <br>
         <p class="tit" id="" style="font-size: 40px">BUSCADOR</p>
         <g:form controller="web" action="busquedaf" method="post" enctype="multipart/form-data">
+
         <div class="row">
             <div class="center-block ing" style="width:80%">
+            <p class="tit" id="" style="font-size: 40px">Receta</p>
+            <br>
                 <div class="input-group">
                     <div class="col-sm-3">
                         <span class="input-group-addon" id="ingredientes">Ingrediente:</span>
@@ -86,6 +89,8 @@
                 </g:form>
                 <br>
                 <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
+                <br>
+                <p class="tit" id="" style="font-size: 40px">Restaurantes</p>
                 <br>
                 <div class="input-group">
                     <div class="col-sm-3">
