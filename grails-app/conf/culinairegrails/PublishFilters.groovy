@@ -51,7 +51,7 @@ class PublishFilters {
                             redirect controller: 'web', action: 'index'
                     }
                 }
-                else if(session.user == true)
+                else if(session.tu == true)
                     render(view: 'perfil', model:[person:Person.findByUsername(session.user)])
                 else
                     redirect controller: 'web', action: 'index'
