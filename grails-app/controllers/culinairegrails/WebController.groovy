@@ -54,18 +54,17 @@ class WebController {
     def categorias() {
         [categories:Category.list()]
     }
+
     def favoritos() {
     }
 
     def perfil() {
-        if(session.user == null) {
-            redirect(action: 'ingresar')
-        }
-        render(view: 'perfil', model:[person:Person.findByUsername(session.user)])
     }
 
-    def perfil2() {
+    def usuarios(){
+        [person: Person.findByUsername(session.user)]
     }
+
     def comentarios() {
     }
     def faq() {

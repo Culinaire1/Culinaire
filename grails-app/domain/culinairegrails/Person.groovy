@@ -6,7 +6,7 @@ class Person extends User{
     String lastname
     Calendar birthdate
 
-    static hasMany = [posts: Post, recipes: Recipe, favorites: User]
+    static hasMany = [posts: Post, recipes: Recipe, favoriteUsers: Person]
 
     static constraints = {
         name(nullable: false, size: 3..50)

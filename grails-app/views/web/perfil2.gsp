@@ -8,11 +8,11 @@
 <div class="container">
     <div class="texto">
         <div class="cuerpo">
-            <p class="tit" id="" style="font-size: 40px">Bienvenido: ${person.username}</p>
+            <p class="tit" id="" style="font-size: 40px">${person.username}</p>
             <div class="row">
                 <div class="col-sm-3">
                     <figure>
-                        <g:if test="${person.photo != null && person.photo.size() > 2}">
+                        <g:if test="${person.photo != null}">
                             <img class="img-responsive img-thumbnail" src="${createLink(controller:'person', action:'displayGraph',
                                     params: [name:person.name])}" />
                         </g:if>
@@ -23,23 +23,31 @@
                 </div>
                 <div class="col-sm-9">
                     <g:if test="${person.recipes.size() > 0}">
-                        <p id="titulo">Tus recetas:</p>
+                        <p id="titulo">Recetas:</p>
                         <g:each var="recipe" in="${person.recipes}">
                             <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">-${recipe.name}</a><br>
                         </g:each>
                     </g:if>
                     <g:else>
-                        <p id="titulo">No tienes recetas.</p>
+                        <p id="titulo">No hay recetas para mostrar.</p>
                     </g:else>
                 </div>
                 <div class="row" style="margin-top: 23%;">
                     <div class="col-sm-9">
                         <p class="firma" style="text-align: left; padding-left: 3%;">Popularidad: ${person.rating}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <a class="btn btn-primary btn-lg center-block botones b2" href="${createLink(action: 'publicar')}" style="margin-right: 2%">
-                            Publicar</a>
-                    </div>
+                    <g:if test="${session.tu == true}">
+                        <div class="col-sm-3">
+                        <g:if test="${person in user.favoriteUsers}">
+                            <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person', action: 'removeFavoriteUser',
+                                    params: [username: person.username])}" style="margin-right: 2%">Dejar de seguir</a>
+                        </g:if>
+                        <g:else>
+                            <a class="btn btn-primary btn-lg center-block botones b2" href="${createLink(controller: 'person', action: 'addFavoritesUsers',
+                            params: [username: person.username])}" style="margin-right: 2%"> Seguir</a>
+                        </g:else>
+                        </div>
+                    </g:if>
                 </div>
             </div>
         </div>
