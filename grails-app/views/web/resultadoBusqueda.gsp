@@ -26,7 +26,7 @@
 
             <div class="col-md-9 col-md-offset-3 clearfix">
                 <h3>
-                    Resultados de la busqueda
+                    Resultados de la busqueda:  "${parametro}"
                 </h3>
             </div>
 
