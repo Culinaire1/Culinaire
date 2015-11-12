@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!title>Inicio<!/title>
+
     <title><g:layoutTitle default="Page"/></title>
 
     <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon2.ico')}" type="image/x-icon" />
@@ -32,7 +32,7 @@
             <li>
                 <form class="navbar-form" role="search" controller="web" action="barraBusqueda" method="post">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Buscar..." name="srch-term" id="srch-term">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="srch_term">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" id="lupa"><i class="glyphicon glyphicon-search"></i></button>
                         </div>

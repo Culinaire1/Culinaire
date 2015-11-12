@@ -89,7 +89,14 @@ class WebController {
     }
 
     def barraBusqueda(){
-        render(view: 'resultadoBusqueda',  model:[personas:Person.getAll(), restaurantes:Restaurant.getAll(), recetas:Recipe.getAll(), categories: Category.list()])
+
+        def criterio= '%'+params.srch_term+'%'
+
+        def personas= Person.findAllByNameLike(criterio)
+        def restaurantes= Restaurant.findAllByNameLike(criterio)
+        def recetas= Recipe.findAllByNameLike(criterio)
+
+        render(view: 'resultadoBusqueda',  model:[personas:personas, restaurantes:restaurantes, recetas:recetas, categories: Category.list(), parametro: params.srch_term])
     }
 
     def findCategory(){
