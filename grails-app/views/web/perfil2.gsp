@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <figure>
-                        <g:if test="${person.photo != null}">
+                        <g:if test="${person.photo != null && person.photo.size() > 2}">
                             <img class="img-responsive img-thumbnail" src="${createLink(controller:'person', action:'displayGraph',
                                     params: [name:person.name])}" />
                         </g:if>

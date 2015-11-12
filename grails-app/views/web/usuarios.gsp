@@ -22,7 +22,7 @@
                         <div class="cuerpo  row" style="padding-top: 0px;">
                             <div class="col-sm-3">
                                 <figure>
-                                    <g:if test="${user.photo != null}">
+                                    <g:if test="${user.photo != null && user.photo.size() > 2}">
                                         <img class="img-responsive img-thumbnail" src="${createLink(controller:'person', action:'displayGraph',
                                                 params: [name:user.name])}" />
                                     </g:if>
