@@ -79,31 +79,44 @@
                     <p class="tit" style="font-size: 40px">Comentarios:</p>
                     <g:if test="${recipe.posts.size() > 0}">
                         <g:each var="post" in="${recipe.posts}">
-                            <p style="font-family: GearedSlab; font-size: 30px; color: black">${post.content}<br> - ${post.person.username},
-                                ${String.format("%tB %<td, %<tY", post.dateCreated)}</p><br>
+                            <p style="font-family: GearedSlab; font-size: 30px; color: black">${post.content}<br> -
+                                <a href="${createLink(controller:'web', action:'perfil', params: [username: post.person.username])}">
+                                ${post.person.username} </a>, ${String.format("%tB %<td, %<tY", post.dateCreated)}</p><br>
                         </g:each>
                     </g:if>
                     <g:else>
                         <p class="cuerpo">No hay comentarios aún.</p>
                     </g:else>
+                    <g:if test="${session.tu == true}">
                     <div class="row">
+                        <g:form controller="recipe" action="addComments" method="post" enctype="multipart/form-data">
                         <div class="col-sm-9">
-                            <textarea id="des1" rows="2" class="campo textarea" name="des1" maxlength="400" required></textarea>
+                            <textarea id="post" rows="2" class="campo textarea" name="post" maxlength="400" required></textarea>
                         </div>
                         <div class="col-sm-3">
-                            <input type="submit" class="btn btn-primary btn-lg botones b2" style="margin-right: 2%; font-size: 30px" name="bsubmit" value="Comentar" id="buscar2">
+                            <input type="submit" class="btn btn-primary btn-lg botones b2" style="margin-right: 2%; font-size: 30px"
+                                   name="submit" value="Comentar" id="submit">
+                            <input value="${recipe.id}" id="id" hidden name="id">
                         </div>
+                        </g:form>
                     </div>
+                    </g:if>
                     <br>
                     <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                     <g:if test="${recipe.person.recipes.size() > 1}">
                         <p class="tit" style="font-size: 40px">Mas recetas del autor: ${recipe.person.username}</p>
                         <g:each var="recipe2" in="${recipe.person.recipes}">
-                            <p style="font-family: GearedSlab; font-size: 30px">- <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe2])}">${recipe2.name}</a></p><br>
+                            <p style="font-family: GearedSlab; font-size: 30px">- <a href="${createLink(controller:'web', action:'abrirReceta',
+                                    params: [name: recipe2])}">${recipe2.name}</a></p><br>
                         </g:each>
                     </g:if>
                     <g:else>
-                        <p class="cuerpo">El autor ${recipe.person.username} no tiene más recetas.</p>
+                        <g:if test="${session.tu == true && session.user == recipe.person.username}">
+                            <p class="cuerpo">No tienes más recetas.</p>
+                        </g:if>
+                        <g:else>
+                            <p class="cuerpo">El autor ${recipe.person.username} no tiene más recetas.</p>
+                        </g:else>
                     </g:else>
                 </g:else>
             </div>

@@ -15,7 +15,6 @@ class RecipeController {
             respond recipe.errors, view: 'create'
             return
         }
-
         recipe.save flush: true
 
         redirect action: 'show', id: recipe.id
@@ -69,11 +68,17 @@ class RecipeController {
                 instruction.photo = params.getProperty("photo"+i).getBytes()
             }
             instruction.save flush: true
-
-
         }
 
         redirect controller:'web', action:'abrirReceta', params: [name: recipe.name]
+    }
+
+    def addComments(){
+        Person person = Person.findByUsername(session.user);
+        Recipe recipe = Recipe.get(params.id.toInteger())
+        Post post = new Post(person: person, recipe: recipe, content: params.post)
+        post.save flush: true
+        redirect(controller:'web', action:'abrirReceta', params: [name: recipe.name])
     }
 
     def displayGraph = {
