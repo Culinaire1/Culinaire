@@ -66,7 +66,9 @@
                 <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
                     <ul class="dropdown-menu">
                         <li><a href="${createLink(action: 'recetas')}">Recetas</a></li>
-                        <li><a href="#">Usuarios</a></li>
+                        <g:if test="${session.tu == true}">
+                            <li><a href="${createLink(controller: 'web', action: 'usuarios')}">Usuarios</a></li>
+                        </g:if>
                     </ul>
                 </li>
                 <g:if test="${session.user}">

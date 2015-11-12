@@ -30,6 +30,27 @@ class PersonController {
         redirect action: 'login', id: personInstance.id
     }
 
+    def addFavoritesUsers(){
+        Person person = Person.findByUsername(session.user);
+        Person person2 = Person.findByUsername(params.username);
+        if(person != null && person2!= null) {
+            person.addToFavoriteUsers(person2)
+            person.save flush: true
+        }
+        redirect(controller: 'web', action: 'usuarios')
+    }
+
+    def removeFavoriteUser(){
+        Person person = Person.findByUsername(session.user);
+        Person person2 = Person.findByUsername(params.username);
+        if(person != null && person2!= null) {
+            person.removeFromFavoriteUsers(person2)
+            person.save flush: true
+        }
+        redirect(controller: 'web', action: 'usuarios')
+
+    }
+
     def update(Person personInstance) {
         if (personInstance == null) {
             notFound()

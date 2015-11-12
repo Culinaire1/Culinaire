@@ -64,7 +64,8 @@
                     <br>
                     <div class="row">
                         <div class="col-sm-4">
-                            <p class="firma">Autor: ${recipe.person.username}</p>
+                            <p class="firma">Autor: <a href="${createLink(controller:'web', action:'perfil', params: [username: recipe.person.username])}">
+                                ${recipe.person.username}</a></p>
                         </div>
                         <div class="col-sm-4">
 
