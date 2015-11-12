@@ -21,7 +21,7 @@ class WebController {
             f1=Recipe.list()
         else
             f1 = Recipe.list().findAll{it.quantities.findAll{it.ingredient.name==ingrediente}}
-
+        render f1
         if (categoria=="Ninguna")
             f2=f1
         else
