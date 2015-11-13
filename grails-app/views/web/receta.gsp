@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="culinairegrails.Person" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="base"/>
@@ -64,11 +64,24 @@
                     <br>
                     <div class="row">
                         <div class="col-sm-4">
-                            <p class="firma">Autor: <a href="${createLink(controller:'web', action:'perfil', params: [username: recipe.person.username])}">
+                            <p class="firma" style="text-align: left;">Autor: <a href="${createLink(controller:'web', action:'perfil', params: [username: recipe.person.username])}">
                                 ${recipe.person.username}</a></p>
                         </div>
                         <div class="col-sm-4">
-
+                            <g:if test="${session.tu == true}">
+                                <g:if test="${recipe.person.username == session.user}">
+                                    <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'web', action: 'index',
+                                            params: [id: recipe.id])}" style="margin-right: 2%">Editar receta</a>
+                                </g:if>
+                                <g:elseif test="${recipe in culinairegrails.Person.findByUsername(session.user).favoriteRecipes}">
+                                    <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person', action:
+                                            'removeFavoriteRecipe', params: [id: recipe.id])}" style="margin-left: 14%">Dejar de seguir</a>
+                                </g:elseif>
+                                <g:else>
+                                    <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person', action:
+                                            'addFavoriteRecipe', params: [id: recipe.id])}" style="margin-left: 14%">Seguir</a>
+                                </g:else>
+                            </g:if>
                         </div>
                         <div class="col-sm-4">
                             <p class="firma">Popularidad: ${recipe.rating}</p>

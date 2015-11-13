@@ -64,10 +64,10 @@
                 </li>
                 <li class="dropdown active"><a href="${createLink(action: 'categorias')}" class="dropdown-toggle">Categorías</a>
                 </li>
-                <li class="dropdown active"><a href="${createLink(controller: 'web', action: 'favoritos')}" class="dropdown-toggle">Favoritos</a>
+                <li class="dropdown active"><a class="dropdown-toggle">Favoritos</a>
                     <ul class="dropdown-menu">
                         <g:if test="${session.tu == true}">
-                            <li><a href="${createLink(action: 'recetas')}">Recetas</a></li>
+                            <li><a href="${createLink(action: 'recetas_favoritas')}">Recetas</a></li>
                             <li><a href="${createLink(controller: 'web', action: 'usuarios')}">Usuarios</a></li>
                         </g:if>
                     </ul>

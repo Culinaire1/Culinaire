@@ -30,6 +30,26 @@ class PersonController {
         redirect action: 'login', id: personInstance.id
     }
 
+    def addFavoriteRecipe(){
+        Person person = Person.findByUsername(session.user);
+        Recipe recipe = Recipe.get(params.id.toInteger());
+        if(person != null && recipe!= null) {
+            person.addToFavoriteRecipes(recipe)
+            person.save flush: true
+        }
+        redirect(controller: 'web', action: 'recetas_favoritas')
+    }
+
+    def removeFavoriteRecipe(){
+        Person person = Person.findByUsername(session.user);
+        Recipe recipe = Recipe.get(params.id.toInteger());
+        if(person != null && recipe!= null) {
+            person.removeFromFavoriteRecipes(recipe)
+            person.save flush: true
+        }
+        redirect(controller: 'web', action: 'recetas_favoritas')
+    }
+
     def addFavoritesUsers(){
         Person person = Person.findByUsername(session.user);
         Person person2 = Person.findByUsername(params.username);

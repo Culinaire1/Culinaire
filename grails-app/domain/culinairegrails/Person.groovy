@@ -6,13 +6,15 @@ class Person extends User{
     String lastname
     Calendar birthdate
 
-    static hasMany = [posts: Post, recipes: Recipe, favoriteUsers: Person]
+    static hasMany = [posts: Post, recipes: Recipe, favoriteUsers: Person, favoriteRecipes: Recipe]
 
     static constraints = {
         name(nullable: false, size: 3..50)
         lastname(nullable: false, size: 3..50)
         birthdate(nullable: false)
     }
+
+    static mappedBy = [favoriteRecipes: 'follower']
 
     static mapping = {
         sort rating: 'desc'
