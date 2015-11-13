@@ -58,6 +58,11 @@ class WebController {
     def perfil() {
     }
 
+    def editarperfilpersona(){
+        Person person = Person.findByUsername(session.user);
+        render(view:"editarperfil", model: [person:person])
+    }
+
     def usuarios(){
         [person: Person.findByUsername(session.user)]
     }

@@ -24,7 +24,7 @@ class UrlMappings {
         "/barraBusqueda"(controller: 'web', action: 'barraBusqueda')
         "/resultado"(controller: 'web', action: 'busquedaf')
         "/tipicos"(controller: 'web', action: 'tipicos')
-
+        "/editar_perfil"(controller: 'web', action: 'editarperfilpersona')
         "500"(view:'/error')
         "/conf"(controller: "conf", action: 'index')
     }

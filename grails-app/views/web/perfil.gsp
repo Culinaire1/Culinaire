@@ -36,6 +36,10 @@
                     <div class="col-sm-9">
                         <p class="firma" style="text-align: left; padding-left: 3%;">Popularidad: ${person.rating}</p>
                     </div>
+                    <div class="col-sm-4">
+                        <a class="btn btn-primary btn-lg center-block botones b2" href="${createLink(action: 'editarperfilpersona' ) }" style="margin-right: 2%">
+                            Editar perfil</a>
+                    </div>
                     <div class="col-sm-3">
                         <a class="btn btn-primary btn-lg center-block botones b2" href="${createLink(action: 'publicar')}" style="margin-right: 2%">
                             Publicar</a>
