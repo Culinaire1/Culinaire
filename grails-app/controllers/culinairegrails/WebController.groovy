@@ -21,7 +21,7 @@ class WebController {
             f1=Recipe.list()
         else
             f1 = Recipe.list().findAll{it.quantities.findAll{it.ingredient.name==ingrediente}}
-        render f1
+
         if (categoria=="Ninguna")
             f2=f1
         else
@@ -39,7 +39,7 @@ class WebController {
 
         int numeroAleatorio = (int) (Math.random() * (f4.size() - 1)+0.2)
         def resul = f4[numeroAleatorio]
-
+        render f4
         if(boton=="Buscar")
             render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
         if (boton=="Aleatorio"){
