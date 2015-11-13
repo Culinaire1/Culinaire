@@ -10,7 +10,6 @@ class UrlMappings {
         "/"(controller: 'web', action: 'index')
         "/busqueda"(controller: 'web', action: 'busqueda')
         "/categorias"(controller: 'web', action: 'categorias')
-        "/favoritos"(controller: 'web', action: 'favoritos')
         "/perfil"(controller: 'web', action: 'perfil')
         "/comentarios"(controller: 'web', action: 'comentarios')
         "/faq"(controller: 'web', action: 'faq')

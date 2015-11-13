@@ -55,13 +55,14 @@ class WebController {
         [categories:Category.list()]
     }
 
-    def favoritos() {
-    }
-
     def perfil() {
     }
 
     def usuarios(){
+        [person: Person.findByUsername(session.user)]
+    }
+
+    def recetas_favoritas(){
         [person: Person.findByUsername(session.user)]
     }
 

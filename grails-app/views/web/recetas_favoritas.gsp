@@ -11,11 +11,11 @@
         <br>
         <div class="texto">
             <div class="center-block ing" style="width:80%;">
-                <g:if test="${!recipes}">
-                    <p class="cuerpo">Recetas no encontradas para esa categoría.</p>
+                <g:if test="${person.favoriteRecipes.size() <= 0}">
+                    <p class="cuerpo">Actualmente no tienes recetas favoritas.</p>
                 </g:if>
                 <g:else>
-                    <g:each var="recipe" in="${recipes}">
+                    <g:each var="recipe" in="${person.favoriteRecipes}">
                         <div class="row">
                             <div class="col-sm-6">
                                 <figure>
@@ -41,11 +41,11 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <p class="firma">Autor: <a href="${createLink(controller:'web', action:'perfil', params: [username: recipe.person.username])}">
-                                ${recipe.person.username}</a></p>
+                                    ${recipe.person.username}</a></p>
                             </div>
                             <div class="col-sm-4">
-                                <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller:'web', action:'abrirReceta',
-                                        params: [name: recipe.name])}#comentarios">Comentarios</a>
+                                <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person',
+                                        action: 'removeFavoriteRecipe', params: [id: recipe.id])}" style="margin-left: 14%">Dejar de seguir</a>
                             </div>
                             <div class="col-sm-4">
                                 <p class="firma">Popularidad: ${recipe.rating}</p>
