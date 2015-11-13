@@ -15,8 +15,8 @@ class WebController {
         def dificultad=params.dificultadB
         def boton=params.bsubmit
 
-        def f1,f2,f3,f4
-
+        List<Recipe> f1,f2,f3,f4
+        def resul=[]
         if(ingrediente=="Ninguna")
             f1=Recipe.list()
         else
@@ -37,17 +37,17 @@ class WebController {
         else
             f4=f3.findAll {it.difficulty.level==dificultad}
 
-        int numeroAleatorio = (int) (Math.random() * (f4.size() - 1)+0.2)
-        def resul = f4[numeroAleatorio]
-        render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
+        int numeroAleatorio = (int) (Math.random() * (f4.size() - 1)+0.3)
+        resul.add(f4[numeroAleatorio])
+
         if(boton=="Buscar")
-            render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
+            render(view: "Recetas",model:[categories: Category.list(), recipes: f4.listIterator()])
         if (boton=="Aleatorio"){
             if(f4.size()> 1) {
-                render(view: "Recetas", model: [categories: Category.list(), recipes: resul])
+                render(view: "Recetas", model: [categories: Category.list(), recipes: resul.listIterator()])
             }
             else
-                render(view: "Recetas", model: [categories: Category.list(), recipes: f4])
+                render(view: "Recetas", model: [categories: Category.list(), recipes: f4.listIterator()])
         }
     }
 
