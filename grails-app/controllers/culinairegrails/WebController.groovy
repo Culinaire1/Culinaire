@@ -39,7 +39,7 @@ class WebController {
 
         int numeroAleatorio = (int) (Math.random() * (f4.size() - 1)+0.2)
         def resul = f4[numeroAleatorio]
-        render f4
+        render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
         if(boton=="Buscar")
             render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
         if (boton=="Aleatorio"){
