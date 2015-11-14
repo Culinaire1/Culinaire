@@ -27,15 +27,22 @@ class RecipeController {
             return
         }
 
+        println(params)
+
         if(recipe.validate()){
             recipe.save flush: true
             return
         }
 
+        boolean typical = false
+        if (params.typical)
+            typical = true
+
+
         recipe = new Recipe(name: params.name, description: params.description,
                 country: Country.findByName(params.country), difficulty: Difficulty.findByLevel(params.difficulty),
                 duration: Duration.findByDuration(params.duration), category: Category.findByName(params.category),
-                person: Person.findByUsername(session.user), photo: params.photo.getBytes())
+                person: Person.findByUsername(session.user), photo: params.photo.getBytes(), typical: typical)
 
         if (!recipe.validate()) {
             TreeSet<String> tree = new TreeSet<String>()

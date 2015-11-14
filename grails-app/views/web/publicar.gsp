@@ -57,7 +57,7 @@
                             <label for="country" class="input-group-addon tit">Plato Tipico*</label>
                         </div>
                         <div class="col-sm-9">
-                            <input type="checkbox" style="transform: scale(1.5); margin-top: 2%; margin-left: 1%">
+                            <input type="checkbox" id="typical" name="typical" style="transform: scale(1.5); margin-top: 2%; margin-left: 1%">
                             <span class="campo" style="padding-left: 1%">¿Ésta receta es de un plato típico?</span>
                         </div>
                     </div>

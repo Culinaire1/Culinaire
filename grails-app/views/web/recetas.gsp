@@ -30,7 +30,8 @@
                                 <div class="texto row" style="padding-top: 0">
                                     <div class="cuerpo" style="padding-top: 0">
                                         <p>${recipe.description}</p>
-                                        <p><span class="titulo">País: </span> ${recipe.country.name}</p>
+                                        <p><span class="titulo">País: </span>
+                                        <g:if test="${recipe.typical}">Plato típico de </g:if>${recipe.country.name}</p>
                                         <p><span class="titulo">Tiempo de preparación: </span>${recipe.duration.duration}</p>
                                         <p><span class="titulo">Dificultad:</span> ${recipe.difficulty.level}</p>
                                     </div>

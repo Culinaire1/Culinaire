@@ -96,7 +96,7 @@
                                     <label for="birthdate2" class="input-group-addon" id="fecha">Cumpleaños*</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="date" name='birthdate2' class="form-control campo" id="birthdate2" required value="${person.birthdate}">
+                                    <input type="date" name='birthdate2' class="form-control campo" id="birthdate2">
                                 </div>
                             </div>
                             <div class="input-group" style="margin-top: -1%">

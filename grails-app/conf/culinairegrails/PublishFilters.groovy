@@ -16,7 +16,20 @@ class PublishFilters {
 
             }
         }
-        all(controller:'web', action:'usuarios') {
+        all2(controller:'web', action:'usuarios') {
+            before = {
+                if(session.tu != true) {
+                    redirect controller: 'web', action: 'index'
+                }
+            }
+            after = { Map model ->
+
+            }
+            afterView = { Exception e ->
+
+            }
+        }
+        all3(controller:'web', action:'editarperfilpersona') {
             before = {
                 if(session.tu != true) {
                     redirect controller: 'web', action: 'index'

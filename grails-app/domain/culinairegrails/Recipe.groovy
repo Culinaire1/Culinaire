@@ -10,6 +10,7 @@ class Recipe {
     byte[] photo
     String video
     Person follower
+    Boolean typical
 
     static hasMany = [posts: Post, quantities: Quantity, instructions: Instruction]
     static belongsTo = [person: Person, country: Country, category: Category]
@@ -30,6 +31,7 @@ class Recipe {
         description(nullable: false, blank: false, maxSize: 400)
         video(nullable: true, url: true)
         follower(nullable: true)
+        typical(nullable: false)
     }
 
     static mapping = {

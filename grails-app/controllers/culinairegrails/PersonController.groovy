@@ -30,6 +30,37 @@ class PersonController {
         redirect action: 'login', id: personInstance.id
     }
 
+    def update() {
+        Person person = Person.findByUsername(session.user)
+
+        if (params.birthdate2 != '') {
+            def a = params.birthdate2.split("-")
+            person.birthdate = new GregorianCalendar(a[0].toInteger(), a[1].toInteger(), a[2].toInteger(), 0, 0)
+        }
+
+        person.email = params.email
+        person.password = params.password
+        person.name = params.name
+        person.lastname = params.lastname
+        person.username = params.username
+        if(params.photo.getBytes().size() > 2)
+            person.photo = params.photo.getBytes()
+        person.website = params.website
+
+        if (!person.validate()) {
+            TreeSet<String> tree = new TreeSet<String>()
+            for( i in personInstance.errors.fieldErrors.field){
+                tree.add(i)
+            }
+            redirect(controller: 'web', action: 'editarperfilpersona')
+            flash.error = tree
+            return
+        }
+        person.save flush: true
+
+        redirect action: 'login', id: person.id
+    }
+
     def addFavoriteRecipe(){
         Person person = Person.findByUsername(session.user);
         Recipe recipe = Recipe.get(params.id.toInteger());
@@ -69,25 +100,6 @@ class PersonController {
         }
         redirect(controller: 'web', action: 'usuarios')
 
-    }
-
-    def update(Person personInstance) {
-        if (personInstance == null) {
-            notFound()
-            return
-        }
-
-        def a = params.birthdate2.split("-")
-        personInstance.birthdate = new GregorianCalendar(a[0].toInteger(), a[1].toInteger(), a[2].toInteger(), 0, 0)
-
-        if (!personInstance.validate()) {
-            respond personInstance.errors, view: 'edit'
-            return
-        }
-
-        personInstance.save flush: true
-
-        redirect action: 'login', id: personInstance.id
     }
 
     def displayGraph = {

@@ -349,7 +349,7 @@ class BootStrap {
             Recipe natilla = new Recipe(name: 'Natilla', rating: 3, description: 'Disfruta de la navidad',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Postres'),
-                    person: Person.get(3), photo: fileContent1, video: "https://www.youtube.com/embed/2ZB-6br3ZHA").save()
+                    person: Person.get(3), photo: fileContent1, video: "https://www.youtube.com/embed/2ZB-6br3ZHA", typical: true).save()
 
             new Instruction(description: 'Se pone a hervir un litro y medio de leche con la canela en astillas y la panela, sacandole la espuma que vaya formando.', recipe: natilla, paso: 1).save()
             new Instruction(description: 'Se aniade la fecula de maiz (que se ha disuelto previamente en medio litro de leche) y la mantequilla.', recipe: natilla, paso: 2).save()
@@ -380,7 +380,7 @@ class BootStrap {
                     'Consiste en un cuenco que contiene pescado, carne, vegetales, u otros ingredientes cocinados juntos y servidos sobre arroz.',
                     country: Country.findByName('Japon'), difficulty: Difficulty.findByLevel("Medio"),
                     duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Carnes'),
-                    person: Person.get(1), photo: fileContent3, video: "https://www.youtube.com/embed/i9v8FO9Q1QY").save()
+                    person: Person.get(1), photo: fileContent3, video: "https://www.youtube.com/embed/i9v8FO9Q1QY", typical: false).save()
 
             new Instruction(description: 'En una olla precalentamos el aceite. Cuando este caliente ponemos a sofreir la ralladura de limon y el jengibre para darle sabor al aceite.', recipe: donburi, paso: 1).save()
             new Instruction(description: 'Ponemos en la olla el arroz, mezclandolo con la ralladura de limon y el jengibre por 2 minutos, colocamos la sal y el agua. Dejamos hervir y tapamos por 12 minutos.', recipe: donburi, paso: 2).save()
@@ -413,7 +413,7 @@ class BootStrap {
             Recipe sorbete = new Recipe(name: 'Sorbete de Uva', rating: 4, description: 'Delicioso y facil de preparar...)',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Postres'),
-                    person: Person.get(2), photo: fileContent4).save()
+                    person: Person.get(2), photo: fileContent4, typical: false).save()
 
             new Instruction(description: 'Despulpar las uvas, licuando de forma intermitente.', recipe: sorbete, paso: 1).save()
             new Instruction(description: 'Colar, y asi sacar el zumo, reservar.', recipe: sorbete, paso: 2).save()
