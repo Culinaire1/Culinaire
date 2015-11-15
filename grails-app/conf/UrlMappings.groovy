@@ -25,6 +25,7 @@ class UrlMappings {
         "/resultado"(controller: 'web', action: 'busquedaf')
         "/tipicos"(controller: 'web', action: 'tipicos')
         "/editar_perfil"(controller: 'web', action: 'editarperfilpersona')
+        "/resultados"(controller: 'web',action:'busquedatipicos')
         "500"(view:'/error')
         "/conf"(controller: "conf", action: 'index')
     }

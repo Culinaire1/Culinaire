@@ -50,7 +50,15 @@ class WebController {
                 render(view: "Recetas", model: [categories: Category.list(), recipes: f4.listIterator()])
         }
     }
-
+    def busquedatipicos(){
+        def country=params.pais
+        def f
+        if (country!="Ninguna")
+            f=Recipe.list()findAll {it.country.name==country}
+        else
+            f=Recipe.list()
+        render(view: "Recetas", model: [categories: Category.list(), recipes: f.listIterator()])
+    }
     def categorias() {
         [categories:Category.list()]
     }
