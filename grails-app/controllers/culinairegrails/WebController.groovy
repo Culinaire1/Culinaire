@@ -44,10 +44,10 @@ class WebController {
             render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
         if (boton == "Aleatorio"){
             if(f4.size()> 1) {
-                render(view: "Recetas", model: [categories: Category.list(), recipes: resul])
+                render(view: "recetas", model: [categories: Category.list(), recipes: resul])
             }
             else
-                render(view: "Recetas", model: [categories: Category.list(), recipes: f4])
+                render(view: "recetas", model: [categories: Category.list(), recipes: f4])
         }
     }
     def busquedatipicos(){
@@ -58,7 +58,7 @@ class WebController {
         else
             f = Recipe.findAll{typical == true}
         println f
-        render(view: "Recetas", model: [categories: Category.list(), recipes: f])
+        render(view: "recetas", model: [categories: Category.list(), recipes: f])
     }
     def categorias() {
         [categories:Category.list()]
