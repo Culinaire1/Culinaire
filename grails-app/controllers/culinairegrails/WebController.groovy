@@ -9,55 +9,56 @@ class WebController {
          durations: Duration.list()]
     }
     def busquedaf() {
-        def ingrediente= params.ingredienteB
-        def categoria= params.categoriaB
-        def duracion=params.duracionB
-        def dificultad=params.dificultadB
-        def boton=params.bsubmit
+        def ingrediente = params.ingredienteB
+        def categoria = params.categoriaB
+        def duracion = params.duracionB
+        def dificultad = params.dificultadB
+        def boton = params.bsubmit
 
-        List<Recipe> f1,f2,f3,f4
-        def resul=[]
-        if(ingrediente=="Ninguna")
-            f1=Recipe.list()
+        List<Recipe> f1, f2, f3, f4
+        def resul = []
+        if(ingrediente == "Ninguna")
+            f1 = Recipe.list()
         else
-            f1 = Recipe.list().findAll{it.quantities.findAll{it.ingredient.name==ingrediente}}
+            f1 = Recipe.findAll{quantities.findAll{it.ingredient.name==ingrediente}}
 
         if (categoria=="Ninguna")
-            f2=f1
+            f2 = f1
         else
-            f2=f1.findAll {it.category.name==categoria}
+            f2 = f1.findAll{it.category.name == categoria}
 
         if (duracion=="Ninguna")
-            f3=f2
+            f3 = f2
         else
-            f3=f2.findAll {it.duration.duration==duracion}
+            f3 = f2.findAll{it.duration.duration == duracion}
 
-        if(dificultad=="Ninguna")
-            f4=f3
+        if(dificultad == "Ninguna")
+            f4 = f3
         else
-            f4=f3.findAll {it.difficulty.level==dificultad}
+            f4 = f3.findAll {it.difficulty.level == dificultad}
 
         int numeroAleatorio = (int) (Math.random() * (f4.size() - 1)+0.3)
         resul.add(f4[numeroAleatorio])
 
-        if(boton=="Buscar")
-            render(view: "Recetas",model:[categories: Category.list(), recipes: f4.listIterator()])
-        if (boton=="Aleatorio"){
+        if(boton == "Buscar")
+            render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
+        if (boton == "Aleatorio"){
             if(f4.size()> 1) {
-                render(view: "Recetas", model: [categories: Category.list(), recipes: resul.listIterator()])
+                render(view: "Recetas", model: [categories: Category.list(), recipes: resul])
             }
             else
-                render(view: "Recetas", model: [categories: Category.list(), recipes: f4.listIterator()])
+                render(view: "Recetas", model: [categories: Category.list(), recipes: f4])
         }
     }
     def busquedatipicos(){
-        def country=params.pais
+        def country2=params.pais
         def f
-        if (country!="Ninguna")
-            f=Recipe.list()findAll {it.country.name==country}
+        if (country2 != "Ninguna")
+            f = Recipe.findAll{country.name == country2 && typical == true}
         else
-            f=Recipe.list()
-        render(view: "Recetas", model: [categories: Category.list(), recipes: f.listIterator()])
+            f = Recipe.findAll{typical == true}
+        println f
+        render(view: "Recetas", model: [categories: Category.list(), recipes: f])
     }
     def categorias() {
         [categories:Category.list()]
@@ -80,6 +81,15 @@ class WebController {
     }
 
     def comentarios() {
+    }
+
+    def comentar(){
+        new Opinion(description: params.comentario).save()
+        redirect action:'index'
+    }
+    def contactar(){
+        new Contact(issue: params.asunto, description: params.descripcion).save()
+        redirect action:'index'
     }
     def faq() {
     }
@@ -125,5 +135,10 @@ class WebController {
 
     def tipicos(){
         [countries: Country.list()]
+    }
+
+    def favoritos(){}
+
+    def admin(){
     }
 }

@@ -410,7 +410,7 @@ class BootStrap {
 
             File fotosorbete = new File("web-app/images/sorbete.jpg");
             byte[] fileContent4 = Files.readAllBytes(fotosorbete.toPath())
-            Recipe sorbete = new Recipe(name: 'Sorbete de Uva', rating: 4, description: 'Delicioso y facil de preparar...)',
+            Recipe sorbete = new Recipe(name: 'Sorbete de Uva', rating: 4, description: 'Delicioso y facil de preparar...',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Postres'),
                     person: Person.get(2), photo: fileContent4, typical: false).save()

@@ -64,7 +64,11 @@
                 </li>
                 <li class="dropdown active"><a href="${createLink(action: 'categorias')}" class="dropdown-toggle">Categorías</a>
                 </li>
-                <li class="dropdown active"><a class="dropdown-toggle">Favoritos</a>
+                <li class="dropdown active">
+                    <g:if test="${session.tu == true}">
+                        <a class="dropdown-toggle">Favoritos</a>
+                    </g:if>
+                    <g:else><a href="${createLink(action: 'favoritos')}" class="dropdown-toggle">Favoritos</a></g:else>
                     <ul class="dropdown-menu">
                         <g:if test="${session.tu == true}">
                             <li><a href="${createLink(action: 'recetas_favoritas')}">Recetas</a></li>
@@ -76,7 +80,7 @@
                     <li class="dropdown active"><a class="dropdown-toggle">${session.user}</a>
                         <ul class="dropdown-menu">
                             <g:if test="${session.tu == 'admin'}">
-                                <li><a href="#">Admin</a></li>
+                                <li><a href="${createLink(action: 'admin')}">Admin</a></li>
                                 <li><g:link controller="user" action="logout">Salir</g:link></li>
                             </g:if>
                             <g:elseif test="${session.tu}">

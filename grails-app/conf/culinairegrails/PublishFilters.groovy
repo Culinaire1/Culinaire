@@ -76,5 +76,25 @@ class PublishFilters {
 
             }
         }
+        perfil(controller:'web', action:'admin') {
+            before = {
+                if(params.username != null ){
+                    if(session.tu == 'admin'){
+                        if(params.username == session.user)
+                            render(view: 'admin', model: [admin: Admin.findByUsername(session.user)])
+                    }
+                }
+                else if(session.tu == 'admin')
+                    render(view: 'admin', model:[admin:Admin.findByUsername(session.user)])
+                else
+                    redirect controller: 'web', action: 'index'
+            }
+            after = { Map model ->
+
+            }
+            afterView = { Exception e ->
+
+            }
+        }
     }
 }

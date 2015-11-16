@@ -46,7 +46,7 @@ class UserController {
                 return
             }else{
                 redirect controller: 'web', action: 'ingresar'
-                flash.message = "Contrase�a incorrecta"
+                flash.message = "Contraseña incorrecta"
                 return
             }
         }
@@ -56,12 +56,12 @@ class UserController {
             if(admin.password == params.passwordL){
                 session.user = admin.username
                 session.tu = 'admin'
-                redirect controller: 'web', action: 'index'
+                redirect controller: 'web', action: 'admin'
                 return
             }
             else{
                 redirect controller: 'web', action: 'ingresar'
-                flash.message = "Contrase�a incorrecta"
+                flash.message = "Contraseña incorrecta"
                 return
             }
         }
