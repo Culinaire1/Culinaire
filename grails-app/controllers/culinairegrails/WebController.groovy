@@ -41,7 +41,7 @@ class WebController {
         resul.add(f4[numeroAleatorio])
 
         if(boton == "Buscar")
-            render(view: "Recetas",model:[categories: Category.list(), recipes: f4])
+            render(view: "recetas",model:[categories: Category.list(), recipes: f4])
         if (boton == "Aleatorio"){
             if(f4.size()> 1) {
                 render(view: "recetas", model: [categories: Category.list(), recipes: resul])
