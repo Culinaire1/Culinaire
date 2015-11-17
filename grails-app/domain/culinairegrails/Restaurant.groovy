@@ -3,19 +3,17 @@ package culinairegrails
 class Restaurant extends User{
 
     String name
-    String city
-    String address
 
-    static hasMany = [plates: Plate]
+    static hasMany = [cities: City]
+    static hasOne = [menu: Menu]
 
-    static belongsTo = [country: Country]
+    static belongsTo = [country: Country, cuisine: Cuisine]
 
     static constraints = {
         name(nullable: false, blank: false)
-        city(nullable: false, blank: false)
-        address(nullable: false, blank: false)
         photo(nullable: false, minSize: 1)
         description(nullable: false)
+        menu(nullable: true)
     }
 
     String toString(){

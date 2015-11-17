@@ -1,17 +1,16 @@
 package culinairegrails
 
 class Plate{
-    String description
-    byte[] photo
 
-    static belongsTo = [category: Category, restaurant: Restaurant]
+    String name
+
+    static belongsTo = [menu: Menu]
 
     static constraints = {
-        description(nullable: false)
-        photo(nullable: false)
+        name(nullable: false, blank: false)
     }
 
     String toString(){
-        "${description}"
+        "${name}"
     }
 }

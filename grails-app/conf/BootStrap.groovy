@@ -1,11 +1,15 @@
 import culinairegrails.Admin
 import culinairegrails.Category
+import culinairegrails.City
 import culinairegrails.Country
+import culinairegrails.Cuisine
 import culinairegrails.Difficulty
+import culinairegrails.Direction
 import culinairegrails.Duration
 
 import culinairegrails.Ingredient
 import culinairegrails.Instruction
+import culinairegrails.Menu
 import culinairegrails.Person
 import culinairegrails.Plate
 import culinairegrails.Quantity
@@ -288,62 +292,66 @@ class BootStrap {
             new Country(name:'Zimbabwe').save()
         }
 
+        if(Cuisine.count() == 0){
+            new Cuisine(name: 'Cocina Italina').save()
+            new Cuisine(name: 'Cocina Colombiana').save()
+        }
+
         if(Restaurant.count() == 0){
             File fi = new File("web-app/images/f3.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
 
-            new Restaurant(name: "Culinaire's", city: "Bogota", address: "Cll 52 #45-16", username: "culinaire", password: "Test1234",
+            Restaurant tmp = new Restaurant(name: "Culinaire's", username: "culinaire", password: "Test1234",
                     email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'),
-                    photo: fileContent).save()
+                    photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana')).save()
+
+            City city = new City(country: Country.findByName('Colombia'), name: 'Bogotá').save()
+            new Direction(address: 'Cll 52 # 45-16', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
+
             File fi2 = new File("web-app/images/f4.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
 
-            new Restaurant(name: "Wok", city: "Bogota", address: "Cll 96 #28-67", username: "wokfood", password: "Test1234",
+            tmp = new Restaurant(name: "Wok", username: "wokfood", password: "Test1234",
                     email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'),
-                    photo: fileContent2).save()
+                    photo: fileContent2, cuisine: Cuisine.findByName('Cocina Colombiana')).save()
+
+            new Direction(address: 'Cll 52 # 45-16', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
+
             File fi3 = new File("web-app/images/f5.jpg");
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
 
-            new Restaurant(name: "Archie's", city: "Bogota", address: "Cll 123 #45-67", username: "archies", password: "Test1234",
+            tmp = new Restaurant(name: "Archie's", username: "archies", password: "Test1234",
                     email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'),
-                    photo: fileContent3).save()
+                    photo: fileContent3, cuisine: Cuisine.findByName('Cocina Colombiana')).save()
+
+            new Direction(address: 'Cll 52 # 45-16', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
         }
 
         if( Plate.count() == 0){
-            new Plate(description: 'Ravioli de la casa', photo: [0,0,0,0], category: Category.findByName('Pastas'),
-                    restaurant: Restaurant.findByName("Culinaire's")).save()
-            new Plate(description: 'Pizza casera', photo: [0,0,0,0], category: Category.findByName('Pastas'),
-                    restaurant: Restaurant.findByName("Archie's")).save()
+            Menu tmp = Restaurant.findByName("Culinaire's").menu
+            new Plate(name: 'Ravioli de la casa', menu: tmp).save()
+
+            tmp = Restaurant.findByName("Archie's").menu
+            new Plate(name: 'Pizza casera', menu: tmp).save()
+
+            tmp = Restaurant.findByName("Wok").menu
+            new Plate(name: 'Ropa vieja', menu: tmp).save()
         }
 
         if(Recipe.count() == 0){
-
-            /*File fi = new File("web-app/images/rav.jpg");
-            byte[] fileContent = Files.readAllBytes(fi.toPath())
-            Recipe recipe = new Recipe(name: 'Ravioli con pollo', rating: 2, description: 'Muy rico y rapido',
-                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
-                    duration: Duration.findByDuration("Menos de 15 minutos"), category: Category.findByName('Pastas'),
-                    person: Person.get(1), photo: fileContent).save()
-
-            new Instruction(description: 'Calentar 15 minutos la pasta', recipe: recipe, paso: 1).save()
-
-            File fi2 = new File("web-app/images/pi.jpg");
-            byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
-            Recipe recipe2 = new Recipe(name: 'Pizza de queso', rating: 4, description: 'Exquisito!',
-                    country: Country.findByName('Italia'), difficulty: Difficulty.findByLevel("Medio"),
-                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Aperitivos'),
-                    person: Person.get(3), photo: fileContent2 ).save()
-
-            Ingredient ingredient = new Ingredient(name: 'Queso').save()
-            Ingredient ingredient1 = new Ingredient(name: 'Piña').save()
-            Ingredient ingredient2 = new Ingredient(name: 'Pollo').save()
-            new Instruction(description: 'Hornear a fuego medio', recipe: recipe2, paso: 1).save()
-
-            new Quantity(quantity: '10 gramos', recipe: recipe2, ingredient: ingredient).save()
-            new Quantity(quantity: '1/2 Lb', recipe: recipe, ingredient: ingredient1).save()
-            new Quantity(quantity: "2 Lb", recipe: recipe, ingredient: ingredient2).save()*/
-
-            //--------------------------------------------
             File fotoNatilla = new File("web-app/images/natilla.jpg");
             byte[] fileContent1 = Files.readAllBytes(fotoNatilla.toPath())
             Recipe natilla = new Recipe(name: 'Natilla', rating: 3, description: 'Disfruta de la navidad',
@@ -406,8 +414,8 @@ class BootStrap {
             new Quantity(quantity: "70 onzas", recipe: donburi, ingredient: salsa).save()
             new Quantity(quantity: "250 gramos", recipe: donburi, ingredient: arroz).save()
             new Quantity(quantity: "3 onzas", recipe: donburi, ingredient: aceite).save()
-            //---------------------------------------------------------------------------------------------------------
 
+            //---------------------------------------------------------------------------------------------------------
             File fotosorbete = new File("web-app/images/sorbete.jpg");
             byte[] fileContent4 = Files.readAllBytes(fotosorbete.toPath())
             Recipe sorbete = new Recipe(name: 'Sorbete de Uva', rating: 4, description: 'Delicioso y facil de preparar...',
