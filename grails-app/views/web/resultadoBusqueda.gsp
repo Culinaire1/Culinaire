@@ -11,12 +11,13 @@
     <meta name="layout" content="base"/>
     <title>Barra Busqueda</title>
     <style>
-        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-            background-color: #333387;
-        }
-        a{
-            color: #333387;
-        }
+    .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+        background-color: #333387;
+    }
+    a{
+        color: #333387;
+        font-size: 24px;
+    }
     </style>
 </head>
 <body>
@@ -25,9 +26,9 @@
         <div id="int" class="row">
 
             <div class="col-md-9 col-md-offset-3 clearfix">
-                <h3>
+                <h2>
                     Resultados de la busqueda:  [${parametro}]
-                </h3>
+                </h2>
             </div>
 
             <!--
@@ -97,12 +98,35 @@
                                     </div>
                                     <div id="collapsePersona${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPersona${i}">
                                         <div class="panel-body">
-                                            <h5><b>Usuario:</b> ${persona.username}</h5>
-                                            <h5><b>Puntuación</b> ${persona.rating}</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
+
+                                            <div class="row">
+
+                                                <div class="col-md-3 col-lg-3 " align="center">
+                                                    <g:if test="${persona.photo != null && persona.photo.size() > 2}">
+                                                        <img alt="User Pic" src="${createLink(controller:'person', action:'displayGraph', params: [name:persona.name])}" class="img-rounded img-responsive">
+                                                    </g:if>
+                                                    <g:else>
+                                                        <g:img dir="images" file="chefPlaceholder.png" class="img-responsive img-rounded"/>
+                                                    </g:else>
+                                                </div>
+                                                <div class=" col-md-9 col-lg-9 ">
+                                                    <table class="table table-user-information">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Usuario:</td>
+                                                                <td>${persona.username}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Puntuación:</td>
+                                                                <td>${persona.rating}</td>
+                                                            </tr>
+                                                            <tr><td></td><td></td></tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <p class="firma"><a class="firma" href="${createLink(controller:'web', action:'perfil', params: [username: persona.username])}">ver perfil</a></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -129,15 +153,32 @@
                                     </div>
                                     <div id="collapseRestaurante${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingRestaurante${i}">
                                         <div class="panel-body">
-                                            <h5><b>Pais:</b> ${restaurante.country}</h5>
-                                            <h5><b>Ciudad:</b> ${restaurante.city}</h5>
-                                            <h5><b>Dirección:</b> ${restaurante.address}</h5>
-                                            <h5><b>Descripción:</b> ${restaurante.description}</h5>
-                                            <h5><b>Puntuación</b> ${restaurante.rating}</b></h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
+
+                                            <div class="row">
+
+                                                <div class="col-md-3 col-lg-3 " align="center">
+
+                                                    <g:img dir="images" file="chefPlaceholder.png" class="img-responsive img-rounded"/>
+
+                                                </div>
+                                                <div class=" col-md-9 col-lg-9 ">
+                                                    <table class="table table-user-information">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>Descripción:</td>
+                                                            <td>${restaurante.description}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Puntuación:</td>
+                                                            <td>${restaurante.rating}</td>
+                                                        </tr>
+                                                        <tr><td></td><td></td></tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <p class="firma"><a class="firma" href="#">ver mas</a></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -164,14 +205,38 @@
                                     </div>
                                     <div id="collapseReceta${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReceta${i}">
                                         <div class="panel-body">
-                                            <h5><b>Pais:</b> ${receta.country}</h5>
-                                            <h5><b>Descripción:</b> ${receta.description}</h5>
-                                            <h5><b>Intrucciones:</b> ${receta.instructions}</h5>
-                                            <h5><b>Puntuación</b> ${receta.rating}</b></h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
-                                            <h5>Lorem ipsum dolor sit amet consectetur.</h5>
+                                            <div class="row">
+
+                                                <div class="col-md-3 col-lg-3 " align="center">
+                                                    <g:if test="${receta.photo != null && receta.photo.size() > 2}">
+                                                        <img alt="User Pic" src="${createLink(controller:'recipe', action:'displayGraph', params: [name:receta.name])}" class="img-rounded img-responsive">
+                                                    </g:if>
+                                                    <g:else>
+                                                        <g:img dir="images" file="chefPlaceholder.png" class="img-responsive img-rounded"/>
+                                                    </g:else>
+                                                </div>
+                                                <div class=" col-md-9 col-lg-9 ">
+                                                    <table class="table table-user-information">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>Pais:</td>
+                                                            <td>${receta.country}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Descripción:</td>
+                                                            <td>${receta.description}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Puntuación:</td>
+                                                            <td>${receta.rating}</td>
+                                                        </tr>
+                                                        <tr><td></td><td></td></tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <p class="firma"><a class="firma" href="${createLink(controller:'web', action:'abrirReceta', params: [name: receta.name])}">ver mas</a></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
