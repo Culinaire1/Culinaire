@@ -1,6 +1,8 @@
 package culinairegrails
 
+
 class WebController {
+    def elasticSearchService
     def index() {
 
     }
@@ -114,11 +116,30 @@ class WebController {
 
     def barraBusqueda(){
 
-        def criterio= '%'+params.srch_term+'%'
+        def parametros= params.srch_term.toLowerCase().split(" ")
+        def personas=[] as Set
+        def restaurantes=[] as Set
+        def recetas=[] as Set
+        def criterio=""
+        def aux
 
-        def personas= Person.findAllByNameLike(criterio)
-        def restaurantes= Restaurant.findAllByNameLike(criterio)
-        def recetas= Recipe.findAllByNameLike(criterio)
+        parametros.each {
+            criterio= '%'+it+'%'
+            aux= Person.where {
+                (lower(name) ==~ criterio || lower(lastname)==~ criterio || lower(username)==~ criterio)
+            }
+            personas += aux
+
+            aux= Restaurant.where {
+                (lower(name) ==~ criterio || lower(description)==~ criterio || lower(username)==~ criterio)
+            }
+            restaurantes +=aux
+
+            aux= Recipe.where {
+                (lower(name) ==~ criterio || lower(description)==~ criterio)
+            }
+            recetas +=aux
+        }
 
         render(view: 'resultadoBusqueda',  model:[personas:personas, restaurantes:restaurantes, recetas:recetas, categories: Category.list(), parametro: params.srch_term])
     }

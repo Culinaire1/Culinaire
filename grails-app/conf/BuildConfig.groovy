@@ -44,6 +44,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+
     }
 
     dependencies {
@@ -51,6 +52,8 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+
+
     }
 
     plugins {
@@ -60,6 +63,7 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
+
         // asset-pipeline 2.0+ requires Java 7, use version 1.9.x with Java 6
         compile ":asset-pipeline:2.2.3"
 
@@ -68,6 +72,8 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
         runtime ':twitter-bootstrap:3.3.5'
+        //runtime ":elasticsearch:0.0.4.6"
+
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
@@ -75,4 +81,5 @@ grails.project.dependency.resolution = {
         //compile ":coffee-asset-pipeline:1.8.0"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
     }
+
 }

@@ -26,7 +26,7 @@
 
             <div class="col-md-9 col-md-offset-3 clearfix">
                 <h3>
-                    Resultados de la busqueda:  "${parametro}"
+                    Resultados de la busqueda:  [${parametro}]
                 </h3>
             </div>
 
@@ -88,18 +88,16 @@
                         <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
                             <g:each status="i" var="persona" in="${personas}">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="heading${i+100}">
+                                    <div class="panel-heading" role="tab" id="headingPersona${i}">
                                         <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse${i+100}" aria-expanded="false" aria-controls="collapseOne">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapsePersona${i}" aria-expanded="false" aria-controls="collapseOne">
                                                 <b>${persona.toString()}</b>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse${i+100}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading${i+100}">
+                                    <div id="collapsePersona${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPersona${i}">
                                         <div class="panel-body">
                                             <h5><b>Usuario:</b> ${persona.username}</h5>
-                                            <h5><b>Descripción:</b> ${persona.description}</h5>
-                                            <h5><b>Edad:</b> ${persona.age}</h5>
                                             <h5><b>Puntuación</b> ${persona.rating}</h5>
                                             <h5>Lorem ipsum dolor sit amet consectetur.</h5>
                                             <h5>Lorem ipsum dolor sit amet consectetur.</h5>
@@ -122,14 +120,14 @@
                         <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
                             <g:each status="i" var="restaurante" in="${restaurantes}">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="heading${i+200}">
+                                    <div class="panel-heading" role="tab" id="headingRestaurante${i}">
                                         <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse${i+200}" aria-expanded="false" aria-controls="collapseOne">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseRestaurante${i}" aria-expanded="false" aria-controls="collapseOne">
                                                 <b>${restaurante.name}</b>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse${i+200}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading${i+200}">
+                                    <div id="collapseRestaurante${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingRestaurante${i}">
                                         <div class="panel-body">
                                             <h5><b>Pais:</b> ${restaurante.country}</h5>
                                             <h5><b>Ciudad:</b> ${restaurante.city}</h5>
@@ -157,14 +155,14 @@
                         <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
                             <g:each status="i" var="receta" in="${recetas}">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="heading${i+300}">
+                                    <div class="panel-heading" role="tab" id="headingReceta${i}">
                                         <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapse${i+300}" aria-expanded="false" aria-controls="collapseOne">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapseReceta${i}" aria-expanded="false" aria-controls="collapseOne">
                                                 <b>${receta.name}</b>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse${i+300}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading${i+300}">
+                                    <div id="collapseReceta${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReceta${i}">
                                         <div class="panel-body">
                                             <h5><b>Pais:</b> ${receta.country}</h5>
                                             <h5><b>Descripción:</b> ${receta.description}</h5>
