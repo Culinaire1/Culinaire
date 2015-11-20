@@ -183,6 +183,8 @@
 
                             <div id="cities" class="direccion">
 
+                                <div id="cityDiv1">
+
                             <div class="input-group">
                                 <div class="col-sm-5">
                                     <span class="input-group-addon">Ciudad*</span>
@@ -207,8 +209,9 @@
                                 </div>
                             </div>
                             </div>
+                            </div>
 
-                            <div class="row addDir" align="right">
+                            <div class="row addDir" align="right" id="delDiv">
                                 <button type="button" class="btn btn-primary btn-xs botones b2 publicarB" id="add_city" value="2">
                                     Agregar Ciudad</button>
                                 <input value="1" id="citiesNum" name="citiesNum" hidden>

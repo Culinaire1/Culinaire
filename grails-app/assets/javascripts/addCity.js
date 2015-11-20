@@ -16,11 +16,14 @@ function init(){
 
 function addCityToDOM() {
 
+    var div1 = document.createElement("div");
+    div1.setAttribute("id", "cityDiv"+ button.value);
+
     var cityDiv = document.createElement("div");
     cityDiv.setAttribute("class", "input-group");
     var br = document.createElement("br");
     cityDiv.appendChild(br);
-    cities.appendChild(cityDiv);
+    div1.appendChild(cityDiv);
 
     var colDiv = document.createElement("div");
     colDiv.setAttribute("class", "col-sm-5");
@@ -46,7 +49,9 @@ function addCityToDOM() {
 
     var dirDiv = document.createElement("div");
     dirDiv.setAttribute("class", "input-group");
-    cities.appendChild(dirDiv);
+    div1.appendChild(dirDiv);
+
+    cities.appendChild(div1);
 
     var dirColDiv = document.createElement("div");
     dirColDiv.setAttribute("class", "col-sm-5");
@@ -97,6 +102,18 @@ function addCityToDOM() {
     button.value = aux + 1;
 
     addDir.onclick = addDirToDom;
+
+    if(aux == 2){
+        var p = document.getElementById("delDiv");
+        var button2 = document.createElement("button");
+        button2.setAttribute("class", "btn btn-primary btn-xs botones b2 publicarB");
+        button2.setAttribute("type", "button");
+        button2.setAttribute("id", "delcity");
+        button2.setAttribute("name", "delcity");
+        button2.textContent = 'Quitar';
+        button2.onclick = removeCityFromDom;
+        p.appendChild(button2);
+    }
 }
 
 function addDirToDom(e){
@@ -148,4 +165,23 @@ function removeDirFromDom(e){
     }
 
     num.value = aux - 1;
+}
+
+function removeCityFromDom(){
+    var key = parseInt(citiesNum.value);
+
+    var div = document.getElementById("cityDiv"+ key);
+
+    cities.removeChild(div);
+
+    var aux = parseInt(key);
+
+    if(aux == 2){
+        var p = document.getElementById("delDiv");
+        var button2 = document.getElementById("delcity");
+        p.removeChild(button2)
+    }
+
+    citiesNum.value = aux - 1;
+    button.value = aux;
 }
