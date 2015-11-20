@@ -226,3 +226,11 @@ display: block;
 .titulo {
     font-weight: bold;
 }
+
+.direccion {
+    margin-top: 2%;
+}
+
+.addDir {
+    padding-bottom: 2%;
+}

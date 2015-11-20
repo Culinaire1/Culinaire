@@ -3,6 +3,7 @@
 <head>
     <meta name="layout" content="base"/>
     <title>Ingresar</title>
+    <asset:javascript src="addCity.js"/>
 </head>
 <body>
 <div class="container">
@@ -179,25 +180,41 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div id="cities" class="direccion">
+
                             <div class="input-group">
                                 <div class="col-sm-5">
                                     <span class="input-group-addon">Ciudad*</span>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" id="city"
-                                    required value name="city">
+                                    <input type="text" class="form-control campo" aria-describedby="basic-addon1"
+                                           name="city1" required value id="city1">
                                 </div>
                             </div>
                             <div class="input-group">
                                 <div class="col-sm-5">
-                                    <span class="input-group-addon">Dirección*</span>
+                                    <span class="input-group-addon">Direcciones*</span>
                                 </div>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="address"
-                                    required value id="address">
+                                <div class="col-sm-7 addDir" id="directions1">
+                                    <input type="text" class="form-control campo" aria-describedby="basic-addon1"
+                                    required value id="city1dir1" name="city1dir1">
+                                </div>
+                                <div class="row addDir" align="right">
+                                    <button type="button" class="btn btn-primary btn-xs botones b2 publicarB" id="add_dir1" value="1">
+                                        Agregar Direccion</button>
+                                    <input value="1" id="cityDirNum1" name="cityDirNum1" hidden>
                                 </div>
                             </div>
-                            <div class="input-group">
+                            </div>
+
+                            <div class="row addDir" align="right">
+                                <button type="button" class="btn btn-primary btn-xs botones b2 publicarB" id="add_city" value="2">
+                                    Agregar Ciudad</button>
+                                <input value="1" id="citiesNum" name="citiesNum" hidden>
+                            </div>
+
+                            <div class="input-group direccion">
                                 <div class="col-sm-5">
                                     <label for="description" class="input-group-addon">Descripción*</label>
                                 </div>
