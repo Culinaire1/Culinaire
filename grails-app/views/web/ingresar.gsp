@@ -180,11 +180,21 @@
                                     </select>
                                 </div>
                             </div>
-
+                            <div class="input-group">
+                                <div class="col-sm-5">
+                                    <label for="cuisine" class="input-group-addon">Cocina*</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <select class="form-control campo" id="cuisine" name="cuisine" required>
+                                        <g:each var="cuisine" in="${cuisines}">
+                                            <option>${cuisine.name}</option>
+                                        </g:each>
+                                    </select>
+                                </div>
+                            </div>
                             <div id="cities" class="direccion">
 
                                 <div id="cityDiv1">
-
                             <div class="input-group">
                                 <div class="col-sm-5">
                                     <span class="input-group-addon">Ciudad*</span>
