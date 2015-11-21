@@ -4,20 +4,10 @@ class RestaurantController {
 
     static scaffold = Restaurant
 
-    def save(Restaurant restaurant) {
-        if (restaurant == null) {
-            notFound()
-            return
-        }
-
-        restaurant.name = params.nameR
-        restaurant.photo = params.photoR.getBytes()
-        restaurant.username = params.usernameR
-        restaurant.password = params.passwordR
-        restaurant.email = params.emailR
-        restaurant.website = params.websiteR
-        restaurant.rating = 1
-        restaurant.country = Country.findByName((String) params.countryR)
+    def save() {
+        Restaurant restaurant = new Restaurant(name: params.nameR, username: params.usernameR, password: params.passwordR,
+                email: params.emailR, photo: params.photoR.getBytes(), website: params.websiteR, country: Country.findByName(params.countryR),
+                cuisine: Cuisine.findByName(params.cuisine), description: params.description)
 
         if (!restaurant.validate()) {
             TreeSet<String> tree = new TreeSet<String>()
@@ -28,25 +18,23 @@ class RestaurantController {
             flash.error = tree
             return
         }
-
         restaurant.save flush: true
 
-        redirect action: 'login', id: restaurant.id
-    }
+        for(int i = 1; i <= params.citiesNum.toInteger(); i++ ){
+            String a = params.getProperty("city"+i);
+            City city = City.findByName(a);
+            if (city == null){
+                city = new City(country: Country.findByName(params.countryR), name: a).save flush: true
+            }
+            restaurant.addToCities(city)
+            restaurant.save flush: true
 
-    def update(Restaurant restaurantInstance) {
-        if (restaurantInstance == null) {
-            notFound()
-            return
+            String b = params.getProperty("cityDirNum"+i)
+            int n = b.toInteger();
+            for(int j = 1; j <= n; j++){
+                new Direction(address: params.getProperty("city"+i+"dir"+j), city: city, restaurant: restaurant).save flush: true
+            }
         }
-
-        if (restaurantInstance.hasErrors()) {
-            respond restaurantInstance.errors, view: 'edit'
-            return
-        }
-
-        restaurantInstance.save flush: true
-
         redirect action: 'login', id: restaurant.id
     }
 

@@ -102,7 +102,7 @@ class WebController {
     def acerca() {
     }
     def ingresar() {
-        [countries:Country.list()]
+        [countries:Country.list(), cuisines:Cuisine.list()]
     }
     def publicar() {
         [categories:Category.list(), countries:Country.list(), difficulties: Difficulty.list(), durations: Duration.list()]
