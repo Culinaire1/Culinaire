@@ -90,7 +90,7 @@
                             </g:elseif>
                             <g:else>
                                 <li><a href="${createLink(action:'abrirRestaurante', params: [user: session.user])}">Perfil</a></li>
-                                <li><a href="#">Carta</a></li>
+                                <li><a href="${createLink(action:'carta')}">Carta</a></li>
                                 <li><g:link controller="user" action="logout">Salir</g:link></li>
                             </g:else>
                         </ul>

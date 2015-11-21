@@ -74,6 +74,11 @@ class WebController {
         render(view:"editarperfil", model: [person:person])
     }
 
+    def carta(){
+        Restaurant restaurant = Restaurant.findByUsername(session.user)
+        [restaurant: restaurant]
+    }
+
     def usuarios(){
         [person: Person.findByUsername(session.user)]
     }

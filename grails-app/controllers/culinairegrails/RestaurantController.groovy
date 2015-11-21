@@ -47,6 +47,22 @@ class RestaurantController {
         redirect(controller:'web', action:'abrirRestaurante', params: [user: restaurant.username])
     }
 
+    def saveMenu(){
+        Restaurant restaurant = Restaurant.findByUsername(session.user)
+        int n = params.platesNum.toInteger()
+        def plates = restaurant.menu.plates
+        for(int i = 1; i <= n; i++){
+            if( (i-1) < plates.size()){
+                Plate plate = plates.getAt(i-1)
+                plate.name = params.getProperty("plate"+i)
+                plate.save flush: true
+            }
+            else
+                new Plate(name: params.getProperty("plate"+i), menu: restaurant.menu).save flush: true
+        }
+        redirect(controller:'web', action:'abrirRestaurante', params: [user: restaurant.username])
+    }
+
     def displayGraph = {
         def resPhoto = Restaurant.findByName((String) params.name)
         if (!resPhoto || !resPhoto.photo) {

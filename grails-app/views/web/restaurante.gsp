@@ -46,8 +46,16 @@
                         <p class="cuerpo" style="padding-bottom: 0">${ciudad}</p>
                         <ul class="nav nav-tabs">
                             <g:each var="direccion" in="${ciudad.directions.findAll{it.restaurant == restaurante}}" status="counter">
-                                <g:if test="${counter == 0}"><li class="active"><a data-toggle="tab" href="#${ciudad}${counter+1}">${direccion}</a></li></g:if>
-                                <g:else><li><a data-toggle="tab" href="#${ciudad}${counter+1}">${direccion}</a></li></g:else>
+                                <g:if test="${counter == 0}">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#${ciudad}${counter+1}">${direccion}</a>
+                                    </li>
+                                </g:if>
+                                <g:else>
+                                    <li>
+                                        <a data-toggle="tab" href="#${ciudad}${counter+1}">${direccion}</a>
+                                    </li>
+                                </g:else>
                             </g:each>
                         </ul>
                     </g:each>
@@ -55,18 +63,22 @@
                     <g:each var="ciudad" in="${restaurante.cities}">
                         <div class="tab-content">
                         <g:each var="direccion" in="${ciudad.directions.findAll{it.restaurant == restaurante}}" status="counter">
-                            <g:if test="${counter == 0}"><div id="${ciudad}${counter+1}" class="tab-pane fade in active"></g:if>
-                            <g:else><div id="${ciudad}${counter+1}" class="tab-pane fade"></g:else>
+                            <g:if test="${counter == 0}">
+                                <div id="${ciudad}${counter+1}" class="tab-pane fade in active">
+
+                            </g:if>
+                            <g:else>
+                                <div id="${ciudad}${counter+1}" class="tab-pane fade">
+                            </g:else>
                             <div style="max-height:400px;width:100%;max-width:100%;list-style:none; transition: none;overflow:hidden;">
                                 <div id="gmap-display" style="height:100%; width:100%;max-width:100%;">
                                     <iframe style="height:100%;width:100%;border:0;" frameborder="0"
                                             src="https://www.google.com/maps/embed/v1/place?q=${direccion.address.split(" ").join("+").replace("#", "%23")},
                                                 +${ciudad},+${restaurante.country}&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU">
-
                                     </iframe>
                                 </div>
                                 <a class="google-map-code" href="https://www.treat-lice.com" id="grab-map-data">treatlice</a>
-                                <style>#gmap-display .map-generator{max-width: 100%; max-height: 100%; background: none;</style>
+                                <style>#gmap-display .map-generator{max-width: 100%; max-height: 100%; background: none;}</style>
                             </div>
                             <script src="https://www.treat-lice.com/google-maps-authorization.js?id=49ffb604-6213-883d-5331-4a8993c1576f&c=google-map-code&u=1448065595"
                                     defer="defer" async="async">
