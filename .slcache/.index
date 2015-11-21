@@ -3873,3 +3873,5 @@ n:2186:org/codehaus/groovy/grails/commons/GrailsApplication$addArtefact
 n:6916:org/codehaus/groovy/grails/web/mapping/UrlMappingsHolderFactoryBean
 n:414:org/springframework/beans/factory/FactoryBean
 n:397:org/codehaus/groovy/grails/web/mapping/UrlMappings
+n:1887:org/codehaus/groovy/grails/cli/interactive/InteractiveMode$getCurrent
+n:1013:org/apache/tools/zip/ZipFile$1

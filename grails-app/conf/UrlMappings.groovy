@@ -19,6 +19,7 @@ class UrlMappings {
         "/ingresar"(controller: 'web', action: 'ingresar')
         "/publicar"(controller: 'web', action: 'publicar')
         "/restaurantes"(controller: 'web', action: 'restaurantes')
+        "/restaurante"(controller: 'web', action: 'abrirRestaurante')
         "/favoritos"(controller: 'web', action: 'favoritos')
         "/recetas"(controller: 'web', action: 'recetas')
         "/receta"(controller: 'web', action: 'abrirReceta')

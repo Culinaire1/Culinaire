@@ -9,4 +9,8 @@ class Direction {
     static constraints = {
         address(nullable: false, blank: false)
     }
+
+    String toString(){
+        "${address}"
+    }
 }

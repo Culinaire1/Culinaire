@@ -9,7 +9,7 @@
     <div class="fill">
         <br>
         <p class="tit" id="" style="font-size: 40px">BUSCADOR</p>
-        <g:form controller="web" action="busquedaf" method="post" enctype="multipart/form-data">
+        <g:form controller="web" action="busquedaf" method="post" enctype="multipart/form-data" style="margin-bottom: 0">
 
         <div class="row">
             <div class="center-block ing" style="width:80%">
@@ -108,15 +108,15 @@
                 </div>
                 <div class="input-group">
                     <div class="col-sm-3">
-                        <span class="input-group-addon" id="categoria2">Categoría:</span>
+                        <span class="input-group-addon" id="categoria2">Cocina:</span>
                     </div>
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel3"></label>
                         <select class="form-control campo" id="sel3">
                             <option>Ninguna</option>
-                            <g:each var="category" in="${categories}">
-                                <option>${category.name}</option>
+                            <g:each var="cuisine" in="${cuisines}">
+                                <option>${cuisine.name}</option>
                             </g:each>
                         </select>
                     </div>
@@ -128,6 +128,7 @@
                         <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%">Buscar</button>
                     </div>
                 </div>
+                <br>
                 <br>
             </div>
         </div>

@@ -8,7 +8,7 @@ class WebController {
     }
     def busqueda() {
         [categories:Category.list(), countries:Country.list(), difficulties:Difficulty.list(), ingredients:Ingredient.list(),
-         durations: Duration.list()]
+         durations: Duration.list(), cuisines: Cuisine.list()]
     }
     def busquedaf() {
         def ingrediente = params.ingredienteB
@@ -152,6 +152,10 @@ class WebController {
 
     def abrirReceta(){
         render(view: 'receta',  model:[recipe: Recipe.findByName(params.name)])
+    }
+
+    def abrirRestaurante(){
+        render(view: 'restaurante',  model:[restaurante: Restaurant.findByName(params.name)])
     }
 
     def tipicos(){

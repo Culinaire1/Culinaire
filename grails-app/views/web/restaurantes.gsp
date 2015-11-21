@@ -17,70 +17,42 @@
                             <figure>
                                 <img class="img-responsive img-thumbnail" src="${createLink(controller:'restaurant', action:'displayGraph', params: [name:restaurant.name])}" />
                             </figure>
+                            <p class="texto cuerpo"><span class="titulo">Tipo: </span>${restaurant.cuisine}<br> </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="tit" style="font-size: 40px">${restaurant.name}</p>
+                            <p class="tit" style="font-size: 40px">
+                                <a href="${createLink(controller:'web', action:'abrirRestaurante', params: [name: restaurant.name])}">${restaurant.name}</a>
+                            </p>
                             <p class="firma">${restaurant.country}</p>
                             <div class="texto">
                                 <div class="cuerpo">
-                                    <p id="titulo">Dirección:</p>
-                                    <p>${restaurant.city} - ${restaurant.address}<br> </p>
-                                    <p id="titulo">Descripción:</p>
-                                    <p>${restaurant.description}<br> </p>
+                                    <p style="padding-top: 0; margin-top: 0">Direcciones:</p>
+                                    <div class="container">
+                                    <g:each var="ciudad" in="${restaurant.cities}">
+                                        <p>${ciudad}</p>
+                                        <g:each var="direccion" in="${ciudad.directions.findAll{it.restaurant == restaurant}}">
+                                            <p>- ${direccion}</p>
+                                        </g:each>
+                                    </g:each>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="carousel-caption" style="font-family: 'Liberator', sans-serif;font-size: 20px;color: #03034c; margin-bottom: 5px; text-align: left">
-                                <a href="#">${restaurant.website}</a>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p class="firma"><a href="${restaurant.website}">${restaurant.website}</a></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller:'web', action:'abrirRestaurante',
+                                    params: [name: restaurant.name])}#comentarios">Comentarios</a>
+                        </div>
+                        <div class="col-sm-4">
                             <p class="firma">Popularidad: ${restaurant.rating}</p>
                         </div>
                     </div>
-                    <hr style="width: 100%; color: #111160; height: 10px; background-color:#111160;" />
+                    <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                 </g:each>
-                <!--
-                <div class="row">
-                    <div class="col-sm-6">
-                        <!g:img dir="images" file="f4.jpg" class="img-responsive img-thumbnail"/>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="tit" style="font-size: 40px">WOK</p>
-                        <p class="firma">Colombia</p>
-                        <div class="texto">
-                            <div class="cuerpo">
-                                <p id="titulo">Dirección:</p>
-                                <p>Bogotá - Calle 123 #20-30<br> </p>
-                                <p id="titulo">Descripción:</p>
-                                <p>Somos un restaurante blah blah...<br> </p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption" style="font-family: 'Liberator', sans-serif;font-size: 20px;color: #03034c; margin-bottom: 5px; text-align: left">
-                            <a href="#">www.wok.com.co</a>
-                        </div>
-                        <p class="firma">Popularidad: ♦♦♦♦</p>
-                    </div>
-                </div>
-                <hr style="width: 100%; color: #111160; height: 10px; background-color:#111160;" />
-                <div class="row">
-                    <div class="col-sm-6">
-                        <!g:img dir="images" file="f5.jpg" class="img-responsive img-thumbnail"/>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="tit" id="" style="font-size: 40px">Archies Trattoria</p>
-                        <p class="firma">Colombia</p>
-                        <div class="texto">
-                            <div class="cuerpo">
-                                <p id="titulo">Dirección:</p>
-                                <p>Bogotá - Calle 10 #20-30<br> </p>
-                                <p id="titulo">Descripción:</p>
-                                <p>Comida italiana<br> </p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption" style="font-family: 'Liberator', sans-serif;font-size: 20px;color: #03034c; margin-bottom: 5px; text-align: left">
-                            <a href="#">www.archies.co</a>
-                        </div>
-                        <p class="firma">Popularidad: ♦♦♦♦♦</p>
-                    </div>
-                </div>-->
             </div>
         </div>
         <br>
