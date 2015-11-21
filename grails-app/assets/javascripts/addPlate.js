@@ -7,6 +7,11 @@ var form;
 function init() {
     button = document.getElementById("add");
     platesNum = document.getElementById("platesNum");
+    var delButton;
+    for(i = 1; i <= parseInt(platesNum.value); i++){
+        delButton = document.getElementById("del"+i);
+        delButton.onclick = delPlateFromDom;
+    }
     form = document.getElementById("form");
     button.onclick = addPlateToDom;
 }
@@ -30,7 +35,7 @@ function addPlateToDom(){
     colDiv.appendChild(nameSpan);
 
     var plateTextDiv = document.createElement("div");
-    plateTextDiv.setAttribute("class", "col-sm-7");
+    plateTextDiv.setAttribute("class", "col-sm-7 addDir");
     nameDiv.appendChild(plateTextDiv);
 
     var plateInput = document.createElement("input");
@@ -42,7 +47,27 @@ function addPlateToDom(){
     plateInput.setAttribute("required", "true");
     plateTextDiv.appendChild(plateInput);
 
+    var del = document.createElement("div");
+    del.setAttribute("class", "row addDir");
+    del.setAttribute("align", "right");
+    nameDiv.appendChild(del);
+
+    var delbutton = document.createElement("button");
+    delbutton.setAttribute("type", "button");
+    delbutton.setAttribute("class", "btn btn-primary btn-xs botones b2 publicarB");
+    delbutton.setAttribute("id", "del"+button.value);
+    delbutton.value = "plateDiv"+ button.value;
+    delbutton.onclick = delPlateFromDom;
+    delbutton.textContent = "Quitar";
+    del.appendChild(delbutton);
+
     var aux = parseInt(button.value);
     button.value = aux+1;
     platesNum.value = aux;
+}
+
+function delPlateFromDom(e){
+    var key = e.target.value;
+    var del = document.getElementById(key);
+    form.removeChild(del);
 }

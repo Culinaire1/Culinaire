@@ -35,9 +35,14 @@
                                         <div class="col-sm-5">
                                             <span class="input-group-addon">Nombre*</span>
                                         </div>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 addDir">
                                             <input type="text" class="form-control campo" aria-describedby="basic-addon1" name="plate${counter+1}"
                                                    maxlength="50" required value="${plate.name}" id="plate${counter+1}">
+                                        </div>
+                                        <div class="row addDir" align="right">
+                                            <button type="button" class="btn btn-primary btn-xs botones b2 publicarB" id="del${counter+1}"
+                                            value="plateDiv${counter+1}">
+                                                Quitar</button>
                                         </div>
                                     </div>
                                 </div>

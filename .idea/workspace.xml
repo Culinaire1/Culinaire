@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="331c3310-a516-4912-8f9c-3d3255bd9308" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/culinairegrails/PublishFilters.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/culinairegrails/PublishFilters.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CulinaireGrails.iml" afterPath="$PROJECT_DIR$/CulinaireGrails.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/base.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/base.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/web/restaurante.gsp" afterPath="$PROJECT_DIR$/grails-app/views/web/restaurante.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js" afterPath="$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/web/carta.gsp" afterPath="$PROJECT_DIR$/grails-app/views/web/carta.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CulinaireGrails.iws" />
@@ -43,10 +42,23 @@
       <file leaf-file-name="RestaurantController.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6066838">
-              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.562982">
+              <caret line="62" column="55" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Restaurant.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Restaurant.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -63,8 +75,8 @@
       <file leaf-file-name="carta.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/web/carta.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.632653">
-              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+            <state vertical-scroll-proportion="-5.2040815">
+              <caret line="43" column="73" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -74,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -84,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/addCity.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+              <caret line="151" column="4" selection-start-line="151" selection-start-column="4" selection-end-line="151" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -93,8 +105,8 @@
       <file leaf-file-name="ingresar.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/web/ingresar.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7346939">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="40" />
+            <state vertical-scroll-proportion="-1.3877552">
+              <caret line="210" column="53" selection-start-line="210" selection-start-column="53" selection-end-line="210" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -103,7 +115,7 @@
       <file leaf-file-name="restaurante.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurante.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.602564">
+            <state vertical-scroll-proportion="0.0">
               <caret line="57" column="41" selection-start-line="48" selection-start-column="32" selection-end-line="57" selection-end-column="41" />
               <folding />
             </state>
@@ -113,7 +125,7 @@
       <file leaf-file-name="restaurantes.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurantes.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.469388">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -123,40 +135,10 @@
       <file leaf-file-name="WebController.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.304348">
-              <caret line="112" column="123" selection-start-line="112" selection-start-column="123" selection-end-line="112" selection-end-column="123" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="receta.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/web/receta.gsp">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="80" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
+              <caret line="130" column="123" selection-start-line="130" selection-start-column="123" selection-end-line="130" selection-end-column="123" />
               <folding>
-                <marker date="1447385706767" expanded="true" signature="397:500" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="525:8406" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="1276:1450" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="1824:2992" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="1979:2760" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="2805:2950" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="3108:3358" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="3858:5097" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="3946:4249" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="4380:4707" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="4748:5061" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="5571:6168" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="5682:6109" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="6197:6321" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="6377:7252" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="6493:7197" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="7450:7940" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="7613:7912" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="7969:8380" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="8071:8176" placeholder="..." />
-                <marker date="1447385706767" expanded="true" signature="8209:8350" placeholder="..." />
+                <marker date="1448120808356" expanded="true" signature="338:2268" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -221,7 +203,6 @@
         <option value="$PROJECT_DIR$/grails-app/views/web/ingresar.gsp" />
         <option value="$PROJECT_DIR$/grails-app/domain/culinairegrails/Post.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/culinairegrails/RestaurantPost.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/culinairegrails/Restaurant.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/culinairegrails/Recipe.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/web/restaurantes.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/web/Carta.gsp" />
@@ -232,6 +213,7 @@
         <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/web/carta.gsp" />
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js" />
+        <option value="$PROJECT_DIR$/grails-app/domain/culinairegrails/Restaurant.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy" />
       </list>
     </option>
@@ -620,11 +602,12 @@
       <workItem from="1448057683852" duration="8822000" />
       <workItem from="1448068672926" duration="8665000" />
       <workItem from="1448114109344" duration="6248000" />
+      <workItem from="1448131779784" duration="7783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190651000" />
+    <option name="totallyTimeSpent" value="198434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -634,12 +617,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28104576" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28104576" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28104576" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -812,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32258064">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/assets/stylesheets/main2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="233" column="1" selection-start-line="233" selection-start-column="1" selection-end-line="233" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Cuisine.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33055556">
@@ -953,16 +928,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Restaurant.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25888324">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Recipe.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
@@ -978,27 +943,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="80" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
           <folding>
-            <marker date="1447385706767" expanded="true" signature="397:500" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="525:8406" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="1276:1450" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="1824:2992" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="1979:2760" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="2805:2950" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="3108:3358" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="3858:5097" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="3946:4249" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="4380:4707" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="4748:5061" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="5571:6168" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="5682:6109" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="6197:6321" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="6377:7252" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="6493:7197" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="7450:7940" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="7613:7912" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="7969:8380" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="8071:8176" placeholder="..." />
-            <marker date="1447385706767" expanded="true" signature="8209:8350" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447385706767" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1007,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,7 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurantes.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.469388">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1051,7 +1015,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurante.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.602564">
+        <state vertical-scroll-proportion="0.0">
           <caret line="57" column="41" selection-start-line="48" selection-start-column="32" selection-end-line="57" selection-end-column="41" />
           <folding />
         </state>
@@ -1061,15 +1025,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617">
           <caret line="92" column="90" selection-start-line="92" selection-start-column="90" selection-end-line="92" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.304348">
-          <caret line="112" column="123" selection-start-line="112" selection-start-column="123" selection-end-line="112" selection-end-column="123" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="130" column="123" selection-start-line="130" selection-start-column="123" selection-end-line="130" selection-end-column="123" />
+          <folding>
+            <marker date="1448120808356" expanded="true" signature="338:2268" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,7 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,38 +1049,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/web/ingresar.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7346939">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="40" />
+        <state vertical-scroll-proportion="-1.3877552">
+          <caret line="210" column="53" selection-start-line="210" selection-start-column="53" selection-end-line="210" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/addCity.js">
+    <entry file="file://$PROJECT_DIR$/grails-app/assets/stylesheets/main2.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/carta.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.632653">
-          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1129,10 +1076,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/addCity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="4" selection-start-line="151" selection-start-column="4" selection-end-line="151" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/carta.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.2040815">
+          <caret line="43" column="73" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Restaurant.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6066838">
-          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.562982">
+          <caret line="62" column="55" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
           <folding />
         </state>
       </provider>

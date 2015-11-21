@@ -51,15 +51,21 @@ class RestaurantController {
         Restaurant restaurant = Restaurant.findByUsername(session.user)
         int n = params.platesNum.toInteger()
         def plates = restaurant.menu.plates
-        for(int i = 1; i <= n; i++){
-            if( (i-1) < plates.size()){
-                Plate plate = plates.getAt(i-1)
-                plate.name = params.getProperty("plate"+i)
-                plate.save flush: true
-            }
-            else
-                new Plate(name: params.getProperty("plate"+i), menu: restaurant.menu).save flush: true
+        ArrayList<Plate> plates2 = new ArrayList<>()
+        plates.each {
+            plates2.add(it)
         }
+        plates2.each {
+            restaurant.menu.removeFromPlates(it)
+            it.delete(flush: true)
+        }
+        for(int i = 1; i <= n; i++){
+            String name = params.getProperty("plate"+i)
+            if(name != null) {
+                new Plate(name: params.getProperty("plate" + i), menu: restaurant.menu).save flush: true
+            }
+        }
+        restaurant.save(flush: true)
         redirect(controller:'web', action:'abrirRestaurante', params: [user: restaurant.username])
     }
 
