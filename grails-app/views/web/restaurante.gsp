@@ -79,10 +79,24 @@
 
                     <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                     <p class="tit" style="font-size: 40px" id="comentarios">Comentarios:</p>
-                    <p class="cuerpo" style="margin-top: -5%">No hay comentarios aún.</p>
 
+                    <g:if test="${restaurante.posts.size() > 0}">
+                        <div class="row" style="padding-left: 8%">
+                            <g:each var="post" in="${restaurante.posts}">
+                                <p style="font-family: GearedSlab; font-size: 26px; color: black">${post.content}<br> -
+                                    <a href="${createLink(controller:'web', action:'perfil', params: [username: post.person.username])}">
+                                        ${post.person.username}</a>, ${String.format("%tB %<td, %<tY", post.dateCreated)}
+                                </p>
+                                <br>
+                            </g:each>
+                        </div>
+                    </g:if>
+                    <g:else>
+                        <p class="cuerpo" style="margin-top: -5%">No hay comentarios aún.</p>
+                    </g:else>
+                    <g:if test="${session.tu == true}">
                     <div class="row" style="padding-left: 5%">
-                        <g:form controller="recipe" action="addComments" method="post" enctype="multipart/form-data">
+                        <g:form controller="restaurant" action="addComments" method="post" enctype="multipart/form-data">
                             <div class="col-sm-9">
                                 <textarea id="post" rows="2" class="campo textarea" name="post" maxlength="400" required></textarea>
                             </div>
@@ -93,6 +107,7 @@
                             </div>
                         </g:form>
                     </div>
+                    </g:if>
                 </g:else>
             </div>
             </div>

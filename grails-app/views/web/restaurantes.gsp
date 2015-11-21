@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-sm-6">
                             <p class="tit" style="font-size: 40px">
-                                <a href="${createLink(controller:'web', action:'abrirRestaurante', params: [name: restaurant.name])}">${restaurant.name}</a>
+                                <a href="${createLink(controller:'web', action:'abrirRestaurante', params: [user: restaurant.username])}">${restaurant.name}</a>
                             </p>
                             <p class="firma">${restaurant.country}</p>
                             <div class="texto">
@@ -44,8 +44,8 @@
                             <p class="firma"><a href="${restaurant.website}">${restaurant.website}</a></p>
                         </div>
                         <div class="col-sm-4">
-                            <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller:'web', action:'abrirRestaurante',
-                                    params: [name: restaurant.name])}#comentarios">Comentarios</a>
+                            <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller:'web',
+                                    action:'abrirRestaurante', params: [user: restaurant.username])}#comentarios">Comentarios</a>
                         </div>
                         <div class="col-sm-4">
                             <p class="firma">Popularidad: ${restaurant.rating}</p>

@@ -155,7 +155,7 @@ class WebController {
     }
 
     def abrirRestaurante(){
-        render(view: 'restaurante',  model:[restaurante: Restaurant.findByName(params.name)])
+        render(view: 'restaurante',  model:[restaurante: Restaurant.findByUsername(params.user)])
     }
 
     def tipicos(){

@@ -35,7 +35,16 @@ class RestaurantController {
                 new Direction(address: params.getProperty("city"+i+"dir"+j), city: city, restaurant: restaurant).save flush: true
             }
         }
+        new Menu(restaurant: restaurant).save()
         redirect action: 'login', id: restaurant.id
+    }
+
+    def addComments(){
+        Person person = Person.findByUsername(session.user);
+        Restaurant restaurant = Restaurant.get(params.id.toInteger())
+        RestaurantPost post = new RestaurantPost(person: person, restaurant: restaurant, content: params.post)
+        post.save flush: true
+        redirect(controller:'web', action:'abrirRestaurante', params: [user: restaurant.username])
     }
 
     def displayGraph = {

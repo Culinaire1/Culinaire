@@ -4,7 +4,7 @@ class Restaurant extends User{
 
     String name
 
-    static hasMany = [cities: City]
+    static hasMany = [cities: City, posts: RestaurantPost]
     static hasOne = [menu: Menu]
 
     static belongsTo = [country: Country, cuisine: Cuisine]
