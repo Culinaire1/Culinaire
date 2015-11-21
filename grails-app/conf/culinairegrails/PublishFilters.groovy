@@ -42,6 +42,19 @@ class PublishFilters {
 
             }
         }
+        al43(controller:'web', action:'carta') {
+            before = {
+                if(session.tu != false) {
+                    redirect controller: 'web', action: 'index'
+                }
+            }
+            after = { Map model ->
+
+            }
+            afterView = { Exception e ->
+
+            }
+        }
         perfil(controller:'web', action:'perfil') {
             before = {
                 if(params.username != null ){
