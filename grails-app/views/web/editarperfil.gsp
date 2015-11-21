@@ -10,7 +10,7 @@
     <div class="fill">
         <br>
 
-        <hr style="width: 90%; color: #111160; height: 4px; background-color:#111160;" />
+        <!--hr style="width: 90%; color: #111160; height: 4px; background-color:#111160;" /-->
 
         <p class="tit" id="registro">Editar Perfil:</p>
         <br>

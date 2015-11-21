@@ -92,13 +92,14 @@
                 <br>
                 <p class="tit" id="" style="font-size: 40px">Restaurantes</p>
                 <br>
+                <g:form controller="web" action="busquedaRestaurantes" method="post" enctype="multipart/form-data" style="margin-bottom: 0">
                 <div class="input-group">
                     <div class="col-sm-3">
                         <span class="input-group-addon" id="pais">País:</span>
                     </div>
                     <div class="col-sm-9">
                         <label for="sel2"></label>
-                        <select class="form-control campo" id="sel2">
+                        <select class="form-control campo" id="sel2" name="paisR">
                             <option>Ninguna</option>
                             <g:each var="country" in="${countries}">
                                 <option>${country.name}</option>
@@ -113,7 +114,7 @@
                     <div class="col-sm-9">
                         <!input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1">
                         <label for="sel3"></label>
-                        <select class="form-control campo" id="sel3">
+                        <select class="form-control campo" id="sel3" name="cocinaR">
                             <option>Ninguna</option>
                             <g:each var="cuisine" in="${cuisines}">
                                 <option>${cuisine.name}</option>
@@ -125,9 +126,9 @@
                 <div class="row">
                     <div class="col-sm-6"></div>
                     <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%">Buscar</button>
-                    </div>
+                        <input type="submit" class="btn btn-primary btn-lg center-block botones b2" style="margin-right: 2%"  value="Buscar" id="buscar3">                    </div>
                 </div>
+                </g:form>
                 <br>
                 <br>
             </div>

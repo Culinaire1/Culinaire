@@ -30,6 +30,7 @@ class UrlMappings {
         "/tipicos"(controller: 'web', action: 'tipicos')
         "/editar_perfil"(controller: 'web', action: 'editarperfilpersona')
         "/resultados"(controller: 'web',action:'busquedatipicos')
+        "/resultado_Restaurantes"(controller: 'web',action:'busquedaRestaurantes')
         "/admin"(controller: 'web',action:'admin')
         "500"(view:'/error')
         "/conf"(controller: "conf", action: 'index')

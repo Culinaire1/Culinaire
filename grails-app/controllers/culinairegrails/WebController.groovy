@@ -21,9 +21,10 @@ class WebController {
         def resul = []
         if(ingrediente == "Ninguna")
             f1 = Recipe.list()
-        else
-            f1 = Recipe.findAll{quantities.findAll{it.ingredient.name==ingrediente}}
-
+        else{
+            //f1 = Recipe.findAll{quantities.findAll{it.ingredient.name==ingrediente}}
+            f1=Recipe.list().findAll {it.quantities.findAll{it.ingredient.name==ingrediente}}
+        }
         if (categoria=="Ninguna")
             f2 = f1
         else
@@ -51,6 +52,23 @@ class WebController {
             else
                 render(view: "recetas", model: [categories: Category.list(), recipes: f4])
         }
+    }
+    def busquedaRestaurantes(){
+        def pais=params.paisR
+        def cocina=params.cocinaR
+        List<Restaurant> f1,f2
+
+        if(pais=="Ninguna")
+            f1=Restaurant.list()
+        else
+            f1=Restaurant.list().findAll{it.country.name==pais}
+
+        if(cocina=="Ninguna")
+            f2=f1
+        else
+            f2=f1.findAll{it.cuisine.name==cocina}
+        //render "hola"
+        render(view: 'restaurantes',  model:[restaurants: f2])
     }
     def busquedatipicos(){
         def country2=params.pais
