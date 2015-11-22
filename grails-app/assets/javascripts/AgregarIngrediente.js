@@ -60,7 +60,7 @@ function addIngredientToDOM() {
         buttonD.setAttribute("type", "button");
         buttonD.setAttribute("id", "del1");
         buttonD.setAttribute("name", "del1");
-        buttonD.textContent = 'quitar';
+        buttonD.textContent = 'Quitar';
         buttonD.onclick = removeIngFromDOM;
         ingDiv.appendChild(buttonD)
     }
@@ -111,8 +111,8 @@ function addInstructionToDOM() {
         buttonD2 = document.createElement("button");
         buttonD2.setAttribute("class", "btn btn-primary btn-xs botones b2 publicarB");
         buttonD2.setAttribute("type", "button");
-        buttonD2.setAttribute("id", "del1");
-        buttonD2.setAttribute("name", "del1");
+        buttonD2.setAttribute("id", "del2");
+        buttonD2.setAttribute("name", "del2");
         buttonD2.textContent = 'quitar';
         buttonD2.onclick = removeInsFromDOM;
         insDiv.appendChild(buttonD2)
@@ -151,4 +151,14 @@ function removeInsFromDOM() {
         insDiv.removeChild(buttonD2);
         buttonD2 = null;
     }
+}
+
+function addButtonD2(e){
+    buttonD2 = e;
+    buttonD2.onclick = removeInsFromDOM;
+}
+
+function addButtonD(e){
+    buttonD = e;
+    buttonD.onclick = removeIngFromDOM;
 }

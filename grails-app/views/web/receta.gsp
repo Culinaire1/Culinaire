@@ -45,8 +45,8 @@
                                                 <p>${instruction.paso}. ${instruction.description}</p><br>
                                             </div>
                                             <div class="col-sm-6">
-                                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'recipe',
-                                                action:'displayGraph', params: [name:recipe.name])}" style="max-height: 500px;" />
+                                                <img class="img-responsive img-thumbnail" src="${createLink(controller:'instruction',
+                                                action:'displayGraph', params: [id:instruction.id])}" style="max-height: 500px;" />
                                             </div>
                                         </div>
                                     </g:if>
@@ -70,8 +70,8 @@
                         <div class="col-sm-4">
                             <g:if test="${session.tu == true}">
                                 <g:if test="${recipe.person.username == session.user}">
-                                    <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'web', action: 'index',
-                                            params: [id: recipe.id])}" style="margin-right: 2%">Editar receta</a>
+                                    <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'web',
+                                            action: 'editarReceta', params: [id: recipe.id])}" style="margin-right: 2%">Editar receta</a>
                                 </g:if>
                                 <g:elseif test="${recipe in culinairegrails.Person.findByUsername(session.user).favoriteRecipes}">
                                     <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person', action:

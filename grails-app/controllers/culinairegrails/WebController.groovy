@@ -130,6 +130,9 @@ class WebController {
     def publicar() {
         [categories:Category.list(), countries:Country.list(), difficulties: Difficulty.list(), durations: Duration.list()]
     }
+    def editarReceta(){
+        [categories:Category.list(), countries:Country.list(), difficulties: Difficulty.list(), durations: Duration.list(), recipe: Recipe.findById(params.id)]
+    }
     def restaurantes() {
         [restaurants:Restaurant.list()]
     }

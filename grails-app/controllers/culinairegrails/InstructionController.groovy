@@ -37,4 +37,17 @@ class InstructionController {
 
         redirect action: 'show', id: instruction.id
     }
+
+    def displayGraph = {
+        def resPhoto = Instruction.findById(params.id)
+        if (!resPhoto || !resPhoto.photo) {
+            response.sendError(404)
+            return
+        }
+        response.contentType = resPhoto.photo
+        response.contentLength = resPhoto.photo.size()
+        OutputStream out = response.outputStream
+        out.write(resPhoto.photo)
+        out.close()
+    }
 }

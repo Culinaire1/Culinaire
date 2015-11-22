@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="331c3310-a516-4912-8f9c-3d3255bd9308" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/culinairegrails/PublishFilters.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/culinairegrails/PublishFilters.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/javascripts/AgregarIngrediente.js" afterPath="$PROJECT_DIR$/grails-app/assets/javascripts/AgregarIngrediente.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/InstructionController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/InstructionController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/javascripts/addCity.js" afterPath="$PROJECT_DIR$/grails-app/assets/javascripts/addCity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/web/editarperfil.gsp" afterPath="$PROJECT_DIR$/grails-app/views/web/editarperfil.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/javascripts/emailValidator.js" afterPath="$PROJECT_DIR$/grails-app/assets/javascripts/emailValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/web/ingresar.gsp" afterPath="$PROJECT_DIR$/grails-app/views/web/ingresar.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/assets/javascripts/passwordValidator.js" afterPath="$PROJECT_DIR$/grails-app/assets/javascripts/passwordValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/web/restaurante.gsp" afterPath="$PROJECT_DIR$/grails-app/views/web/restaurante.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/web/receta.gsp" afterPath="$PROJECT_DIR$/grails-app/views/web/receta.gsp" />
     </list>
     <ignored path="CulinaireGrails.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,51 +39,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RestaurantController.groovy" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RestaurantController.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.218509">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.782609">
+              <caret line="82" column="5" selection-start-line="71" selection-start-column="0" selection-end-line="82" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carta.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/web/carta.gsp">
+      <file leaf-file-name="receta.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/web/receta.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.408163">
-              <caret line="31" column="95" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="95" />
+            <state vertical-scroll-proportion="-3.4693878">
+              <caret line="40" column="99" selection-start-line="40" selection-start-column="84" selection-end-line="40" selection-end-column="99" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ingresar.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/web/ingresar.gsp">
+      <file leaf-file-name="InstructionController.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/InstructionController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.163265">
-              <caret line="216" column="108" selection-start-line="216" selection-start-column="108" selection-end-line="216" selection-end-column="108" />
+            <state vertical-scroll-proportion="-7.304348">
+              <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editarRestaurante.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/web/editarRestaurante.gsp">
+      <file leaf-file-name="publicar.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/web/publicar.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.285714">
-              <caret line="80" column="131" selection-start-line="80" selection-start-column="131" selection-end-line="80" selection-end-column="131" />
+            <state vertical-scroll-proportion="-1.1632653">
+              <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restaurante.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurante.gsp">
+      <file leaf-file-name="editarReceta.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/web/editarReceta.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6530614">
-              <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
+            <state vertical-scroll-proportion="-1.5102041">
+              <caret line="182" column="123" selection-start-line="182" selection-start-column="123" selection-end-line="182" selection-end-column="123" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecipeController.groovy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3881748">
+              <caret line="132" column="62" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -97,10 +102,10 @@
       <file leaf-file-name="WebController.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.521739">
-              <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+            <state vertical-scroll-proportion="-6.652174">
+              <caret line="130" column="123" selection-start-line="130" selection-start-column="123" selection-end-line="130" selection-end-column="123" />
               <folding>
-                <marker date="1448144888932" expanded="true" signature="338:2268" placeholder="{...}" />
+                <marker date="1448160166874" expanded="true" signature="338:2268" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -126,12 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/views/web/receta.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/web/editarperfilR.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/web/perfil.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/PersonController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/web/publicar.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/web/recetas.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/web/favoritos.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/OpinionController.groovy" />
@@ -166,7 +165,6 @@
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/addPlate.js" />
         <option value="$PROJECT_DIR$/grails-app/domain/culinairegrails/Restaurant.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/web/editarperfil.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/passwordValidatorR.js" />
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/passwordValidator.js" />
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/emailValidator.js" />
@@ -177,6 +175,13 @@
         <option value="$PROJECT_DIR$/grails-app/views/web/restaurante.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/culinairegrails/PublishFilters.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/assets/javascripts/AgregarIngrediente.js" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/QuantityController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/InstructionController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/web/receta.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/web/editarReceta.gsp" />
       </list>
     </option>
   </component>
@@ -567,11 +572,12 @@
       <workItem from="1448131779784" duration="7783000" />
       <workItem from="1448140454200" duration="231000" />
       <workItem from="1448141847427" duration="9640000" />
+      <workItem from="1448156379610" duration="8966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208305000" />
+    <option name="totallyTimeSpent" value="217271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -646,27 +652,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/recetas.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3469388">
-          <caret line="33" column="87" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/contacto.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.428571">
-          <caret line="27" column="111" selection-start-line="27" selection-start-column="111" selection-end-line="27" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/comentarios.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5102043">
-          <caret line="19" column="110" selection-start-line="19" selection-start-column="110" selection-end-line="19" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Opinion.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
@@ -739,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/MenuController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16346154">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/DirectionController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16346154">
@@ -773,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/publicar.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24011299">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Cuisine.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
@@ -787,13 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33055556">
           <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/AgregarIngrediente.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -833,31 +797,6 @@
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Recipe.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/receta.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="80" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -939,21 +878,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.521739">
-          <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
-          <folding>
-            <marker date="1448144888932" expanded="true" signature="338:2268" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/passwordValidator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53640777">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53640777">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53640777">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,22 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/ingresar.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.163265">
-          <caret line="216" column="108" selection-start-line="216" selection-start-column="108" selection-end-line="216" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/carta.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.408163">
-          <caret line="31" column="95" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="95" />
           <folding />
         </state>
       </provider>
@@ -1021,14 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurante.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6530614">
-          <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurantes.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3265305">
@@ -1041,15 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30591258">
           <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/web/editarRestaurante.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.285714">
-          <caret line="80" column="131" selection-start-line="80" selection-start-column="131" selection-end-line="80" selection-end-column="131" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,14 +949,130 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54611653">
           <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/carta.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="95" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/ingresar.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18732782">
+          <caret line="220" column="35" selection-start-line="220" selection-start-column="35" selection-end-line="220" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/restaurante.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/editarRestaurante.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="131" selection-start-line="80" selection-start-column="131" selection-end-line="80" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/culinairegrails/Recipe.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.094444446">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/publicar.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1632653">
+          <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/MenuController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17480719">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/WebController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.652174">
+          <caret line="130" column="123" selection-start-line="130" selection-start-column="123" selection-end-line="130" selection-end-column="123" />
+          <folding>
+            <marker date="1448160166874" expanded="true" signature="338:2268" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/assets/javascripts/AgregarIngrediente.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="44" selection-start-line="105" selection-start-column="44" selection-end-line="105" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/QuantityController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17480719">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RestaurantController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.218509">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.782609">
+          <caret line="82" column="5" selection-start-line="71" selection-start-column="0" selection-end-line="82" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/InstructionController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.304348">
+          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/receta.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4693878">
+          <caret line="40" column="99" selection-start-line="40" selection-start-column="84" selection-end-line="40" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/web/editarReceta.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5102041">
+          <caret line="182" column="123" selection-start-line="182" selection-start-column="123" selection-end-line="182" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/culinairegrails/RecipeController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3881748">
+          <caret line="132" column="62" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
           <folding />
         </state>
       </provider>
