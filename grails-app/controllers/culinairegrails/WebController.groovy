@@ -133,6 +133,10 @@ class WebController {
     def restaurantes() {
         [restaurants:Restaurant.list()]
     }
+
+    def editarRestaurante(){
+        [cuisines:Cuisine.list(), restaurant: Restaurant.findByUsername(session.user)]
+    }
     def recetas() {
         [recipes: Recipe.list()]
     }

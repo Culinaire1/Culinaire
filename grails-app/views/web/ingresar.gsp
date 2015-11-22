@@ -192,33 +192,33 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="cities" class="direccion">
 
+                            <div id="cities" class="direccion">
                                 <div id="cityDiv1">
-                            <div class="input-group">
-                                <div class="col-sm-5">
-                                    <span class="input-group-addon">Ciudad*</span>
+                                    <div class="input-group">
+                                        <div class="col-sm-5">
+                                            <span class="input-group-addon">Ciudad*</span>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control campo" aria-describedby="basic-addon1"
+                                                   name="city1" required id="city1">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="col-sm-5">
+                                            <span class="input-group-addon">Direcciones*</span>
+                                        </div>
+                                        <div class="col-sm-7 addDir" id="directions1">
+                                            <input type="text" class="form-control campo" aria-describedby="basic-addon1"
+                                                   required id="city1dir1" name="city1dir1">
+                                        </div>
+                                        <div class="row addDir" align="right">
+                                            <button type="button" class="btn btn-primary btn-xs botones b2 publicarB" id="add_dir1" value="1"
+                                                    onclick="addDirToDom2(this)"> Agregar Direccion</button>
+                                            <input value="1" id="cityDirNum1" name="cityDirNum1" hidden>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control campo" aria-describedby="basic-addon1"
-                                           name="city1" required value id="city1">
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <div class="col-sm-5">
-                                    <span class="input-group-addon">Direcciones*</span>
-                                </div>
-                                <div class="col-sm-7 addDir" id="directions1">
-                                    <input type="text" class="form-control campo" aria-describedby="basic-addon1"
-                                    required value id="city1dir1" name="city1dir1">
-                                </div>
-                                <div class="row addDir" align="right">
-                                    <button type="button" class="btn btn-primary btn-xs botones b2 publicarB" id="add_dir1" value="1">
-                                        Agregar Direccion</button>
-                                    <input value="1" id="cityDirNum1" name="cityDirNum1" hidden>
-                                </div>
-                            </div>
-                            </div>
                             </div>
 
                             <div class="row addDir" align="right" id="delDiv">
@@ -241,7 +241,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="usernameR"
-                                           maxlength="15" required value id="usernameR">
+                                           maxlength="15" required id="usernameR">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -250,7 +250,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1"
-                                           name="passwordR" required value id="passwordR">
+                                           name="passwordR" required id="passwordR">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -259,7 +259,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="password2R"
-                                           required value id="password2R">
+                                           required id="password2R">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -268,7 +268,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="emailR"
-                                           required value id="emailR">
+                                           required id="emailR">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -277,7 +277,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="email2R"
-                                           required value id="email2R">
+                                           required id="email2R">
                                 </div>
                             </div>
                             <div class="input-group" style="margin-top: -1%">
@@ -285,7 +285,8 @@
                                     <span class="input-group-addon">Imagen*</span>
                                 </div>
                                 <div class="col-sm-7" style="margin-top: 1.5%">
-                                    <input type="file" name="photoR" id="photoR" required accept="image/*" style="font-family: 'GearedSlab', sans-serif; font-size: 16px;"/>
+                                    <input type="file" name="photoR" id="photoR" required accept="image/*" style="font-family: 'GearedSlab',
+                                    sans-serif; font-size: 16px;"/>
                                 </div>
                             </div>
                             <div class="input-group">
@@ -306,6 +307,8 @@
         </div>
         <asset:javascript src="passwordValidator.js"/>
         <asset:javascript src="emailValidator.js"/>
+        <asset:javascript src="passwordValidatorR.js"/>
+        <asset:javascript src="emailValidatorR.js"/>
         <br>
         <br>
         <br>

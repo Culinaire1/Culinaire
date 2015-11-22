@@ -41,6 +41,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="col-sm-3">
+                        <g:if test="${session.tu == false && session.user == restaurante.username}">
+                            <a class="btn btn-primary btn-lg center-block botones b1"
+                               href="${createLink(controller: 'web', action: 'editarRestaurante')}" style="margin-right: 2%">Editar perfil</a>
+                        </g:if>
+                    </div>
+                    </div>
 
                     <g:each var="ciudad" in="${restaurante.cities}">
                         <p class="cuerpo" style="padding-bottom: 0">${ciudad}</p>

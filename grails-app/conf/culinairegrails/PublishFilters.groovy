@@ -42,7 +42,20 @@ class PublishFilters {
 
             }
         }
-        al43(controller:'web', action:'carta') {
+        all4(controller:'web', action:'editarRestaurante') {
+            before = {
+                if(session.tu != false) {
+                    redirect controller: 'web', action: 'index'
+                }
+            }
+            after = { Map model ->
+
+            }
+            afterView = { Exception e ->
+
+            }
+        }
+        all5(controller:'web', action:'carta') {
             before = {
                 if(session.tu != false) {
                     redirect controller: 'web', action: 'index'

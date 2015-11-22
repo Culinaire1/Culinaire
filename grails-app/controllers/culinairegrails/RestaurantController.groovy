@@ -86,6 +86,61 @@ class RestaurantController {
         def restaurant = Restaurant.get(id)
         session.user = restaurant.username
         session.tu = false
-        redirect controller: 'web', action: 'index'
+        redirect controller: 'web', action: 'abrirRestaurante', params: [user: restaurant.username]
+    }
+
+    def update() {
+        Restaurant restaurant = Restaurant.findByUsername(session.user)
+        restaurant.cuisine = Cuisine.findByName(params.cuisine)
+        restaurant.name = params.nameR
+        restaurant.username = params.usernameR
+        restaurant.password = params.passwordR
+        restaurant.email = params.emailR
+        if(params.photoR.getBytes().size() > 10) {
+            restaurant.photo = params.photoR.getBytes()
+        }
+        if(params.websiteR != null) {
+            restaurant.website = params.websiteR
+        }
+        restaurant.description = params.description
+
+        if (!restaurant.validate()) {
+            TreeSet<String> tree = new TreeSet<String>()
+            for( i in restaurant.errors.fieldErrors.field){
+                tree.add(i)
+            }
+            redirect(controller: 'web', action: 'editarRestaurante')
+            flash.error = tree
+            return
+        }
+        restaurant.save flush: true
+
+        for(int i = 1; i <= params.citiesNum.toInteger(); i++ ){
+            String a = params.getProperty("city"+i);
+            City city = City.findByName(a);
+            if (city == null){
+                city = new City(country: restaurant.country, name: a).save flush: true
+                restaurant.addToCities(city)
+            }
+            else if(!(city in restaurant.cities)){
+                restaurant.addToCities(city)
+            }
+
+            restaurant.save flush: true
+
+            String b = params.getProperty("cityDirNum"+i)
+            int n = b.toInteger();
+            def directions = city.directions.findAll{it.restaurant.id == restaurant.id}
+            ArrayList<String> names = new ArrayList<>()
+            directions.each {
+                names.add(it.address)
+            }
+            for(int j = 1; j <= n; j++){
+                if (!(params.getProperty("city"+i+"dir"+j) in names)) {
+                    new Direction(address: params.getProperty("city" + i + "dir" + j), city: city, restaurant: restaurant).save flush: true
+                }
+            }
+        }
+        redirect action: 'login', id: restaurant.id
     }
 }

@@ -7,8 +7,6 @@ var citiesNum;
 
 function init(){
     button = document.getElementById("add_city");
-    var addDir = document.getElementById("add_dir1");
-    addDir.onclick = addDirToDom;
     cities = document.getElementById("cities");
     citiesNum = document.getElementById("citiesNum");
     button.onclick = addCityToDOM;
@@ -148,6 +146,38 @@ function addDirToDom(e){
     }
 }
 
+function addDirToDom2(e){
+    var key = e.value;
+    var num = document.getElementById("cityDirNum"+key);
+
+    var aux = parseInt(num.value);
+    num.value = aux + 1;
+
+    var div = document.getElementById("directions" + key);
+
+    var dirInput = document.createElement("input");
+    dirInput.setAttribute("class", "form-control campo direccion");
+    dirInput.setAttribute("type", "text");
+    dirInput.setAttribute("aria-describedby", "basic-addon1");
+    dirInput.setAttribute("required", "true");
+    dirInput.setAttribute("id", "city" + key + "dir"+ num.value);
+    dirInput.setAttribute("name", "city" + key + "dir"+ num.value);
+    div.appendChild(dirInput);
+
+    if((aux + 1) == 2){
+        var p = e.parentNode;
+        var button2 = document.createElement("button");
+        button2.setAttribute("class", "btn btn-primary btn-xs botones b2 publicarB");
+        button2.setAttribute("type", "button");
+        button2.setAttribute("id", "del"+key);
+        button2.setAttribute("name", "del"+key);
+        button2.textContent = 'Quitar';
+        button2.onclick = removeDirFromDom;
+        button2.value = key;
+        p.appendChild(button2);
+    }
+}
+
 function removeDirFromDom(e){
     var key = e.target.value;
     var num = document.getElementById("cityDirNum"+key);
@@ -160,6 +190,25 @@ function removeDirFromDom(e){
 
     if(aux == 2){
         var p = e.target.parentNode;
+        var button2 = document.getElementById("del"+key);
+        p.removeChild(button2)
+    }
+
+    num.value = aux - 1;
+}
+
+function removeDirFromDom2(e){
+    var key = e.value;
+    var num = document.getElementById("cityDirNum"+key);
+    var aux = parseInt(num.value);
+
+    var div = document.getElementById("directions" + key);
+    var dirInput = document.getElementById("city" + key + "dir"+ num.value);
+
+    div.removeChild(dirInput);
+
+    if(aux == 2){
+        var p = e.parentNode;
         var button2 = document.getElementById("del"+key);
         p.removeChild(button2)
     }
