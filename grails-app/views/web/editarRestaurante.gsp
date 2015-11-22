@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control campo" aria-describedby="basic-addon1"
-                                                       name="city1" required value="${city.name}" id="city${counter+1}">
+                                                       name="city${counter+1}" required value="${city.name}" id="city${counter+1}">
                                             </div>
                                         </div>
                                         <div class="input-group">

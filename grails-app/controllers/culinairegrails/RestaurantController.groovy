@@ -1,5 +1,7 @@
 package culinairegrails
 
+import java.lang.reflect.Array
+
 class RestaurantController {
 
     static scaffold = Restaurant
@@ -119,6 +121,18 @@ class RestaurantController {
         }
         restaurant.save flush: true
 
+        def cities = restaurant.cities
+
+        ArrayList<City> tmp = new ArrayList<>()
+
+        cities.each {
+            tmp.add(it)
+        }
+
+        tmp.each {
+            restaurant.removeFromCities(it)
+        }
+
         for(int i = 1; i <= params.citiesNum.toInteger(); i++ ){
             String a = params.getProperty("city"+i);
             City city = City.findByName(a);
@@ -126,23 +140,29 @@ class RestaurantController {
                 city = new City(country: restaurant.country, name: a).save flush: true
                 restaurant.addToCities(city)
             }
-            else if(!(city in restaurant.cities)){
+            else {
                 restaurant.addToCities(city)
             }
 
             restaurant.save flush: true
 
+            def directions = city.directions.findAll{it.restaurant.id == restaurant.id}
+
+            ArrayList<Direction> tmp2 = new ArrayList<>()
+
+            directions.each {
+                tmp2.add(it)
+            }
+
+            tmp2.each {
+                city.removeFromDirections(it)
+                it.delete(flush: true)
+            }
+
             String b = params.getProperty("cityDirNum"+i)
             int n = b.toInteger();
-            def directions = city.directions.findAll{it.restaurant.id == restaurant.id}
-            ArrayList<String> names = new ArrayList<>()
-            directions.each {
-                names.add(it.address)
-            }
             for(int j = 1; j <= n; j++){
-                if (!(params.getProperty("city"+i+"dir"+j) in names)) {
-                    new Direction(address: params.getProperty("city" + i + "dir" + j), city: city, restaurant: restaurant).save flush: true
-                }
+                new Direction(address: params.getProperty("city" + i + "dir" + j), city: city, restaurant: restaurant).save flush: true
             }
         }
         redirect action: 'login', id: restaurant.id
