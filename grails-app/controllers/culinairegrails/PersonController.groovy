@@ -4,6 +4,8 @@ class PersonController {
 
     static scaffold = Person
 
+    def simpleCaptchaService
+
     def save(Person personInstance) {
         if (personInstance == null) {
             notFound()
@@ -15,8 +17,10 @@ class PersonController {
             personInstance.birthdate = new GregorianCalendar(a[0].toInteger(), a[1].toInteger(), a[2].toInteger(), 0, 0)
         }
 
-        if (!personInstance.validate()) {
+        if (!personInstance.validate() || !simpleCaptchaService.validateCaptcha(params.captcha)) {
             TreeSet<String> tree = new TreeSet<String>()
+            if (!simpleCaptchaService.validateCaptcha(params.captcha))
+                tree.add("captcha")
             for( i in personInstance.errors.fieldErrors.field){
                 tree.add(i)
             }

@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-sm-7">
                             <input type="password" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="passwordL"
-                            required id="passwordL">
+                                   required id="passwordL">
                         </div>
                     </div>
                     <br>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="name"
-                                    maxlength="50" required value id="name">
+                                           maxlength="50" required value id="name">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control campo" placeholder="" aria-describedby="basic-addon1" name="lastname"
-                                    maxlength="50" required value id="lastname">
+                                           maxlength="50" required value id="lastname">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" aria-describedby="basic-addon1" name="password"
-                                    required value id="password">
+                                           required value id="password">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control campo" aria-describedby="basic-addon1" name="password2"
-                                    required value id="password2">
+                                           required value id="password2">
                                 </div>
                             </div>
                             <div class="input-group">
@@ -151,8 +151,18 @@
                                            id="website">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img src="${createLink(controller: 'simpleCaptcha', action: 'captcha')}" class="img-responsive" align="right"/>
+                                </div>
+                                <div class="col-sm-7">
+                                    <g:textField name="captcha" class="campo" style="border: 1px solid #03034C; width: 94.5%; margin-left: 3px; margin-top: 2%"/>
+                                </div>
+                            </div>
                             <br>
-                            <input type="submit" class="btn btn-primary btn-lg center-block botones b2" value="Registrar" id="create">
+                            <div class="row">
+                                <input type="submit" class="btn btn-primary btn-lg center-block botones b2" value="Registrar" id="create">
+                            </div>
                         </g:form>
                     </div>
 
@@ -298,8 +308,19 @@
                                            id="websiteR">
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img src="${createLink(controller: 'simpleCaptcha', action: 'captcha')}" class="img-responsive" align="right"/>
+                                </div>
+                                <div class="col-sm-7">
+                                    <g:textField name="captcha2" class="campo" style="border: 1px solid #03034C; width: 94.5%; margin-left: 3px; margin-top: 2%"/>
+                                </div>
+                            </div>
                             <br>
-                            <input type="submit" class="btn btn-primary btn-lg center-block botones b2" value="Registrar" id="create2">
+                            <div class="row">
+                                <input type="submit" class="btn btn-primary btn-lg center-block botones b2" value="Registrar" id="create2">
+                            </div>
                         </g:form>
                     </div>
                 </div>

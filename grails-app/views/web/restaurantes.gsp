@@ -45,7 +45,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
-                                <p class="firma"><a href="${restaurant.website}">${restaurant.website}</a></p>
+                                <p class="firma"><a href="${restaurant.website}">Página web</a></p>
                             </div>
                             <div class="col-sm-4">
                                 <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller:'web',

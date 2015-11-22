@@ -4,13 +4,17 @@ class RestaurantController {
 
     static scaffold = Restaurant
 
+    def simpleCaptchaService
+
     def save() {
         Restaurant restaurant = new Restaurant(name: params.nameR, username: params.usernameR, password: params.passwordR,
                 email: params.emailR, photo: params.photoR.getBytes(), website: params.websiteR, country: Country.findByName(params.countryR),
                 cuisine: Cuisine.findByName(params.cuisine), description: params.description)
 
-        if (!restaurant.validate()) {
+        if (!restaurant.validate()  || !simpleCaptchaService.validateCaptcha(params.captcha2)) {
             TreeSet<String> tree = new TreeSet<String>()
+            if (!simpleCaptchaService.validateCaptcha(params.captcha2))
+                tree.add("captcha")
             for( i in restaurant.errors.fieldErrors.field){
                 tree.add(i)
             }

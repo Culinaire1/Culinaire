@@ -27,7 +27,7 @@
 
             <div class="col-md-9 col-md-offset-3 clearfix">
                 <h2>
-                    Resultados de la busqueda:  [${parametro}]
+                    Resultados de la búsqueda:  ${parametro}
                 </h2>
             </div>
 
@@ -176,7 +176,7 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <p class="firma"><a class="firma" href="#">ver mas</a></p>
+                                                    <p class="firma"><a class="firma" href="#">ver más</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -234,7 +234,7 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <p class="firma"><a class="firma" href="${createLink(controller:'web', action:'abrirReceta', params: [name: receta.name])}">ver mas</a></p>
+                                                    <p class="firma"><a class="firma" href="${createLink(controller:'web', action:'abrirReceta', params: [name: receta.name])}">ver más</a></p>
                                                 </div>
                                             </div>
                                         </div>

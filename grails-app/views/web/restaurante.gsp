@@ -66,9 +66,6 @@
                                 </g:else>
                             </g:each>
                         </ul>
-                    </g:each>
-
-                    <g:each var="ciudad" in="${restaurante.cities}">
                         <div class="tab-content">
                         <g:each var="direccion" in="${ciudad.directions.findAll{it.restaurant == restaurante}}" status="counter">
                             <g:if test="${counter == 0}">
@@ -95,6 +92,8 @@
                         </g:each>
                         </div>
                     </g:each>
+
+
                     <br>
 
                     <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />

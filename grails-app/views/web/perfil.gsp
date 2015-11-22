@@ -25,7 +25,7 @@
                     <g:if test="${person.recipes.size() > 0}">
                         <p id="titulo">Tus recetas:</p>
                         <g:each var="recipe" in="${person.recipes}">
-                            <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">-${recipe.name}</a><br>
+                            - <a href="${createLink(controller:'web', action:'abrirReceta', params: [name: recipe.name])}">${recipe.name}</a><br>
                         </g:each>
                     </g:if>
                     <g:else>

@@ -34,6 +34,9 @@
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/taglib" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/cache-headers-1.1.7">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-headers-1.1.7/grails-app/services" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/controllers" isTestSource="false" />
@@ -49,6 +52,10 @@
     <content url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/groovy" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/simple-captcha-1.0.0">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/simple-captcha-1.0.0/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/simple-captcha-1.0.0/grails-app/services" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55.3">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55.3/src/java" isTestSource="false" />

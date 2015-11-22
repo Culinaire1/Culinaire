@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-bottom: -5%">
                         <div class="row texto cuerpo">
                             <p>Preparación:</p>
                                 <g:each var="instruction" in="${recipe.instructions.sort({it.paso})}">
@@ -57,8 +57,8 @@
                         </div>
                     </div>
                     <g:if test="${recipe.video != null}">
-                        <div style="width: 60%; margin: 0 auto;">
-                            <iframe width="560" height="315" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
+                        <div style="width: 100%; margin: 0 auto;">
+                            <iframe style="height:50%;width:100%;border:0;" frameborder="0" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </g:if>
                     <br>
@@ -122,7 +122,7 @@
                     <g:if test="${recipe.person.recipes.size() > 1}">
                         <p class="tit" style="font-size: 40px">Mas recetas del autor: ${recipe.person.username}</p>
                         <g:each var="recipe2" in="${recipe.person.recipes}">
-                            <p style="font-family: GearedSlab; font-size: 30px">- <a href="${createLink(controller:'web', action:'abrirReceta',
+                            <p style="font-family: GearedSlab; font-size: 30px; margin: 0">- <a href="${createLink(controller:'web', action:'abrirReceta',
                                     params: [name: recipe2])}">${recipe2.name}</a></p><br>
                         </g:each>
                     </g:if>
