@@ -1,4 +1,4 @@
-<%@ page import="culinairegrails.Admin; culinairegrails.Contact; culinairegrails.Opinion" contentType="text/html;charset=UTF-8" %>
+<%@ page import="culinairegrails.Admin; culinairegrails.Contact; culinairegrails.Opinion; culinairegrails.Restaurant" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="base"/>
@@ -25,7 +25,7 @@
                         <g:if test="${Contact.list().size() > 0}">
                             <p id="titulo">Contactos:</p>
                             <g:each var="contacto" in="${Contact.list()}">
-                                - ${contacto.issue}: ${contacto.description}<br>
+                                - ${contacto.issue}: ${contacto.description} <a href="${createLink(controller:'web', action:'eliminarContacto', params: [contacto: contacto.id])}">  Eliminar</a><br>
                             </g:each>
                         </g:if>
                         <g:else>
@@ -37,11 +37,23 @@
                         <g:if test="${Opinion.list().size() > 0}">
                             <p id="titulo">Comentarios y sugerencias:</p>
                             <g:each var="comentario" in="${Opinion.list()}">
-                                - ${comentario.description}<br>
+                                - ${comentario.description} <a href="${createLink(controller:'web', action:'eliminarComentario', params: [comentario: comentario.id])}">  Eliminar</a><br>
                             </g:each>
                         </g:if>
                         <g:else>
                             <p id="titulo">No hay comentarios ni sugerencias.</p>
+                        </g:else>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <g:if test="${Restaurant.findAll{approved == false}.size() > 0}">
+                            <p id="titulo">Restaurantes sin aprobar:</p>
+                            <g:each var="restaurante" in="${Restaurant.findAll{approved == false}}">
+                                - <a href="${createLink(controller:'web', action:'abrirRestaurante', params: [user: restaurante.username])}">${restaurante.name}</a> <a href="${createLink(controller:'web', action:'aprobarRestaurante', params: [restaurante: restaurante.id])}">  Aprobar</a><br>
+                            </g:each>
+                        </g:if>
+                        <g:else>
+                            <p id="titulo">No hay restaurantes que aprobar.</p>
                         </g:else>
                     </div>
                 </div>

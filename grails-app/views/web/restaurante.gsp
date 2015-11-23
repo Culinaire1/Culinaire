@@ -21,7 +21,8 @@
                                     action:'displayGraph', params: [name:restaurante.name]) }" style="max-height: 600px;"/>
                         </div>
                         <div class="col-sm-6">
-                            <p class="tit" style="font-size: 40px"><a href="${restaurante.website}">${restaurante.name}</a></p>
+                            <p class="tit" style="font-size: 40px"><a href="${restaurante.website}">${restaurante.name}</a><br>
+                            <g:if test="${restaurante.approved == false}"> - No aprobado aun</g:if> </p>
                             <div class="texto row">
                                 <div class="cuerpo" style="padding-bottom: 0; padding-top: 0">
                                     <p>

@@ -134,7 +134,7 @@ class WebController {
         [categories:Category.list(), countries:Country.list(), difficulties: Difficulty.list(), durations: Duration.list(), recipe: Recipe.findById(params.id)]
     }
     def restaurantes() {
-        [restaurants:Restaurant.list()]
+        [restaurants:Restaurant.findAll{approved == true}]
     }
 
     def editarRestaurante(){
@@ -195,5 +195,22 @@ class WebController {
     def favoritos(){}
 
     def admin(){
+    }
+
+    def eliminarComentario(){
+        Opinion.findById(params.comentario).delete(flush: true)
+        redirect controller: 'web', action: 'admin'
+    }
+
+    def eliminarContacto(){
+        Contact.findById(params.contacto).delete(flush: true)
+        redirect controller: 'web', action: 'admin'
+    }
+
+    def aprobarRestaurante(){
+        Restaurant restaurant = Restaurant.findById(params.restaurante)
+        restaurant.approved = true
+        restaurant.save(flush: true)
+        redirect controller: 'web', action: 'admin'
     }
 }

@@ -3,6 +3,7 @@ package culinairegrails
 class Restaurant extends User{
 
     String name
+    boolean approved
 
     static hasMany = [cities: City, posts: RestaurantPost]
     static hasOne = [menu: Menu]
@@ -14,6 +15,7 @@ class Restaurant extends User{
         photo(nullable: false, minSize: 1)
         description(nullable: false)
         menu(nullable: true)
+        approved(nullable: false)
     }
 
     String toString(){

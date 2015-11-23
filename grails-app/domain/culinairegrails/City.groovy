@@ -11,6 +11,10 @@ class City {
         name(nullable: false, blank: false)
     }
 
+    static mapping = {
+        sort name: 'asc'
+    }
+
     String toString(){
         "${name}"
     }

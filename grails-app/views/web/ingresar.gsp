@@ -156,7 +156,7 @@
                                     <img src="${createLink(controller: 'simpleCaptcha', action: 'captcha')}" class="img-responsive" align="right"/>
                                 </div>
                                 <div class="col-sm-7">
-                                    <g:textField name="captcha" class="campo" style="border: 1px solid #03034C; width: 94.5%; margin-left: 3px; margin-top: 2%"/>
+                                    <g:textField name="captcha" class="campo" style="border: 1px solid #03034C; width: 94.5%; margin-left: 3px; margin-top: 2%" required="required"/>
                                 </div>
                             </div>
                             <br>
@@ -314,7 +314,7 @@
                                     <img src="${createLink(controller: 'simpleCaptcha', action: 'captcha')}" class="img-responsive" align="right"/>
                                 </div>
                                 <div class="col-sm-7">
-                                    <g:textField name="captcha2" class="campo" style="border: 1px solid #03034C; width: 94.5%; margin-left: 3px; margin-top: 2%"/>
+                                    <g:textField name="captcha2" class="campo" style="border: 1px solid #03034C; width: 94.5%; margin-left: 3px; margin-top: 2%" required="required"/>
                                 </div>
                             </div>
                             <br>

@@ -303,7 +303,7 @@ class BootStrap {
 
             Restaurant tmp = new Restaurant(name: "Culinaire's", username: "culinaire", password: "Test1234",
                     email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'),
-                    photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "https://culinaire.herokuapp.com/").save()
+                    photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "https://culinaire.herokuapp.com/", approved: true).save()
 
             City city = new City(country: Country.findByName('Colombia'), name: 'Bogotá').save()
             new Direction(address: 'Carrera 72 #79a-62', city: city, restaurant: tmp).save()
@@ -318,7 +318,7 @@ class BootStrap {
 
             tmp = new Restaurant(name: "Wok", username: "wokfood", password: "Test1234",
                     email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'),
-                    photo: fileContent2, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://wok.com.co/wps/portal/wok").save()
+                    photo: fileContent2, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://wok.com.co/wps/portal/wok", approved: true).save()
 
             new Direction(address: 'Kr 19 #118-75', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
@@ -331,7 +331,7 @@ class BootStrap {
 
             tmp = new Restaurant(name: "Archie's", username: "archies", password: "Test1234",
                     email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'),
-                    photo: fileContent3, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://www.archies.co/").save()
+                    photo: fileContent3, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://www.archies.co/", approved: true).save()
 
             new Direction(address: 'Cl 134 #55-30', city: city, restaurant: tmp).save()
             tmp.addToCities(city)

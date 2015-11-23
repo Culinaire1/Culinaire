@@ -11,7 +11,7 @@ class RestaurantController {
     def save() {
         Restaurant restaurant = new Restaurant(name: params.nameR, username: params.usernameR, password: params.passwordR,
                 email: params.emailR, photo: params.photoR.getBytes(), website: params.websiteR, country: Country.findByName(params.countryR),
-                cuisine: Cuisine.findByName(params.cuisine), description: params.description)
+                cuisine: Cuisine.findByName(params.cuisine), description: params.description, approved: false)
 
         if (!restaurant.validate()  || !simpleCaptchaService.validateCaptcha(params.captcha2)) {
             TreeSet<String> tree = new TreeSet<String>()
