@@ -543,9 +543,7 @@ class BootStrap {
             
             File fotopasta = new File("web-app/images/rav.jpg");
             byte[] fileContent7 = Files.readAllBytes(fotopasta.toPath())
-            Recipe pasta = new Recipe(name: 'Ensalada de pasta', rating: 4, description: 'Las ensaladas de pasta son una alternativa estupenda para una cena rapida, ya que admiten multiples variantes. En otras ocasiones os hemos enseñado a preparar una ensalada de pasta al pesto y otra ensalada de pasta con jamon o pollo.\n' +
-                    '\n' +
-                    'Hoy os traemos una ensalada de pasta muy fresquita para estos dias en los que el calor ya empieza a apretar. Es una ensalada de pasta y fruta, y lleva hasta pipas, cosa que a mi peque por ejemplo le ha encantado ¡que la disfruteis!…',
+            Recipe pasta = new Recipe(name: 'Ensalada de pasta', rating: 4, description: 'Las ensaladas de pasta son una alternativa estupenda para una cena rapida, ya que admiten multiples variantes.',
                     country: Country.findByName('Espana'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Pastas'),
                     person: Person.get(3), photo: fileContent7, typical: false).save()
