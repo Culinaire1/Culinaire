@@ -542,13 +542,13 @@ class BootStrap {
             new Quantity(quantity: "2 cucharadas", recipe: pavo, ingredient: salh).save()
             
             File fotopasta = new File("web-app/images/rav.jpg");
-            byte[] fileContent5 = Files.readAllBytes(fotopasta.toPath())
+            byte[] fileContent7 = Files.readAllBytes(fotopasta.toPath())
             Recipe pasta = new Recipe(name: 'Ensalada de pasta', rating: 4, description: 'Las ensaladas de pasta son una alternativa estupenda para una cena rapida, ya que admiten multiples variantes. En otras ocasiones os hemos enseñado a preparar una ensalada de pasta al pesto y otra ensalada de pasta con jamon o pollo.\n' +
                     '\n' +
                     'Hoy os traemos una ensalada de pasta muy fresquita para estos dias en los que el calor ya empieza a apretar. Es una ensalada de pasta y fruta, y lleva hasta pipas, cosa que a mi peque por ejemplo le ha encantado ¡que la disfruteis!…',
                     country: Country.findByName('Espana'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Pastas'),
-                    person: Person.get(3), photo: fileContent5, typical: false).save()
+                    person: Person.get(3), photo: fileContent7, typical: false).save()
 
             new Instruction(description: 'Cocemos la pasta, enfriamos.', recipe: pasta, paso: 1).save()
             new Instruction(description: 'Mezclamos con todos los ingredientes y aliñamos con el aceite, sal y pimienta. Ponemos por encima unas pipas.', recipe: pasta, paso: 2).save()
@@ -560,8 +560,6 @@ class BootStrap {
             Ingredient atun = new Ingredient(name: 'atun al natural').save()
             Ingredient cebolleta = new Ingredient(name: 'cebolleta').save()
             Ingredient pipas = new Ingredient(name: 'pipas peladas').save()
-            Ingredient aceiteo = new Ingredient(name: 'aceite de oliva extra virgen').save()
-            Ingredient sal = new Ingredient(name: 'sal').save()
             Ingredient pimienta2 = new Ingredient(name: 'pimienta negra recien molida').save()
 
             new Quantity(quantity: '500 gramos', recipe: pasta, ingredient: colores).save()
