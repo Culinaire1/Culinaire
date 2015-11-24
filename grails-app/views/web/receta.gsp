@@ -3,6 +3,20 @@
 <head>
     <meta name="layout" content="base"/>
     <title>Recetas</title>
+
+    <script type="text/javascript">
+        $(function (){
+            $(".img-bg").on('click', function() {
+
+                $(this).toggleClass('select');
+                if ($(this).hasClass('select')) {
+                    $(this).attr('src', 'images/start.png');
+                } else {
+                    $(this).attr('src', 'images/start_off.png');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -86,6 +100,24 @@
                         <div class="col-sm-4">
                             <p class="firma">Popularidad: ${recipe.rating}</p>
                         </div>
+                        <g:if test="${session.tu == true}">
+                            <g:if test="${voto == 1}">
+                                <div class="col-sm-12">
+
+                                    <img style="cursor:pointer"  class="img-bg pull-right select" src="images/start.png"/>
+                                </div>
+
+                            </g:if>
+                            <g:else>
+                                <div class="col-sm-12">
+
+                                    <p class="firma pull-right">+</p>
+                                    <img style="cursor:pointer"  class="img-bg pull-right" src="images/start_off.png"/>
+
+                                </div>
+                            </g:else>
+                        </g:if>
+
                     </div>
 
                     <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />

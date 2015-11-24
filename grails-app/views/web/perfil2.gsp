@@ -3,6 +3,19 @@
 <head>
     <meta name="layout" content="base"/>
     <title>Perfil: ${person.username}</title>
+    <script type="text/javascript">
+        $(function (){
+            $(".img-bg").on('click', function() {
+
+                $(this).toggleClass('select');
+                if ($(this).hasClass('select')) {
+                    $(this).attr('src', 'images/start.png');
+                } else {
+                    $(this).attr('src', 'images/start_off.png');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -47,6 +60,22 @@
                             params: [username: person.username])}" style="margin-right: 2%"> Seguir</a>
                         </g:else>
                         </div>
+                    </g:if>
+
+                    <g:if test="${session.tu == true}">
+                        <g:if test="${voto == 1}">
+                            <div class="col-sm-12 col-md-offset-1">
+                                <img style="cursor:pointer"  class="img-bg pull-left select" src="images/start.png"/>
+                                <p class="firma pull-left">+</p>
+                            </div>
+
+                        </g:if>
+                        <g:else>
+                            <div class="col-sm-12 col-md-offset-1">
+                                <img style="cursor:pointer"  class="img-bg pull-left" src="images/start_off.png"/>
+                                <p class="firma pull-left">+</p>
+                            </div>
+                        </g:else>
                     </g:if>
                 </div>
             </div>

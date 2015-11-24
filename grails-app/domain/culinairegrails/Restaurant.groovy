@@ -5,10 +5,11 @@ class Restaurant extends User{
     String name
     boolean approved
 
-    static hasMany = [cities: City, posts: RestaurantPost]
+    static hasMany = [cities: City, posts: RestaurantPost, votes: Vote]
     static hasOne = [menu: Menu]
 
     static belongsTo = [country: Country, cuisine: Cuisine]
+
 
     static constraints = {
         name(nullable: false, blank: false)

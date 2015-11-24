@@ -19,6 +19,7 @@
         font-size: 24px;
     }
     </style>
+
 </head>
 <body>
 <div class="container">
@@ -158,12 +159,21 @@
 
                                                 <div class="col-md-3 col-lg-3 " align="center">
 
-                                                    <g:img dir="images" file="chefPlaceholder.png" class="img-responsive img-rounded"/>
+                                                    <g:if test="${restaurante.photo != null && restaurante.photo.size() > 2}">
+                                                        <img alt="User Pic" src="${createLink(controller:'restaurant', action:'displayGraph', params: [name:restaurante.name])}" class="img-rounded img-responsive">
+                                                    </g:if>
+                                                    <g:else>
+                                                        <g:img dir="images" file="chefPlaceholder.png" class="img-responsive img-rounded"/>
+                                                    </g:else>
 
                                                 </div>
                                                 <div class=" col-md-9 col-lg-9 ">
                                                     <table class="table table-user-information">
                                                         <tbody>
+                                                        <tr>
+                                                            <td>Usuario:</td>
+                                                            <td>${restaurante.username}</td>
+                                                        </tr>
                                                         <tr>
                                                             <td>Descripción:</td>
                                                             <td>${restaurante.description}</td>
@@ -176,7 +186,7 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <p class="firma"><a class="firma" href="#">ver más</a></p>
+                                                    <p class="firma"><a class="firma" href="${createLink(controller:'web', action:'abrirRestaurante', params: [user: restaurante.username])}">ver más</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -228,12 +238,13 @@
                                                         </tr>
                                                         <tr>
                                                             <td>Puntuación:</td>
+
                                                             <td>${receta.rating}</td>
                                                         </tr>
                                                         <tr><td></td><td></td></tr>
+
                                                         </tbody>
                                                     </table>
-
                                                     <p class="firma"><a class="firma" href="${createLink(controller:'web', action:'abrirReceta', params: [name: receta.name])}">ver más</a></p>
                                                 </div>
                                             </div>

@@ -12,7 +12,7 @@ class Recipe {
     Person follower
     Boolean typical
 
-    static hasMany = [posts: Post, quantities: Quantity, instructions: Instruction]
+    static hasMany = [posts: Post, quantities: Quantity, instructions: Instruction, votes: Vote]
     static belongsTo = [person: Person, country: Country, category: Category]
     static hasOne = [difficulty: Difficulty, duration: Duration]
 

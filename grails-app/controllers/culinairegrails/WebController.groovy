@@ -1,8 +1,10 @@
 package culinairegrails
 
+import javax.websocket.Session
+
 
 class WebController {
-    def elasticSearchService
+
     def index() {
 
     }
@@ -181,11 +183,33 @@ class WebController {
     }
 
     def abrirReceta(){
-        render(view: 'receta',  model:[recipe: Recipe.findByName(params.name)])
+
+        if (session.user){
+            def recipe= Recipe.findByName(params.name)
+            def usu= User.findByUsername(session.user).id
+            def voto= Vote.findAllByVoterAndRecipe(usu, recipe).size()
+            render(view: 'receta',  model:[recipe: recipe, voto: voto])
+
+        }else{
+            render(view: 'receta',  model:[recipe: Recipe.findByName(params.name)])
+        }
+
     }
 
     def abrirRestaurante(){
-        render(view: 'restaurante',  model:[restaurante: Restaurant.findByUsername(params.user)])
+
+        if (session.user){
+            //def restaurante= Restaurant.findByUsername(params.user).addToVotes(voter:1).save()
+            def restaurante= Restaurant.findByUsername(params.user)
+            //restaurante.addToVotes(voter: 4).save()
+            def usu= User.findByUsername(session.user).id
+            def voto= Vote.findAllByVoterAndRestaurant(usu, restaurante).size()
+            render(view: 'restaurante',  model:[restaurante: restaurante, voto: voto])
+
+        }else{
+            render(view: 'restaurante',  model:[restaurante: Restaurant.findByUsername(params.user)])
+        }
+
     }
 
     def tipicos(){

@@ -11,7 +11,10 @@
 
     <!link rel="stylesheet" href="${resource(dir: 'css', file: 'main2.css')}" type="text/css">
     <asset:stylesheet src="bootstrap.css"/>
+
     <asset:stylesheet src="main2.css"/>
+    <asset:stylesheet src="star-rating.css"/>
+
     <!link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css.css')}" type="text/css">
     <style>
     @font-face { font-family: Abraham; src: url(${resource(dir: 'fonts', file: 'AbrahamLincoln.ttf')})}
@@ -20,6 +23,12 @@
     @font-face { font-family: GrandHotel; src: url(${resource(dir: 'fonts', file: 'GrandHotel-Regular.otf')})}
     @font-face { font-family: Liberator; src: url(${resource(dir: 'fonts', file: 'Liberator-Light.ttf')})}
     </style>
+
+    <!-- Bootstrap core JavaScript -->
+    <asset:javascript src="jquery-1.11.2.min.js"/>
+    <asset:javascript src="bootstrap.js"/>
+    <asset:javascript src="star-rating.min.js"/>
+    <asset:javascript src="star-rating_locale_en.js"/>
     <g:layoutHead/>
 </head>
 <body>
@@ -129,8 +138,7 @@
     </div>
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<asset:javascript src="jquery-1.11.2.min.js"/>
-<asset:javascript src="bootstrap.js"/>
+
+
 </body>
 </html>
