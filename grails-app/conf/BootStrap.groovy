@@ -488,7 +488,7 @@ class BootStrap {
 
             File pan = new File("web-app/images/pan.jpg");
             byte[] panf = Files.readAllBytes(pan.toPath())
-            Recipe panfrances = new Recipe(name: 'Pan francés', rating: 4, description: 'Una receta de pan francés tan fácil que cualquiera puede prepararla. ',
+            Recipe panfrances = new Recipe(name: 'Pan frances', rating: 4, description: 'Una receta de pan francés tan fácil que cualquiera puede prepararla. ',
                     country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
                     duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Pan'),
                     person: Person.get(2), photo: panf, typical: false).save()
