@@ -451,7 +451,95 @@ class BootStrap {
             new Quantity(quantity: "2 cucharadas", recipe: sorbete, ingredient: lechepolvo).save()
             new Quantity(quantity: "1 cucharada", recipe: sorbete, ingredient: estabilizante).save()
             new Quantity(quantity: "40 gramos", recipe: sorbete, ingredient: chocolate).save()
+
+            //---------------------------------------------------------------------------------------------------------
+            File filete = new File("web-app/images/filete.jpg");
+            byte[] fileContent5 = Files.readAllBytes(filete.toPath())
+            Recipe filetepescado = new Recipe(name: 'Filete de Pescado con manzana', rating: 4, description: 'Esta receta con fruta y pescado es muy fácil de preparar',
+                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
+                    duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Frutas'),
+                    person: Person.get(2), photo: fileContent5, typical: false).save()
+
+            new Instruction(description: 'Lavaremos la fruta y la cortamos en láminas finas.', recipe: filetepescado, paso: 1).save()
+            new Instruction(description: 'Tomamos una fuente apta para horno, y la untamos con un poco de aceite o mantequilla. Repartimos la mitad de las manzanas sobre el fondo del recipiente y ponemos encima los filetes de pescado sazonados y salpimentados.', recipe: filetepescado, paso: 2).save()
+            new Instruction(description: 'Regamos zumo de limón y colocamos encima el resto de las manzanas laminadas. Precalentar el horno entre 200 y 225ºC.', recipe: filetepescado, paso: 3).save()
+            new Instruction(description: 'Rociamos el pescado y las manzanas con vino blanco, cubrimos la fuente con papel de aluminio, para que no se vaya a resecar, y metemos al horno cuando esté caliente.', recipe: filetepescado, paso: 4).save()
+            new Instruction(description: 'Pasado 10 minutos, incorporamos a la cazuela de los filetes de pescado, los guisantes y los langostinos, lavados, pero con piel y cabezas, y volvemos a tapar. Dejamos hornear otros 10 minutos.', recipe: filetepescado, paso: 5).save()
+
+            Ingredient filetes = new Ingredient(name: 'filetes de pescado').save()
+            Ingredient langostinos = new Ingredient(name: 'langostinos').save()
+            Ingredient manzanas = new Ingredient(name: 'manzanas').save()
+            Ingredient Limon = new Ingredient(name: 'limon').save()
+            Ingredient guisantes = new Ingredient(name: 'guisantes').save()
+            Ingredient vino= new Ingredient(name: 'vino blanco').save()
+            Ingredient aceiteo = new Ingredient(name: 'aceite de Oliva').save()
+            Ingredient sal = new Ingredient(name: 'sal').save()
+            
+
+            new Quantity(quantity: '1 Kg', recipe: filetepescado, ingredient: filetes).save()
+            new Quantity(quantity: '12', recipe: filetepescado, ingredient: langostinos).save()
+            new Quantity(quantity: "4", recipe: filetepescado, ingredient: manzanas).save()
+            new Quantity(quantity: '1', recipe: filetepescado, ingredient: Limon).save()
+            new Quantity(quantity: '200 gramos', recipe: filetepescado, ingredient: guisantes).save()
+            new Quantity(quantity: "250 ml", recipe: filetepescado, ingredient: vino).save()
+            new Quantity(quantity: "1 litro", recipe: filetepescado, ingredient: aceiteo).save()
+            new Quantity(quantity: "1 cucharada", recipe: filetepescado, ingredient: sal).save()
+            new Quantity(quantity: "5 gramos", recipe: filetepescado, ingredient: pimienta).save()
+
+            File pan = new File("web-app/images/pan.jpg");
+            byte[] panf = Files.readAllBytes(pan.toPath())
+            Recipe panfrances = new Recipe(name: 'Pan francés', rating: 4, description: 'Una receta de pan francés tan fácil que cualquiera puede prepararla. ',
+                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Facil"),
+                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Pan'),
+                    person: Person.get(2), photo: panf, typical: false).save()
+
+            new Instruction(description: 'Bate los huevos en un tazón mediano. Agrega la leche, azúcar y nuez moscada. Revuelve para mezclar.', recipe: panfrances, paso: 1).save()
+            new Instruction(description: 'Remoja las rebanadas de pan en la mezcla de huevo hasta que estén bien empapadas.', recipe: panfrances, paso: 2).save()
+            new Instruction(description: 'Engrasa un comal o sartén grande y calienta a fuego medio-alto. Dora las rebanadas de pan por ambos lados, espolvorea con canela y sirve calientes.', recipe: panfrances, paso: 3).save()
+
+            Ingredient huevos = new Ingredient(name: 'huevos').save()
+            Ingredient azucarm = new Ingredient(name: 'azúcar mascabado').save()
+            Ingredient nuez = new Ingredient(name: 'nuez moscada, molida').save()
+            Ingredient panb = new Ingredient(name: 'pan blanco').save()
+            Ingredient canelam = new Ingredient(name: 'canela molida').save()
+
+
+            new Quantity(quantity: '4', recipe: panfrances, ingredient: huevos).save()
+            new Quantity(quantity: '3/4 taza', recipe: panfrances, ingredient: leche).save()
+            new Quantity(quantity: "2 cucharadas", recipe: panfrances, ingredient: azucarm).save()
+            new Quantity(quantity: '1 cucharadita', recipe: panfrances, ingredient: nuez).save()
+            new Quantity(quantity: '12 rebanadas', recipe: panfrances, ingredient: panb).save()
+            new Quantity(quantity: "1 cucharada", recipe: panfrances, ingredient: canelam).save()
+
+            File pavof = new File("web-app/images/pavo.jpg");
+            byte[] pavoff = Files.readAllBytes(pavof.toPath())
+            Recipe pavo = new Recipe(name: 'Pavo al horno', rating: 4, description: 'Dicen que la elegancia está en la sencillez y esta receta no es la excepción.',
+                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Master Chef"),
+                    duration: Duration.findByDuration("Mas de 2 horas"), category: Category.findByName('Carnes'),
+                    person: Person.get(2), photo: pavoff, typical: false).save()
+
+            new Instruction(description: 'Precalienta el horno a 175° centígrados. Lava y enjuaga el pavo, desecha las vísceras o agrégalas a la charola y te gustan.', recipe: pavo, paso: 1).save()
+            new Instruction(description: 'Coloca el pavo en una rosticera o cacerola de hierro fundido. Jala la piel de la pechuga del pavo para que se desprenda un poco. Coloca 3 cucharadas de mantequilla en ambos sobre y debajo de la piel de la pechuga. Esto hace que la pechuga salga más jugosa.', recipe: pavo, paso: 2).save()
+            new Instruction(description: 'Mezcla el agua tibia con el consomé de pollo, perejil y cebolla. Vierte sobre el pavo. Salpimienta bien.', recipe: pavo, paso: 3).save()
+            new Instruction(description: 'Tapa con papel aluminio y hornea de 3 1/2 a 4 horas, hasta que la temperadura interna del pavo alcance los 80° centígrados (180° F). Destapa durante los últimos 45 minutos para que la poel del pavo se dore.', recipe: pavo, paso: 4).save()
+
+
+            Ingredient pavoi = new Ingredient(name: 'pavo entero').save()
+            Ingredient aguat = new Ingredient(name: 'agua tibia').save()
+            Ingredient consome = new Ingredient(name: 'consomé granulado de pollo').save()
+            Ingredient perejil = new Ingredient(name: 'perejil seco').save()
+            Ingredient cebolla = new Ingredient(name: 'cebolla seca en trozo').save()
+            Ingredient salh = new Ingredient(name: 'sal con hierbas').save()
+
+
+            new Quantity(quantity: '6 Kilos', recipe: pavo, ingredient: pavoi).save()
+            new Quantity(quantity: '6 cucharadas', recipe: pavo, ingredient: mantequilla).save()
+            new Quantity(quantity: "1 litro", recipe: pavo, ingredient: aguat).save()
+            new Quantity(quantity: '3 cucharadas', recipe: pavo, ingredient: consome).save()
+            new Quantity(quantity: '2 cucharadas', recipe: pavo, ingredient: perejil).save()
+            new Quantity(quantity: "2 cucharadas", recipe: pavo, ingredient: salh).save()
         }
+
         if( Admin.count() == 0){
             new Admin(name:"Juan Camilo", lastname: "Calero", username: "admin1", email: "jccaleroe@unal.edu.co", password: "Test1234").save()
             new Admin(name:"Andres Felipe", lastname: "De Orcajo",username: "admin2", password: "Test1234", email:"afdev@unal.edu.co").save()
