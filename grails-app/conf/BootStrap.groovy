@@ -541,7 +541,7 @@ class BootStrap {
             new Quantity(quantity: '2 cucharadas', recipe: pavo, ingredient: perejil).save()
             new Quantity(quantity: "2 cucharadas", recipe: pavo, ingredient: salh).save()
             
-            File fotopasta = new File("web-app/images/pasta.jpg");
+            File fotopasta = new File("web-app/images/rav.jpg");
             byte[] fileContent5 = Files.readAllBytes(fotopasta.toPath())
             Recipe pasta = new Recipe(name: 'Ensalada de pasta', rating: 4, description: 'Las ensaladas de pasta son una alternativa estupenda para una cena rapida, ya que admiten multiples variantes. En otras ocasiones os hemos enseñado a preparar una ensalada de pasta al pesto y otra ensalada de pasta con jamon o pollo.\n' +
                     '\n' +
