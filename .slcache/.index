@@ -4817,3 +4817,4 @@ n:2152:org/apache/tools/ant/taskdefs/optional/native2ascii/DefaultNative2Ascii
 n:6767:sun/tools/native2ascii/Main
 n:697:sun/tools/native2ascii/resources/MsgNative2ascii
 n:1243:sun/tools/native2ascii/N2AFilter
+n:1928:javax/websocket/Session

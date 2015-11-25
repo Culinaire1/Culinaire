@@ -295,7 +295,7 @@ class BootStrap {
         }
 
         if(Cuisine.count() == 0){
-            new Cuisine(name: 'Cocina Italina').save()
+            new Cuisine(name: 'Cocina Italiana').save()
             new Cuisine(name: 'Cocina Colombiana').save()
             new Cuisine(name: 'Cocina Tailandesa').save()
             new Cuisine(name: 'Cocina Asiatica').save()
