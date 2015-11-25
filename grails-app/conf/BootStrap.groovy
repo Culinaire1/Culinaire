@@ -297,6 +297,8 @@ class BootStrap {
         if(Cuisine.count() == 0){
             new Cuisine(name: 'Cocina Italina').save()
             new Cuisine(name: 'Cocina Colombiana').save()
+            new Cuisine(name: 'Cocina Tailandesa').save()
+            new Cuisine(name: 'Cocina Asiatica').save()
         }
 
         if(Restaurant.count() == 0){
@@ -308,7 +310,7 @@ class BootStrap {
                     photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "https://culinaire.herokuapp.com/", approved: true).save()
 
             City city = new City(country: Country.findByName('Colombia'), name: 'Bogotá').save()
-            new Direction(address: 'Carrera 72 #79a-62', city: city, restaurant: tmp).save()
+            new Direction(address: 'Carrera 163 #49-12', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
 
             tmp.save()
@@ -320,7 +322,7 @@ class BootStrap {
 
             tmp = new Restaurant(name: "Wok", username: "wokfood", password: "Test1234",
                     email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'),
-                    photo: fileContent2, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://wok.com.co/wps/portal/wok", approved: true).save()
+                    photo: fileContent2, cuisine: Cuisine.findByName('Cocina Asiatica'), website: "http://wok.com.co/wps/portal/wok", approved: true).save()
 
             new Direction(address: 'Kr 19 #118-75', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
@@ -333,7 +335,7 @@ class BootStrap {
 
             tmp = new Restaurant(name: "Archie's", username: "archies", password: "Test1234",
                     email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'),
-                    photo: fileContent3, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://www.archies.co/", approved: true).save()
+                    photo: fileContent3, cuisine: Cuisine.findByName('Cocina Italiana'), website: "http://www.archies.co/", approved: true).save()
 
             new Direction(address: 'Cl 134 #55-30', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
