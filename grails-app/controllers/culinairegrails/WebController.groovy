@@ -237,4 +237,17 @@ class WebController {
         restaurant.save(flush: true)
         redirect controller: 'web', action: 'admin'
     }
+
+    def votacionReceta(){
+    }
+    def votacionRestaurante(){
+
+    }
+    def votacionPersona(){
+
+        def persona = Person.findById(params.id_person)
+        persona.rating += 1
+        persona.save(flush: true)
+        render("Popularidad: ${persona.rating}")
+    }
 }

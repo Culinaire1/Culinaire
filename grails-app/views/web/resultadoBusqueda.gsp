@@ -118,9 +118,14 @@
                                                                 <td>${persona.username}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Puntuación:</td>
-                                                                <td>${persona.rating}</td>
+                                                                <td>Popularidad:</td>
+                                                                <td>
+                                                                    <div class="rgt">
+                                                                        <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}"/></span>
+                                                                    </div>
+                                                                </td>
                                                             </tr>
+
                                                             <tr><td></td><td></td></tr>
                                                         </tbody>
                                                     </table>
@@ -179,8 +184,12 @@
                                                             <td>${restaurante.description}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Puntuación:</td>
-                                                            <td>${restaurante.rating}</td>
+                                                            <td>Popularidad:</td>
+                                                            <td>
+                                                                <div class="rgt">
+                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}"/></span>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                         <tr><td></td><td></td></tr>
                                                         </tbody>
@@ -237,9 +246,12 @@
                                                             <td>${receta.description}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Puntuación:</td>
-
-                                                            <td>${receta.rating}</td>
+                                                            <td>Popularidad:</td>
+                                                            <td>
+                                                                <div class="rgt">
+                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}"/></span>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                         <tr><td></td><td></td></tr>
 

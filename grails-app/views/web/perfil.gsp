@@ -33,8 +33,9 @@
                     </g:else>
                 </div>
                 <div class="row" style="margin-top: 23%;">
-                    <div class="col-sm-9">
-                        <p class="firma" style="text-align: left; padding-left: 3%;">Popularidad: ${person.rating}</p>
+                    <div class="col-sm-9 rgt">
+                        <span class="firma" style="text-align: left; padding-left: 3%;">Popularidad: </span>
+                        <span><input type="hidden" class="rating" value="${person.rating}" data-readonly/></span>
                     </div>
                     <div class="col-sm-4">
                         <a class="btn btn-primary btn-lg botones b1" href="${createLink(action: 'publicar')}" style="margin-left: 4%">

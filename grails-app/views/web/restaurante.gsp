@@ -3,19 +3,6 @@
 <head>
     <meta name="layout" content="base"/>
     <title>Restaurante</title>
-    <script type="text/javascript">
-        $(function (){
-            $(".img-bg").on('click', function() {
-
-                $(this).toggleClass('select');
-                if ($(this).hasClass('select')) {
-                    $(this).attr('src', 'images/start.png');
-                } else {
-                    $(this).attr('src', 'images/start_off.png');
-                }
-            });
-        });
-    </script>
 </head>
 <body>
 <div class="container">
@@ -54,6 +41,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-12 rgt">
+                            <span class="firma" style="text-align: left; padding-left: 3%;">Popularidad: </span>
+                            <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}"/></span>
+                        </div>
                     </div>
                     <div class="row">
                     <div class="col-sm-3">
@@ -80,6 +71,7 @@
                                 </g:else>
                             </g:each>
                         </ul>
+
                         <div class="tab-content">
                         <g:each var="direccion" in="${ciudad.directions.findAll{it.restaurant == restaurante}}" status="counter">
                             <g:if test="${counter == 0}">
@@ -108,25 +100,6 @@
                     </g:each>
 
                     <br>
-                    <g:if test="${session.tu == true}">
-                        <g:if test="${voto == 1}">
-                            <div class="col-sm-12">
-                                <p class="firma">Popularidad: ${restaurante.rating}</p>
-                                <img style="cursor:pointer"  class="img-bg pull-right select" src="images/start.png"/>
-                            </div>
-
-                        </g:if>
-                        <g:else>
-                            <div class="col-sm-12">
-                                <p class="firma">Popularidad: ${restaurante.rating}</p>
-                                <p class="firma pull-right">+</p>
-                                <img style="cursor:pointer"  class="img-bg pull-right" src="images/start_off.png"/>
-
-                            </div>
-                        </g:else>
-                    </g:if>
-
-
                     <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />
                     <p class="tit" style="font-size: 40px" id="comentarios">Comentarios:</p>
 

@@ -13,7 +13,7 @@
     <asset:stylesheet src="bootstrap.css"/>
 
     <asset:stylesheet src="main2.css"/>
-    <asset:stylesheet src="star-rating.css"/>
+    <asset:stylesheet src="bootstrap-rating.css"/>
 
     <!link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css.css')}" type="text/css">
     <style>
@@ -24,11 +24,22 @@
     @font-face { font-family: Liberator; src: url(${resource(dir: 'fonts', file: 'Liberator-Light.ttf')})}
     </style>
 
+    <style type="text/css">
+        .rgt{
+            font-size: 20px;
+            color: #333387;
+        }
+        .rgt-st{
+            cursor: pointer;
+        }
+
+    </style>
+
     <!-- Bootstrap core JavaScript -->
     <asset:javascript src="jquery-1.11.2.min.js"/>
     <asset:javascript src="bootstrap.js"/>
-    <asset:javascript src="star-rating.min.js"/>
-    <asset:javascript src="star-rating_locale_en.js"/>
+    <asset:javascript src="bootstrap-rating.min.js"/>
+
     <g:layoutHead/>
 </head>
 <body>

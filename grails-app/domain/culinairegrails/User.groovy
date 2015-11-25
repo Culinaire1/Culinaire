@@ -20,7 +20,7 @@ class User {
         email(nullable: false, email: true)
         description(nullable: true, blank: false)
         photo(nullable: true, blank: true, maxSize: 4194304)//4MB
-        rating(nullable: false, range: 1..5)
+        rating(nullable: false, range: 1..100)
         website(nullable: true, url: true)
     }
 
