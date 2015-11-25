@@ -153,24 +153,18 @@ class WebController {
         def restaurantes=[] as Set
         def recetas=[] as Set
         def criterio=""
-        def aux
+        def cadena=""
 
         parametros.each {
-            criterio= '%'+it+'%'
-            aux= Person.where {
-                (lower(name) ==~ criterio || lower(lastname)==~ criterio || lower(username)==~ criterio)
-            }
-            personas += aux
+            cadena= '.*'+it+'.*'
+            criterio= ~ "${cadena}"
 
-            aux= Restaurant.where {
-                (lower(name) ==~ criterio || lower(description)==~ criterio || lower(username)==~ criterio)
-            }
-            restaurantes +=aux
+            personas.addAll(Person.list().findAll {it.name.toLowerCase()==~criterio||it.lastname.toLowerCase()==~criterio||it.username.toLowerCase()==~criterio})
 
-            aux= Recipe.where {
-                (lower(name) ==~ criterio || lower(description)==~ criterio)
-            }
-            recetas +=aux
+            restaurantes.addAll(Restaurant.list().findAll {it.name.toLowerCase()==~criterio||it.username.toLowerCase()==~criterio||it.description==~criterio})
+
+            recetas.addAll(Recipe.list().findAll {it.name.toLowerCase()==~criterio||it.description.toLowerCase()==~criterio})
+            recetas.addAll(Recipe.list().findAll {it.quantities.findAll{it.ingredient.name.toLowerCase() ==~ criterio}})
         }
 
         render(view: 'resultadoBusqueda',  model:[personas:personas, restaurantes:restaurantes, recetas:recetas, categories: Category.list(), parametro: params.srch_term])

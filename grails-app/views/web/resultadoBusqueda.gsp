@@ -270,11 +270,8 @@
                     <!--FIN Recetas-->
                 </div>
             </div>
-
         </div>
-
     </div>
-
 
 </div>
 
