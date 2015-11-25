@@ -340,6 +340,19 @@ class BootStrap {
             tmp.save()
 
             new Menu(restaurant: tmp).save()
+
+            File fi4 = new File("web-app/images/f9.jpg");
+            byte[] fileContent4 = Files.readAllBytes(fi4.toPath())
+
+            tmp = new Restaurant(name: "T-Bone", username: "tbone", password: "Test1234",
+                    email:"t-bone@tbone.com.co", description: "La especialidad son las carnes maduradas hechas al carbón, de donde proviene el nombre del restaurante", rating: 2, country: Country.findByName('Colombia'),
+                    photo: fileContent4, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://restaurante-tbone.com.co/", approved: true).save()
+
+            new Direction(address: 'Cra. 4 No. 12c-34', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
         }
 
         if( Plate.count() == 0){
@@ -351,6 +364,9 @@ class BootStrap {
 
             tmp = Restaurant.findByName("Wok").menu
             new Plate(name: 'Ropa vieja', menu: tmp).save()
+
+            tmp = Restaurant.findByName("T-Bone").menu
+            new Plate(name: ' corte de lomo ancho y lomo fino con hueso', menu: tmp).save()
         }
 
         if(Recipe.count() == 0){
