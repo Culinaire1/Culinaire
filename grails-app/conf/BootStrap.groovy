@@ -299,6 +299,7 @@ class BootStrap {
             new Cuisine(name: 'Cocina Colombiana').save()
             new Cuisine(name: 'Cocina Tailandesa').save()
             new Cuisine(name: 'Cocina Asiatica').save()
+            new Cuisine(name: 'Cocina Francesa').save()
         }
 
         if(Restaurant.count() == 0){
@@ -350,7 +351,36 @@ class BootStrap {
                     email:"t-bone@tbone.com.co", description: "La especialidad son las carnes maduradas hechas al carbón, de donde proviene el nombre del restaurante", rating: 2, country: Country.findByName('Colombia'),
                     photo: fileContent4, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://restaurante-tbone.com.co/", approved: true).save()
 
-            new Direction(address: 'Cra. 4 No. 12c-34', city: city, restaurant: tmp).save()
+            new Direction(address: 'Kr 4 #12c-34', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
+
+
+
+            File fi5 = new File("web-app/images/f10.jpg");
+            byte[] fileContent5 = Files.readAllBytes(fi5.toPath())
+
+            tmp = new Restaurant(name: "L'Arca Gourmet Fashion Food", username: "gourmet", password: "Test1234",
+                    email:"lgff@gourmet.com.co", description: "Es un restaurante moderno pensado para los amantes de la buena mesa.",country: Country.findByName('Colombia'),
+                    photo: fileContent5, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://restaurantelarca.com/", approved: true).save()
+
+
+            new Direction(address: 'Calle 64 #5-60', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
+
+            File fi6 = new File("web-app/images/f11.jpg");
+            byte[] fileContent6 = Files.readAllBytes(fi6.toPath())
+
+            tmp = new Restaurant(name: "Criterion", username: "Criterion", password: "Test1234",
+                    email:"Criterion@criterion.com.co", description: "El restaurante Criterión se encuentra en la exclusiva Zona G conocida por los Capitalinos como un sector de la ciudad de Bogotá con propuestas innovadoras.", country: Country.findByName('Colombia'),
+                    photo: fileContent6, cuisine: Cuisine.findByName('Cocina Francesa'), website: "http://www.hermanosrausch.com/", approved: true).save()
+
+            new Direction(address: 'Calle 69A # 5-75', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
             tmp.save()
 
@@ -369,6 +399,12 @@ class BootStrap {
 
             tmp = Restaurant.findByName("T-Bone").menu
             new Plate(name: ' corte de lomo ancho y lomo fino con hueso', menu: tmp).save()
+
+            tmp = Restaurant.findByName("L'Arca Gourmet Fashion Food").menu
+            new Plate(name: ' Sopa de tomates frescos, Ensalada de jaiba y calabacín crudo', menu: tmp).save()
+
+            tmp = Restaurant.findByName("Criterion").menu
+            new Plate(name: ' Shakshuka Israeli, Huevos Benedictinos de varios estilos, Huevos a la Florentine, Calentao estilo Rausch, Omelettes con variedad de ingredientes, Sándwiches Croque Madame o Croque Monsieur, Waffles o las famosas Tostadas Francesas. ', menu: tmp).save()
         }
 
         if(Recipe.count() == 0){
