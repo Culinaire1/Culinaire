@@ -44,9 +44,16 @@
                                 </g:else>
                             </div>
                             <div class="row" style="margin-top: 23%;">
+
                                 <div class="col-sm-9 rgt">
-                                    <span class="firma" style="text-align: left; padding-left: 3%;">Popularidad: </span>
-                                    <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}"/></span>
+                                    <div class="col-sm-12">
+                                        <span class="firma" style="text-align: left">Popularidad: </span>
+                                        <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-tipo="person" data-id="${person.id}"/></span>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                        <span class="rgt-counter">${person.votes.size()}</span>
+                                    </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person',

@@ -42,10 +42,11 @@
     <script>
         $(function () {
             $(".rating-symbol").on('click', function(){
-                var valor, tipo, id;
+                var valor, tipo, id, counter;
                 valor = $(this).closest('.rgt-st').find('input.rating').val();
                 tipo = $(this).closest('.rgt-st').find('input.rating').data("tipo");
                 id= $(this).closest('.rgt-st').find('input.rating').data("id");
+                counter=$(this).closest('.rgt').find('span.rgt-counter');
 
                 $.ajax({
                     method: "POST",
@@ -53,10 +54,18 @@
                     data: { valor: valor, tipo:tipo, id:id  }
                 })
                     .done(function(data) {
-                           alert(data.votos);
+                            //alert(typeof data.votos);
+
+                            if (data.votos == -1){
+                                $('#modalAlert').modal('show')
+                                //alert("Para registrar su voto es necesario iniciar session!!!");
+                            }else{
+                                counter.text(data.votos);
+                            }
+
                     })
                     .fail(function() {
-                        alert( "error" );
+                            alert( "error" );
                     })
                     .always(function() {
                         //Código que siempre se ejecuta al finalizar sin importar si fue o no un error.
@@ -167,11 +176,39 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title tit">Opps!!!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="cuerpo">
+                    <h3 class="text-center">Para registrar su voto es necesario iniciar session</h3>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary botones b1" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span>&nbsp;
+                    Cerrar
+                </button>
+                <a href="${createLink(controller: 'web', action: 'ingresar')}" class="btn btn-primary botones b1">
+                    <span class="glyphicon glyphicon-user"></span>&nbsp
+                    Acceder
+                </a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <footer class="footer" id="foot3">
     <div class="container">
         <p class="text">Culinaire - 2015</p>
     </div>
 </footer>
+
 
 </body>
 </html>

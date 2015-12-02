@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-sm-12">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <span>${person.votes.size()}</span>
+                            <span class="rgt-counter">${person.votes.size()}</span>
                         </div>
                     </div>
                     <g:if test="${session.tu == true}">

@@ -127,7 +127,9 @@
                                                             <td>Popularidad:</td>
                                                             <td>
                                                                 <div class="rgt">
-                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}"/></span>
+                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}" data-tipo="recipe" data-id="${receta.id}"/></span>
+                                                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                                                    <span class="rgt-counter">${receta.votes.size()}</span>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -192,7 +194,9 @@
                                                             <td>Popularidad:</td>
                                                             <td>
                                                                 <div class="rgt">
-                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}"/></span>
+                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}" data-tipo="restaurant" data-id="${restaurante.id}"/></span>
+                                                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                                                    <span class="rgt-counter">${restaurante.votes.size()}</span>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -251,7 +255,9 @@
                                                                 <td>Popularidad:</td>
                                                                 <td>
                                                                     <div class="rgt">
-                                                                        <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}"/></span>
+                                                                        <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}" data-tipo="person" data-id="${persona.id}"/></span>
+                                                                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                                                        <span class="rgt-counter">${persona.votes.size()}</span>
                                                                     </div>
                                                                 </td>
                                                             </tr>

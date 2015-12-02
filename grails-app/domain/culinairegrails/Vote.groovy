@@ -1,8 +1,6 @@
 package culinairegrails
 
-class VotePerson {
-
+class Vote {
     Integer voter
     Integer value
-    static belongsTo = [person: Person]
 }
