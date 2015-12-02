@@ -1,7 +1,8 @@
 package culinairegrails
 
-import javax.websocket.Session
+import grails.converters.JSON
 
+import javax.validation.constraints.Null
 
 class WebController {
 
@@ -181,7 +182,7 @@ class WebController {
         if (session.user){
             def recipe= Recipe.findByName(params.name)
             def usu= User.findByUsername(session.user).id
-            def voto= Vote.findAllByVoterAndRecipe(usu, recipe).size()
+            def voto= VoteRestaurant.findAllByVoterAndRecipe(usu, recipe).size()
             render(view: 'receta',  model:[recipe: recipe, voto: voto])
 
         }else{
@@ -197,7 +198,7 @@ class WebController {
             def restaurante= Restaurant.findByUsername(params.user)
             //restaurante.addToVotes(voter: 4).save()
             def usu= User.findByUsername(session.user).id
-            def voto= Vote.findAllByVoterAndRestaurant(usu, restaurante).size()
+            def voto= VoteRestaurant.findAllByVoterAndRestaurant(usu, restaurante).size()
             render(view: 'restaurante',  model:[restaurante: restaurante, voto: voto])
 
         }else{
@@ -232,16 +233,57 @@ class WebController {
         redirect controller: 'web', action: 'admin'
     }
 
-    def votacionReceta(){
-    }
-    def votacionRestaurante(){
+    def votacion(){
 
-    }
-    def votacionPersona(){
+        if (session.user){
 
-        def persona = Person.findById(params.id_person)
-        persona.rating += 1
-        persona.save(flush: true)
-        render("Popularidad: ${persona.rating}")
+            def tipo= params.tipo
+            def valor= params.valor
+            def id=params.id
+            def usu_id= User.findByUsername(session.user).id
+
+            if (tipo=="person"){
+
+                def person= Person.findById(id)
+                def voto= VotePerson.findByVoterAndPerson(usu_id,person)
+
+                if (voto != null){
+                    voto.value=valor
+                    voto.save(flush: true, failOnError:true )
+
+                    def suma= person.votes.sum {it.value}
+                    def num= person.votes.size()
+                    person.rating= suma/num
+
+                    person.save(flush: true, failOnError:true )
+
+                    def data=[tipo:tipo, valor:valor, id:id, votos:voto.v]
+                    render data as JSON
+
+                }else{
+
+                    person.addToVotes(voter: usu_id, value: valor)
+
+                    def suma= person.votes.sum {it.value}
+                    def num= person.votes.size()
+                    person.rating= suma/num
+                    person.save(flush: true, failOnError:true )
+                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
+                    render data as JSON
+
+                }
+
+            }else if (tipo=="restaurant"){
+                render tipo
+
+            }else if(tipo=="recipe"){
+                render tipo
+
+            }
+
+        }else{
+            render ""
+        }
+
     }
 }

@@ -15,7 +15,7 @@ import culinairegrails.Plate
 import culinairegrails.Quantity
 import culinairegrails.Recipe
 import culinairegrails.Restaurant
-import culinairegrails.Vote
+import culinairegrails.VoteRestaurant
 
 import java.nio.file.Files;
 

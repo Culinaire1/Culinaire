@@ -32,9 +32,7 @@ class UrlMappings {
         "/resultados"(controller: 'web',action:'busquedatipicos')
         "/resultado_Restaurantes"(controller: 'web',action:'busquedaRestaurantes')
         "/admin"(controller: 'web',action:'admin')
-        "/votoPersona"(controller: 'web', action: 'votacionPersona')
-        "/votoRestaurante"(controller: 'web', action: 'votacionRestaurante')
-        "/votoReceta"(controller: 'web', action: 'votacionPersona')
+        "/votacion"(controller: 'web', action: 'votacion')
         "500"(view:'/error')
         "/conf"(controller: "conf", action: 'index')
     }

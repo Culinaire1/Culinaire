@@ -47,8 +47,10 @@
                                 <a style="margin-left: 20%;" class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person',
                                         action: 'removeFavoriteRecipe', params: [id: recipe.id])}" style="margin-left: 14%">Dejar de seguir</a>
                             </div>
-                            <div class="col-sm-4">
-                                <p class="firma">Popularidad: ${recipe.rating}</p>
+
+                            <div class="col-sm-4 rgt">
+                                <span class="firma" style="text-align: left; padding-left: 3%;">Popularidad: </span>
+                                <span class="rgt-st"><input type="hidden" class="rating" value="${recipe.rating}"/></span>
                             </div>
                         </div>
                         <hr style="width: 100%; color: #111160; height: 4px; background-color:#111160;" />

@@ -39,12 +39,36 @@
     <asset:javascript src="jquery-1.11.2.min.js"/>
     <asset:javascript src="bootstrap.js"/>
     <asset:javascript src="bootstrap-rating.min.js"/>
+    <script>
+        $(function () {
+            $(".rating-symbol").on('click', function(){
+                var valor, tipo, id;
+                valor = $(this).closest('.rgt-st').find('input.rating').val();
+                tipo = $(this).closest('.rgt-st').find('input.rating').data("tipo");
+                id= $(this).closest('.rgt-st').find('input.rating').data("id");
+
+                $.ajax({
+                    method: "POST",
+                    url: "votacion",
+                    data: { valor: valor, tipo:tipo, id:id  }
+                })
+                    .done(function(data) {
+                           alert(data.votos);
+                    })
+                    .fail(function() {
+                        alert( "error" );
+                    })
+                    .always(function() {
+                        //Código que siempre se ejecuta al finalizar sin importar si fue o no un error.
+                    });
+            });
+        });
+    </script>
 
     <g:layoutHead/>
 </head>
 <body>
 <div class="masthead container">
-
     <nav>
         <ul class="nav nav-justified logo">
             <li><g:img dir="images" file="Logo.png"/>
@@ -148,8 +172,6 @@
         <p class="text">Culinaire - 2015</p>
     </div>
 </footer>
-
-
 
 </body>
 </html>
