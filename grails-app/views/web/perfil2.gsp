@@ -33,17 +33,8 @@
                     </g:else>
                 </div>
                 <div class="row" style="margin-top: 23%;">
-                    <div class="col-sm-9 rgt">
-                        <div class="col-sm-12">
-                            <span class="firma" style="text-align: left">Popularidad: </span>
-                            <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-tipo="person" data-id="${person.id}"/></span>
-                        </div>
-                        <div class="col-sm-12">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <span class="rgt-counter">${person.votes.size()}</span>
-                        </div>
-                    </div>
-                    <g:if test="${session.tu == true}">
+
+                    <g:if test="${session.tu}">
                         <div class="col-sm-3">
                         <g:if test="${person in user.favoriteUsers}">
                             <a class="btn btn-primary btn-lg center-block botones b1" href="${createLink(controller: 'person', action: 'removeFavoriteUser',
@@ -55,6 +46,27 @@
                         </g:else>
                         </div>
                     </g:if>
+
+                    <div class="col-sm-9 rgt">
+                        <div class="col-sm-12">
+                            <span class="firma" style="text-align: left">Popularidad: </span>
+                            <g:if test="${session.user}">
+                                <g:if test="${session.tu==true}">
+                                    <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-tipo="person" data-id="${person.id}"/></span>
+                                </g:if>
+                                <g:else>
+                                    <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-readonly data-case="notperson"/></span>
+                                </g:else>
+                            </g:if>
+                            <g:else>
+                                <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-readonly data-case="offsession"/></span>
+                            </g:else>
+                        </div>
+                        <div class="col-sm-12">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            <span class="rgt-counter">${person.votes.size()}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -211,105 +211,118 @@ class WebController {
 
     def votacion(){
 
-        def tipo= params.tipo
-        def valor= params.valor.toInteger()
-        def id=params.id.toInteger()
+        if(session.tu == true) {
+            def tipo = params.tipo
+            def valor = params.valor.toInteger()
+            def id= params.id.toInteger()
 
-        if (session.user){
+            def voter_id = User.findByUsername(session.user).id
 
-            def user_id= User.findByUsername(session.user).id
+            if (tipo == "person") {
 
-            if (tipo=="person"){
-
-                def person= Person.findById(id)
-                def voto= person.votes.find {it.voter==user_id}
-
-                if (voto != null){
-                    voto.value=valor
-                    voto.save(flush: true, failOnError:true )
-
-                    def suma= person.votes.sum {it.value}
-                    def num= person.votes.size()
-                    person.rating= suma/num
-
-                    person.save(flush: true, failOnError:true )
-
-                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
-                    render data as JSON
-                }else{
-
-                    person.addToVotes(voter: user_id, value: valor)
-
-                    def suma= person.votes.sum {it.value}
-                    def num= person.votes.size()
-                    person.rating= suma/num
-                    person.save(flush: true, failOnError:true )
-                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
+                if( voter_id == id){
+                    def rating = Person.findById(id).rating
+                    def data=[error:true, errorcode: -1, result:rating]
                     render data as JSON
                 }
 
-            }else if (tipo=="restaurant"){
+                def person = Person.findById(id)
+                def vote = person.votes.find { it.voter == voter_id }
 
-                def restaurant= Restaurant.findById(id)
-                def voto= restaurant.votes.find {it.voter==user_id}
+                if (vote != null) {
+                    vote.value = valor
+                    vote.save(flush: true, failOnError: true)
 
-                if (voto != null){
-                    voto.value=valor
-                    voto.save(flush: true, failOnError:true )
+                    def suma = person.votes.sum { it.value }
+                    def num = person.votes.size()
+                    person.rating = suma / num
 
-                    def suma= restaurant.votes.sum {it.value}
-                    def num= restaurant.votes.size()
-                    restaurant.rating= suma/num
+                    person.save(flush: true, failOnError: true)
 
-                    restaurant.save(flush: true, failOnError:true )
-
-                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
+                    def data=[error: false, result:num]
                     render data as JSON
-                }else{
 
-                    restaurant.addToVotes(voter: user_id, value: valor)
+                } else {
 
-                    def suma= restaurant.votes.sum {it.value}
-                    def num= restaurant.votes.size()
-                    restaurant.rating= suma/num
-                    restaurant.save(flush: true, failOnError:true )
-                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
-                    render data as JSON
-                }
+                    person.addToVotes(voter: voter_id, value: valor)
 
-            }else if(tipo=="recipe"){
-
-                def recipe= Recipe.findById(id)
-                def voto= recipe.votes.find {it.voter==user_id}
-
-                if (voto != null){
-                    voto.value=valor
-                    voto.save(flush: true, failOnError:true )
-
-                    def suma= recipe.votes.sum {it.value}
-                    def num= recipe.votes.size()
-                    recipe.rating= suma/num
-
-                    recipe.save(flush: true, failOnError:true )
-
-                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
-                    render data as JSON
-                }else{
-
-                    recipe.addToVotes(voter: user_id, value: valor)
-
-                    def suma= recipe.votes.sum {it.value}
-                    def num= recipe.votes.size()
-                    recipe.rating= suma/num
-                    recipe.save(flush: true, failOnError:true )
-                    def data=[tipo:tipo, valor:valor, id:id, votos:num]
+                    def suma = person.votes.sum { it.value }
+                    def num = person.votes.size()
+                    person.rating = suma / num
+                    person.save(flush: true, failOnError: true)
+                    def data=[error: false, result:num]
                     render data as JSON
                 }
 
+            } else if (tipo == "restaurant") {
+
+                def restaurant = Restaurant.findById(id)
+                def vote = restaurant.votes.find { it.voter == voter_id }
+
+                if (vote != null) {
+                    vote.value = valor
+                    vote.save(flush: true, failOnError: true)
+
+                    def suma = restaurant.votes.sum { it.value }
+                    def num = restaurant.votes.size()
+                    restaurant.rating = suma / num
+
+                    restaurant.save(flush: true, failOnError: true)
+
+                    def data=[error: false, result:num]
+                    render data as JSON
+                } else {
+
+                    restaurant.addToVotes(voter: voter_id, value: valor)
+
+                    def suma = restaurant.votes.sum { it.value }
+                    def num = restaurant.votes.size()
+                    restaurant.rating = suma / num
+                    restaurant.save(flush: true, failOnError: true)
+                    def data=[error: false, result:num]
+                    render data as JSON
+                }
+
+            } else if (tipo == "recipe") {
+
+                def recipe = Recipe.findById(id)
+                def userRecipeId = recipe.person.id;
+
+                if (voter_id == userRecipeId) {
+                    def rating=recipe.rating
+                    def data=[error: true, errorcode: -1, result:rating]
+                    render data as JSON
+                }else {
+                    def vote = recipe.votes.find { it.voter == voter_id }
+
+                    if (vote != null) {
+                        vote.value = valor
+                        vote.save(flush: true, failOnError: true)
+
+                        def suma = recipe.votes.sum { it.value }
+                        def num = recipe.votes.size()
+                        recipe.rating = suma / num
+
+                        recipe.save(flush: true, failOnError: true)
+
+                        def data=[error: false, result:num]
+                        render data as JSON
+                    } else {
+
+                        recipe.addToVotes(voter: voter_id, value: valor)
+
+                        def suma = recipe.votes.sum { it.value }
+                        def num = recipe.votes.size()
+                        recipe.rating = suma / num
+                        recipe.save(flush: true, failOnError: true)
+                        def data=[error: false, result:num]
+                        render data as JSON
+                    }
+                }
             }
 
         }else{
-            def data=[tipo:tipo, valor:valor, id:id, votos:-1]
+            def data=[error: true, errorcode: -2]
             render data as JSON
         }
 

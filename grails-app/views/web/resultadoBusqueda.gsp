@@ -127,7 +127,18 @@
                                                             <td>Popularidad:</td>
                                                             <td>
                                                                 <div class="rgt">
-                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}" data-tipo="recipe" data-id="${receta.id}"/></span>
+                                                                    <g:if test="${session.user}">
+                                                                        <g:if test="${session.tu==true}">
+                                                                            <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}" data-tipo="recipe" data-id="${receta.id}"/></span>
+                                                                        </g:if>
+                                                                        <g:else>
+                                                                            <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}" data-readonly data-case="notperson"/></span>
+                                                                        </g:else>
+                                                                    </g:if>
+                                                                    <g:else>
+                                                                        <span class="rgt-st"><input type="hidden" class="rating" value="${receta.rating}" data-readonly data-case="offsession"/></span>
+                                                                    </g:else>
+
                                                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                                                     <span class="rgt-counter">${receta.votes.size()}</span>
                                                                 </div>
@@ -194,7 +205,18 @@
                                                             <td>Popularidad:</td>
                                                             <td>
                                                                 <div class="rgt">
-                                                                    <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}" data-tipo="restaurant" data-id="${restaurante.id}"/></span>
+                                                                    <g:if test="${session.user}">
+                                                                        <g:if test="${session.tu==true}">
+                                                                            <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}" data-tipo="restaurant" data-id="${restaurante.id}"/></span>
+                                                                        </g:if>
+                                                                        <g:else>
+                                                                            <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}" data-readonly data-case="notperson"/></span>
+                                                                        </g:else>
+                                                                    </g:if>
+                                                                    <g:else>
+                                                                        <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}" data-readonly data-case="offsession"/></span>
+                                                                    </g:else>
+
                                                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                                                     <span class="rgt-counter">${restaurante.votes.size()}</span>
                                                                 </div>
@@ -255,7 +277,18 @@
                                                                 <td>Popularidad:</td>
                                                                 <td>
                                                                     <div class="rgt">
-                                                                        <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}" data-tipo="person" data-id="${persona.id}"/></span>
+                                                                        <g:if test="${session.user}">
+                                                                            <g:if test="${session.tu==true}">
+                                                                                <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}" data-tipo="person" data-id="${persona.id}"/></span>
+                                                                            </g:if>
+                                                                            <g:else>
+                                                                                <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}" data-readonly data-case="notperson"/></span>
+                                                                            </g:else>
+                                                                        </g:if>
+                                                                        <g:else>
+                                                                            <span class="rgt-st"><input type="hidden" class="rating" value="${persona.rating}" data-readonly data-case="offsession"/></span>
+                                                                        </g:else>
+
                                                                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                                                         <span class="rgt-counter">${persona.votes.size()}</span>
                                                                     </div>

@@ -48,7 +48,18 @@
                                 <div class="col-sm-9 rgt">
                                     <div class="col-sm-12">
                                         <span class="firma" style="text-align: left">Popularidad: </span>
-                                        <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-tipo="person" data-id="${person.id}"/></span>
+                                        <g:if test="${session.user}">
+                                            <g:if test="${session.tu==true}">
+                                                <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-tipo="person" data-id="${person.id}"/></span>
+                                            </g:if>
+                                            <g:else>
+                                                <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-readonly data-case="notperson"/></span>
+                                            </g:else>
+                                        </g:if>
+                                        <g:else>
+                                            <span class="rgt-st"><input type="hidden" class="rating" value="${person.rating}" data-readonly data-case="offsesion"/></span>
+                                        </g:else>
+
                                     </div>
                                     <div class="col-sm-12">
                                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
