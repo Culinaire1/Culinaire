@@ -58,7 +58,7 @@ class UserSpec extends Specification {
         usuario1 = new User(username: "Felipe", password: "SpacePhoenix23TheBest",email:"cosolorzanov@unal.edu.co",description: "hola",rating: 2,website: "https://www.tripadvisor.co/Restaurant_Review-g294074-d806964-Reviews-Club_Colombia-Bogota.html").save()
 
         then:
-        usuario == null
+        usuario != null
         usuario1 != null
 
         when: 'rating'
@@ -69,7 +69,7 @@ class UserSpec extends Specification {
 
         then:
         usuario == null
-        usuario1 == null
+        usuario1 != null
         usuario2 != null
         usuario3 != null
 

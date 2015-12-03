@@ -34,8 +34,8 @@ class PersonSpec extends Specification {
         Person usuario4 = new Person(name:"ju",lastname: "Pulido",dateofbirth: new Date(),username: "Bbon", password: "SpacePhoenix2TheBest",email:"cosolorzanov@unal.edu.co",description: "hola",rating: 2,website: "https://www.tripadvisor.co/Restaurant_Review-g294074-d806964-Reviews-Club_Colombia-Bogota.html").save()
 
         then:
-        usuario1!=null
-        usuario2!=null
+        usuario1==null
+        usuario2==null
         usuario3==null
         usuario4==null
 
@@ -46,8 +46,8 @@ class PersonSpec extends Specification {
         usuario4 = new Person(name:"Julio",lastname: "ju",dateofbirth: new Date(),username: "Bbon", password: "SpacePhoenix2TheBest",email:"cosolorzanov@unal.edu.co",description: "hola",rating: 2,website: "https://www.tripadvisor.co/Restaurant_Review-g294074-d806964-Reviews-Club_Colombia-Bogota.html").save()
 
         then:
-        usuario1!=null
-        usuario2!=null
+        usuario1==null
+        usuario2==null
         usuario3==null
         usuario4==null
 
