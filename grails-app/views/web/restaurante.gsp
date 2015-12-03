@@ -41,9 +41,16 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-sm-12 rgt">
-                            <span class="firma" style="text-align: left; padding-left: 3%;">Popularidad: </span>
-                            <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}"/></span>
+                            <div class="col-sm-12">
+                                <span class="firma" style="text-align: left">Popularidad: </span>
+                                <span class="rgt-st"><input type="hidden" class="rating" value="${restaurante.rating}" data-tipo="restaurant" data-id="${restaurante.id}"/></span>
+                            </div>
+                            <div class="col-sm-12">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="rgt-counter">${restaurante.votes.size()}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
