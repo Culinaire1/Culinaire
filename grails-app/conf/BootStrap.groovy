@@ -679,6 +679,67 @@ class BootStrap {
             new Quantity(quantity: "1/2 cabeza", recipe: taco, ingredient: lechuga).save()
             new Quantity(quantity: "1 taza", recipe: taco, ingredient: salsaTomate).save()
             new Quantity(quantity: "1 cucharada", recipe: taco, ingredient: cebollaVerde).save()
+
+
+
+
+            File alcachofasImage = new File("web-app/images/alcachofas.jpg");
+            byte[] fileContent9 = Files.readAllBytes(alcachofasImage.toPath())
+            Recipe alcachofa = new Recipe(name: 'Alcachofas', rating: 5, description: 'Alcachofas rellenas con ragout de hongos.',
+                    country: Country.findByName('Colombia'), difficulty: Difficulty.findByLevel("Medio"),
+                    duration: Duration.findByDuration("Entre 30 y 60 minutos"), category: Category.findByName('Platos principales'),
+                    person: Person.get(1), photo: fileContent9, typical: true).save()
+
+            new Instruction(description: 'Precaliente el horno a una temperatura de 340 °F (170 °C). Llene un recipiente con agua fría,' +
+                    ' agregue tres cucharadas de jugo de limón y si lo desea unas rodajas del cítrico.', recipe: alcachofa, paso: 1).save()
+            new Instruction(description: 'Retire las hojas externas y sumerja las alcachofas con frecuencia en el agua con ' +
+                    'limón para evitar que se oxiden y se pongan oscuras. Límpieles el tallo y córteles el extremo. ',
+                    recipe: alcachofa, paso: 2).save()
+            new Instruction(description: 'Corte una tercera parte de las puntas de las alcachofas, cuidando de no incluir el corazón.' +
+                    ' Sumérjalas en el agua acidulada y con la ayuda de una cuchara, desprenda el centro de la flor retirando toda ' +
+                    'la pelusa y dejando limpio el corazón.', recipe: alcachofa, paso: 3).save()
+            new Instruction(description: 'Caliente agua en una olla profunda. Añádale tres cucharadas de jugo de limón y una cucharada de ' +
+                    'harina de trigo. Agregue las alcachofas ya limpias y cocínelas durante 20 minutos o hasta que estén tiernas. ' +
+                    'Con un cuchillo, retíreles el tallo para que estén de pie. Reserve.', recipe: alcachofa, paso: 4).save()
+            new Instruction(description: 'Para el ragout, cocine los hongos, las zanahorias, la cebolla, el ajo y la carne de res en una' +
+                    ' olla mediana a fuego medio con la mantequilla, hasta conseguir una textura de guisado. Salpimiente al gusto y ' +
+                    'espolvoree el perejil picado.', recipe: alcachofa, paso: 5).save()
+            new Instruction(description: 'Rellene las alcachofas con el ragout, luego cúbralas con una cucharada grande de polvo ' +
+                    'de almendras y finalice con un cubo de mantequilla fría.', recipe: alcachofa, paso: 6).save()
+            new Instruction(description: 'Lleve al horno hasta que el polvo de almendras tome un color dorado. Sirva las alcachofas ' +
+                    'sobre una cama de hilos de zanahoria.', recipe: alcachofa, paso: 7).save()
+            new Instruction(description: 'Se le recomienda: Una vez cocidas las alcachofas, puede conservar los corazones en un ' +
+                    'frasco con aceite de oliva, ajo, una ramita de tomillo, unas hojitas de albahaca y vinagre blanco.' +
+                    ' Guárdelos máximo por una semana en refrigeración.', recipe: alcachofa, paso: 8).save()
+
+            Ingredient champ = Ingredient.findByName('Champiñones')
+            if(champ != null)
+                champ = new Ingredient(name: 'Champiñones').save()
+            Ingredient porto = new Ingredient(name: 'Hongos portobello').save()
+            Ingredient zan = Ingredient.findByName('Zanahoria')
+            if(zan != null)
+                zan = new Ingredient(name: 'Zanahoria').save()
+            Ingredient ceb = new Ingredient(name: 'Cebolla blanca').save()
+            Ingredient ajo = Ingredient.findByName('Ajo')
+            if(ajo != null)
+                ajo = new Ingredient(name: 'Ajo').save()
+            Ingredient res = new Ingredient(name: 'Carne de res molida').save()
+            Ingredient mant = Ingredient.findByName('Mantequilla')
+            if(mant != null)
+                mant = new Ingredient(name: 'Mantequilla').save()
+            Ingredient per = Ingredient.findByName('Perijil')
+            Ingredient alm = Ingredient.findByName('Almendras')
+
+
+            new Quantity(quantity: '10 unidades finamente picadas', recipe: alcachofa, ingredient: champ).save()
+            new Quantity(quantity: '7 unidades finamente picadas', recipe: alcachofa, ingredient: porto).save()
+            new Quantity(quantity: "1/2", recipe: alcachofa, ingredient: zan).save()
+            new Quantity(quantity: '1/2 taza', recipe: alcachofa, ingredient: ceb).save()
+            new Quantity(quantity: '1 diente finamente picado', recipe: alcachofa, ingredient: ajo).save()
+            new Quantity(quantity: "1 y media tazas", recipe: alcachofa, ingredient: res).save()
+            new Quantity(quantity: "2 cucharas", recipe: alcachofa, ingredient: mant).save()
+            new Quantity(quantity: "1 cuchara", recipe: alcachofa, ingredient: per).save()
+            new Quantity(quantity: "1/2 taza", recipe: alcachofa, ingredient: alm).save()
         }
 
         if( Admin.count() == 0){
