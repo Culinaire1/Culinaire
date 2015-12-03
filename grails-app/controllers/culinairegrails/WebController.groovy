@@ -160,7 +160,7 @@ class WebController {
 
             personas.addAll(Person.list().findAll {it.name.toLowerCase()==~criterio||it.lastname.toLowerCase()==~criterio||it.username.toLowerCase()==~criterio})
 
-            restaurantes.addAll(Restaurant.list().findAll {it.name.toLowerCase()==~criterio||it.username.toLowerCase()==~criterio||it.description==~criterio})
+            restaurantes.addAll(Restaurant.list().findAll {it.name.toLowerCase()==~criterio||it.username.toLowerCase()==~criterio||it.description==~criterio}.findAll {it.approved == true})
 
             recetas.addAll(Recipe.list().findAll {it.name.toLowerCase()==~criterio||it.description.toLowerCase()==~criterio})
             recetas.addAll(Recipe.list().findAll {it.quantities.findAll{it.ingredient.name.toLowerCase() ==~ criterio}})

@@ -311,6 +311,7 @@ class BootStrap {
 
             City city = new City(country: Country.findByName('Colombia'), name: 'Bogotá').save()
             new Direction(address: 'Calle 163 #72-39', city: city, restaurant: tmp).save()
+            new Direction(address: 'Calle 128 #60-50', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
 
             City city2 = new City(country: Country.findByName('Colombia'), name: 'Barranquilla').save()
@@ -388,6 +389,20 @@ class BootStrap {
             tmp.save()
 
             new Menu(restaurant: tmp).save()
+
+
+            File fi7 = new File("web-app/images/tartine.jpg");
+            byte[] fileContent7 = Files.readAllBytes(fi7.toPath())
+
+            tmp = new Restaurant(name: "La Tartine", username: "Tartine", password: "Test1234",
+                    email:"tartine@tartine.com.co", description: "Restaurante de comida francesa en Bogota.", country: Country.findByName('Colombia'),
+                    photo: fileContent7, cuisine: Cuisine.findByName('Cocina Francesa'), website: "https://www.facebook.com/latartinebogota", approved: true).save()
+
+            new Direction(address: 'Calle 12 #3-88', city: city, restaurant: tmp).save()
+            tmp.addToCities(city)
+            tmp.save()
+
+            new Menu(restaurant: tmp).save()
         }
 
         if( Plate.count() == 0){
@@ -408,6 +423,10 @@ class BootStrap {
 
             tmp = Restaurant.findByName("Criterion").menu
             new Plate(name: 'Shakshuka Israeli, Huevos Benedictinos de varios estilos, Huevos a la Florentine, Calentao estilo Rausch, Omelettes con variedad de ingredientes, Sándwiches Croque Madame o Croque Monsieur, Waffles o las famosas Tostadas Francesas. ', menu: tmp).save()
+
+            tmp = Restaurant.findByName("La Tartine").menu
+            new Plate(name: 'Foie Gras.', menu: tmp).save()
+            new Plate(name: 'Aiguillettes de pollo campesino asado con salsa de vino cebollada y pimienta rosada.', menu: tmp).save()
         }
 
         if(Recipe.count() == 0){
