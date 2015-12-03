@@ -220,11 +220,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title tit">Opps!!!</h3>
+                <h3 class="modal-title tit">¡Ups!</h3>
             </div>
             <div class="modal-body">
                 <div class="cuerpo">
-                    <h3 class="text-center">Para registrar su voto es necesario iniciar session como Persona</h3>
+                    <h3 class="text-center">Para registrar su voto es necesario iniciar sesión como Persona</h3>
                 </div>
 
             </div>
@@ -247,11 +247,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title tit">Opps!!!</h3>
+                <h3 class="modal-title tit">¡Ups!</h3>
             </div>
             <div class="modal-body">
                 <div class="cuerpo">
-                    <h3 class="text-center">Por políticas de este sitio, pueden ejercer el voto de puntuación solo los usuarios registrados como Persona</h3>
+                    <h3 class="text-center">Por políticas de éste sitio, pueden ejercer el voto de puntuación solo los usuarios registrados como Persona</h3>
                 </div>
 
             </div>

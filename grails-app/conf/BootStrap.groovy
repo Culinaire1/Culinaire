@@ -307,11 +307,15 @@ class BootStrap {
 
             Restaurant tmp = new Restaurant(name: "Culinaire's", username: "culinaire", password: "Test1234",
                     email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'),
-                    photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "https://culinaire.herokuapp.com/", approved: true).save()
+                    photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "https://culinaire.herokuapp.com/", approved: false).save()
 
             City city = new City(country: Country.findByName('Colombia'), name: 'Bogotá').save()
-            new Direction(address: 'Carrera 163 #49-12', city: city, restaurant: tmp).save()
+            new Direction(address: 'Calle 163 #72-39', city: city, restaurant: tmp).save()
             tmp.addToCities(city)
+
+            City city2 = new City(country: Country.findByName('Colombia'), name: 'Barranquilla').save()
+            new Direction(address: 'Calle 77B #59–61', city: city2, restaurant: tmp).save()
+            tmp.addToCities(city2)
 
             tmp.save()
 
@@ -394,16 +398,16 @@ class BootStrap {
             new Plate(name: 'Pizza casera', menu: tmp).save()
 
             tmp = Restaurant.findByName("Wok").menu
-            new Plate(name: 'Ropa vieja', menu: tmp).save()
+            new Plate(name: 'Carne asada', menu: tmp).save()
 
             tmp = Restaurant.findByName("T-Bone").menu
-            new Plate(name: ' corte de lomo ancho y lomo fino con hueso', menu: tmp).save()
+            new Plate(name: 'Corte de lomo ancho y lomo fino con hueso', menu: tmp).save()
 
             tmp = Restaurant.findByName("L'Arca Gourmet Fashion Food").menu
-            new Plate(name: ' Sopa de tomates frescos, Ensalada de jaiba y calabacín crudo', menu: tmp).save()
+            new Plate(name: 'Sopa de tomates frescos, Ensalada de jaiba y calabacín crudo', menu: tmp).save()
 
             tmp = Restaurant.findByName("Criterion").menu
-            new Plate(name: ' Shakshuka Israeli, Huevos Benedictinos de varios estilos, Huevos a la Florentine, Calentao estilo Rausch, Omelettes con variedad de ingredientes, Sándwiches Croque Madame o Croque Monsieur, Waffles o las famosas Tostadas Francesas. ', menu: tmp).save()
+            new Plate(name: 'Shakshuka Israeli, Huevos Benedictinos de varios estilos, Huevos a la Florentine, Calentao estilo Rausch, Omelettes con variedad de ingredientes, Sándwiches Croque Madame o Croque Monsieur, Waffles o las famosas Tostadas Francesas. ', menu: tmp).save()
         }
 
         if(Recipe.count() == 0){
@@ -434,7 +438,7 @@ class BootStrap {
             new Quantity(quantity: "1 libra", recipe: natilla, ingredient: panela).save()
             new Quantity(quantity: '4 astillas', recipe: natilla, ingredient: canela).save()
             new Quantity(quantity: '2 cucharadas', recipe: natilla, ingredient: mantequilla).save()
-            new Quantity(quantity: "1", recipe: natilla, ingredient: coco).save()
+            new Quantity(quantity: "1 unidad", recipe: natilla, ingredient: coco).save()
             new Quantity(quantity: "1 cucharada", recipe: natilla, ingredient: canela1).save()
             //--------------------------------------------------------------------------------------------------------
             File fotodonburi = new File("web-app/images/donburi.jpg");
@@ -532,9 +536,9 @@ class BootStrap {
             
 
             new Quantity(quantity: '1 Kg', recipe: filetepescado, ingredient: filetes).save()
-            new Quantity(quantity: '12', recipe: filetepescado, ingredient: langostinos).save()
-            new Quantity(quantity: "4", recipe: filetepescado, ingredient: manzanas).save()
-            new Quantity(quantity: '1', recipe: filetepescado, ingredient: Limon).save()
+            new Quantity(quantity: '12 unidades', recipe: filetepescado, ingredient: langostinos).save()
+            new Quantity(quantity: "4 unidades", recipe: filetepescado, ingredient: manzanas).save()
+            new Quantity(quantity: '1 unidad', recipe: filetepescado, ingredient: Limon).save()
             new Quantity(quantity: '200 gramos', recipe: filetepescado, ingredient: guisantes).save()
             new Quantity(quantity: "250 ml", recipe: filetepescado, ingredient: vino).save()
             new Quantity(quantity: "1 litro", recipe: filetepescado, ingredient: aceiteo).save()
@@ -559,7 +563,7 @@ class BootStrap {
             Ingredient canelam = new Ingredient(name: 'canela molida').save()
 
 
-            new Quantity(quantity: '4', recipe: panfrances, ingredient: huevos).save()
+            new Quantity(quantity: '4 unidades', recipe: panfrances, ingredient: huevos).save()
             new Quantity(quantity: '3/4 taza', recipe: panfrances, ingredient: leche).save()
             new Quantity(quantity: "2 cucharadas", recipe: panfrances, ingredient: azucarm).save()
             new Quantity(quantity: '1 cucharadita', recipe: panfrances, ingredient: nuez).save()
@@ -615,13 +619,47 @@ class BootStrap {
 
             new Quantity(quantity: '500 gramos', recipe: pasta, ingredient: colores).save()
             new Quantity(quantity: '50 gramos', recipe: pasta, ingredient: fresas).save()
-            new Quantity(quantity: "2", recipe: pasta, ingredient: kiwis).save()
+            new Quantity(quantity: "2 unidades", recipe: pasta, ingredient: kiwis).save()
             new Quantity(quantity: '1 lata', recipe: pasta, ingredient: atun).save()
             new Quantity(quantity: '100 gramos', recipe: pasta, ingredient: cebolleta).save()
-            new Quantity(quantity: "2", recipe: pasta, ingredient: pipas).save()
+            new Quantity(quantity: "2 unidades", recipe: pasta, ingredient: pipas).save()
             new Quantity(quantity: "4 cucharadita", recipe: pasta, ingredient: aceiteo).save()
             new Quantity(quantity: "2 cucharada", recipe: pasta, ingredient: sal).save()
             new Quantity(quantity: "1 cucharadita", recipe: pasta, ingredient: pimienta2).save()
+
+
+            File tacos = new File("web-app/images/tacos.jpg");
+            byte[] fileContent8 = Files.readAllBytes(tacos.toPath())
+            Recipe taco = new Recipe(name: 'Tacos', rating: 5, description: 'El taco es un plato tipico de Mexico que consiste en una tortilla de maiz enrollada (en algunas ciudades mexicanas se utiliza tambien las de harina de trigo) rellena de carne roja y verduras.',
+                    country: Country.findByName('Mexico'), difficulty: Difficulty.findByLevel("Facil"),
+                    duration: Duration.findByDuration("Entre 15 y 30 minutos"), category: Category.findByName('Aperitivos'),
+                    person: Person.get(3), photo: fileContent8, typical: true).save()
+
+            new Instruction(description: 'En una sarten salteamos la carne picada, previamente condimentada.', recipe: taco, paso: 1).save()
+            new Instruction(description: 'Despues, retiramos el aceite y comenzamos a freir las tortillas de harina.', recipe: taco, paso: 2).save()
+            new Instruction(description: 'Antes de que la tortilla se ponga dura y se quiebre, debemos doblarla por la mitad.', recipe: taco, paso: 3).save()
+            new Instruction(description: 'La retiramos y repetimos el procedimiento por cuantos tacos queremos realizar.', recipe: taco, paso: 4).save()
+            new Instruction(description: 'Sobre cada tortilla de harina colocamos: un poco de carne, lechuga, cebolla, tomate y cubrimos de queso rallado.', recipe: taco, paso: 5).save()
+            new Instruction(description: 'La doblamos en dos y servimos.', recipe: taco, paso: 6).save()
+            new Instruction(description: 'La salsa roja o picante se sirve a gusto de cada persona.', recipe: taco, paso: 7).save()
+
+            Ingredient tortillas = new Ingredient(name: 'tortillas de harina').save()
+            Ingredient carne = new Ingredient(name: 'carne picada en cubos').save()
+            Ingredient aceiteMaiz = new Ingredient(name: 'aceite de maiz').save()
+            Ingredient quesoRallado = new Ingredient(name: 'queso rallado').save()
+            Ingredient tomate = new Ingredient(name: 'tomate picado en cubos').save()
+            Ingredient lechuga = new Ingredient(name: 'cabeza de lechuga').save()
+            Ingredient salsaTomate = new Ingredient(name: 'salsa de tomate').save()
+            Ingredient cebollaVerde = new Ingredient(name: 'cebola verde picada').save()
+
+            new Quantity(quantity: '2 unidades', recipe: taco, ingredient: tortillas).save()
+            new Quantity(quantity: '2 tazas', recipe: taco, ingredient: carne).save()
+            new Quantity(quantity: "1/2 taza", recipe: taco, ingredient: aceiteMaiz).save()
+            new Quantity(quantity: '2 tazas', recipe: taco, ingredient: quesoRallado).save()
+            new Quantity(quantity: '1 unidad', recipe: taco, ingredient: tomate).save()
+            new Quantity(quantity: "1/2 cabeza", recipe: taco, ingredient: lechuga).save()
+            new Quantity(quantity: "1 taza", recipe: taco, ingredient: salsaTomate).save()
+            new Quantity(quantity: "1 cucharada", recipe: taco, ingredient: cebollaVerde).save()
         }
 
         if( Admin.count() == 0){

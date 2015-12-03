@@ -4818,3 +4818,12 @@ n:6767:sun/tools/native2ascii/Main
 n:697:sun/tools/native2ascii/resources/MsgNative2ascii
 n:1243:sun/tools/native2ascii/N2AFilter
 n:1928:javax/websocket/Session
+n:17990:grails/converters/JSON
+n:499:org/codehaus/groovy/grails/web/converters/IncludeExcludeConverter
+n:732:org/codehaus/groovy/grails/web/converters/ConfigurableConverter
+n:3082:org/codehaus/groovy/grails/web/converters/AbstractConverter
+n:1199:org/codehaus/groovy/grails/web/converters/configuration/ConverterConfiguration
+n:2141:org/codehaus/groovy/grails/web/converters/Converter$CircularReferenceBehaviour
+n:6057:org/codehaus/groovy/grails/web/json/JSONWriter
+n:812:org/codehaus/groovy/grails/web/json/JSONException
+n:167:org/codehaus/groovy/grails/web/json/JSONElement
