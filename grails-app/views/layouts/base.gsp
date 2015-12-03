@@ -29,6 +29,14 @@
             font-size: 20px;
             color: #333387;
         }
+        .tooltip.right .tooltip-arrow{
+            border-right-color: #fff;
+        }
+        .tooltip-inner {
+            background-color: #fff ;
+            font-size: 20px;
+            color: #03034c;
+        }
         .rgt-st{
             cursor: pointer;
         }
@@ -41,7 +49,9 @@
     <asset:javascript src="bootstrap-rating.min.js"/>
     <script>
         $(function () {
+
             $(".rating-symbol").on('click', function(){
+
                 var validateCase;
                 validateCase= $(this).closest('.rgt-st').find('input.rating').data("case");
 
@@ -78,7 +88,15 @@
                                 }
                                 //alert("fallo");
                             }else {
+                                var template
+                                template='<span class="glyphicon glyphicon-refresh"></span>'
                                 counter.text(data.result);
+                                counter.tooltip({title: template, html:true, placement : 'right', delay: { "show": 500, "hide": 100 }});
+                                counter.tooltip('show');
+                                setTimeout(function(){
+                                   counter.tooltip('hide');
+                                }, 600);
+                                //counter.tooltip('hide');
                                 //alert("user:"+data.idv+" voter:"+data.idu)
                             }
 
