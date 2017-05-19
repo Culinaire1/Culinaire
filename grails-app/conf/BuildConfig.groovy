@@ -74,7 +74,7 @@ grails.project.dependency.resolution = {
         runtime ':twitter-bootstrap:3.3.5'
         //runtime ":elasticsearch:0.0.4.6"
 
-
+        compile 'org.grails.plugins:spring-security-ldap:2.0.1'
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"
