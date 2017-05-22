@@ -1,9 +1,0 @@
-diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
-@@ -2,6 +2,7 @@
- <project version="4">
-   <component name="ChangeListManager">
- <<<<<<< HEAD
-+<<<<<<< HEAD
-     <list default="true" id="0a23632c-ef33-4cf0-8df9-426139249faa" name="Default" comment="" />
- =======
-     <list default="true" id="0a23632c-ef33-4cf0-8df9-426139249faa" name="Default" comment="">

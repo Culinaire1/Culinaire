@@ -5,6 +5,7 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
+
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 grails.project.fork = [
@@ -52,12 +53,21 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+        /*String tomcatVersion = '7.0.78'
+        compile "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion"
+        ['el', 'jasper', 'logging-log4j', 'logging-juli', 'websocket'].each {
+            runtime "org.apache.tomcat.embed:tomcat-embed-$it:$tomcatVersion"
+        }*/
 
     }
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.55.3" // or ":tomcat:8.0.22"
+        build ":tomcat:7.0.70" // or ":tomcat:8.0.22"
+
+        //tomcat.deploy.username ":admin"
+        //tomcat.deploy.password ":987654"
+        //tomcat.deploy.url ":localhost:8080"
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
@@ -74,7 +84,7 @@ grails.project.dependency.resolution = {
         runtime ':twitter-bootstrap:3.3.5'
         //runtime ":elasticsearch:0.0.4.6"
 
-        compile 'org.grails.plugins:spring-security-ldap:2.0.1'
+        //compile 'org.grails.plugins:spring-security-ldap:2.0.1'
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"

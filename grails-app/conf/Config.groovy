@@ -121,3 +121,17 @@ log4j.main = {
 //elasticSearch.bulkIndexOnStartup = true
 
 //elasticSearch.client.mode = 'local'
+
+/*
+//grails.plugin.springsecurity.providerNames = ['ldapAuthProvider']
+grails.plugin.springsecurity.ldap.context.managerDn = 'cn=admin,dc=culinaire,dc=com'
+grails.plugin.springsecurity.ldap.context.managerPassword = 'culinaire'
+grails.plugin.springsecurity.ldap.context.server = 'ldap://192.168.0.5:389'
+grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'dc=culinaire,dc=com'
+//grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
+//grails.plugin.springsecurity.ldap.authorities.retrieveDatabaseRoles = false
+//grails.plugin.springsecurity.ldap.mapper.userDetailsClass = 'administrator'
+//grails.plugin.springsecurity.ldap.search.filter = '(sAMAccountName={0})'
+grails.plugin.springsecurity.ldap.search.base = 'dc=culinaire,dc=com'
+//310-408-3218
+*/
