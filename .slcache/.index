@@ -6800,3 +6800,7 @@ n:1734:org/apache/catalina/Manager
 n:58118:org/apache/catalina/connector/Request
 n:27426:org/apache/catalina/connector/Response
 n:13034:org/apache/catalina/connector/MapperListener
+n:583:groovyjarjarantlr/TokenStreamRecognitionException
+n:523:groovyjarjarantlr/TokenStreamException
+n:5930:com/novell/ldap/LDAPAttributeSet
+n:2102:com/novell/ldap/util/LDAPXMLHandler

@@ -1,5 +1,11 @@
 package culinairegrails
 
+import com.novell.ldap.LDAPAttribute
+import com.novell.ldap.LDAPAttributeSet
+import com.novell.ldap.LDAPConnection
+import com.novell.ldap.LDAPEntry
+import com.novell.ldap.LDAPException
+
 import java.lang.reflect.Array
 
 class RestaurantController {
@@ -41,8 +47,17 @@ class RestaurantController {
                 new Direction(address: params.getProperty("city"+i+"dir"+j), city: city, restaurant: restaurant).save flush: true
             }
         }
-        new Menu(restaurant: restaurant).save()
-        redirect action: 'login', id: restaurant.id
+
+        String aux = create(params.usernameR, params.passwordR, params.nameR, "Restaurante", (Math.random()*10000000000).toInteger().toString())
+
+        if(aux.equals("creado")) {
+            new Menu(restaurant: restaurant).save()
+            redirect action: 'login', id: restaurant.id
+        } else {
+            redirect(controller: 'web', action: 'ingresar')
+            flash.error = "Error al crear restaurante"
+        }
+
     }
 
     def addComments(){
@@ -166,5 +181,61 @@ class RestaurantController {
             }
         }
         redirect action: 'login', id: restaurant.id
+    }
+
+    private LDAPConnection lc = new LDAPConnection();
+
+    String create(String username, String password, String name, String lastname, String uid){
+        conectar()
+
+        LDAPAttribute attribute = null
+        LDAPAttributeSet attributeSet = new LDAPAttributeSet()
+        attributeSet.add( new LDAPAttribute( "objectclass", (String[])['inetOrgPerson', 'posixAccount', 'top'].toArray()))
+        attributeSet.add( new LDAPAttribute("cn", name))
+        attributeSet.add( new LDAPAttribute("givenname", name))
+        attributeSet.add( new LDAPAttribute("uidNumber", uid))
+        attributeSet.add( new LDAPAttribute("uid", username))
+        attributeSet.add( new LDAPAttribute("gidNumber", "502"))
+        attributeSet.add( new LDAPAttribute("homeDirectory", "/home/users/"+username+name))
+        attributeSet.add( new LDAPAttribute("sn", lastname))
+        attributeSet.add( new LDAPAttribute("userpassword", password))
+
+        String  dn  = "cn="+username+",ou=Usuarios,dc=culinaire,dc=com"
+
+        LDAPEntry newEntry = new LDAPEntry( dn, attributeSet )
+
+        try {
+            lc.add( newEntry )
+            System.out.println( "\nAdded object: " + dn + " successfully." )
+            lc.disconnect()
+            return "creado"
+        }
+
+        catch( LDAPException e ) {
+            System.out.println( "Error:  " + e.toString())
+        }
+        return ""
+    }
+
+    Boolean conectar(){
+
+        String ldapHost = "192.168.0.5"
+        String dn = "cn=admin,dc=culinaire,dc=com"
+        String password = "culinaire"
+
+        int ldapPort =  LDAPConnection.DEFAULT_PORT
+        int ldapVersion = LDAPConnection.LDAP_V3
+
+        try {
+            lc.connect(ldapHost, ldapPort);
+            System.out.println("====Conectado al Servidor LDAP====")
+            lc.bind(ldapVersion, dn, password.getBytes("UTF8"))
+            System.out.println("====Autenticado en el servidor====")
+            return true
+        } catch (LDAPException | UnsupportedEncodingException ex) {
+            System.out.println("====ERROR al conectarse al Servidor LDAP====")
+            return false
+        }
+
     }
 }
