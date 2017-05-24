@@ -15,12 +15,17 @@ import culinairegrails.Plate
 import culinairegrails.Quantity
 import culinairegrails.Recipe
 import culinairegrails.Restaurant
+import org.apache.commons.codec.digest.DigestUtils
 
 import java.nio.file.Files;
+
+import java.security.*;
 
 class BootStrap {
 
     def init = { servletContext ->
+
+        //println("HASH " + md5("Test1234"))
         if( Duration.count() == 0){
             new Duration(duration: "Menos de 15 minutos").save()
             new Duration(duration: "Entre 15 y 30 minutos").save()
@@ -32,22 +37,22 @@ class BootStrap {
             File fi = new File("web-app/images/jc.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
             new Person(name:"Juan Camilo", lastname: "Calero", birthdate: new GregorianCalendar(1996, 11, 14), username: "SpaceCode4",
-                    password: "Test1234", email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3, photo: fileContent).save()
+                    password: md5("Test1234"), email:"jccaleroe@unal.edu.co", description: "Creador", rating: 3, photo: fileContent).save()
 
             File fi2 = new File("web-app/images/coso.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
             new Person(name:"Carlos", lastname: "Solorzano", birthdate: new GregorianCalendar(1995, 11, 14), username: "Cosolo",
-                    password: "Test1234", email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3, photo: fileContent2).save()
+                    password: md5("Test1234"), email:"cosolorzanov@unal.edu.co", description: "Creador", rating: 3, photo: fileContent2).save()
 
             File fi3 = new File("web-app/images/af.jpg");
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
             new Person(name:"Andres Felipe", lastname: "De Orcajo", birthdate: new GregorianCalendar(1996, 05, 02), username: "afdev",
-                    password: "Test1234", email:"afdev@unal.edu.co", description: "Creador", rating: 3, photo: fileContent3).save()
+                    password: md5("Test1234"), email:"afdev@unal.edu.co", description: "Creador", rating: 3, photo: fileContent3).save()
 
             File fi4 = new File("web-app/images/od.jpg");
             byte[] fileContent4 = Files.readAllBytes(fi4.toPath())
             new Person(name:"Oscar Dario", lastname: "Parra", birthdate: new GregorianCalendar(1994, 12, 19), username: "odparraj",
-                    password: "Test1234", email:"odparraj@unal.edu.co", description: "Creador", rating: 3, photo: fileContent4).save()
+                    password: md5("Test1234"), email:"odparraj@unal.edu.co", description: "Creador", rating: 3, photo: fileContent4).save()
         }
 
         if( Difficulty.count() == 0){
@@ -305,7 +310,7 @@ class BootStrap {
             File fi = new File("web-app/images/f3.jpg");
             byte[] fileContent = Files.readAllBytes(fi.toPath())
 
-            Restaurant tmp = new Restaurant(name: "Culinaire's", username: "culinaire", password: "Test1234",
+            Restaurant tmp = new Restaurant(name: "Culinaire's", username: "culinaire", password: md5("Test1234"),
                     email:"culinaire@culinaire.com.co", description: "Comida italiana", rating: 5, country: Country.findByName('Colombia'),
                     photo: fileContent, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "https://culinaire.herokuapp.com/", approved: false).save()
 
@@ -325,7 +330,7 @@ class BootStrap {
             File fi2 = new File("web-app/images/f4.jpg");
             byte[] fileContent2 = Files.readAllBytes(fi2.toPath())
 
-            tmp = new Restaurant(name: "Wok", username: "wokfood", password: "Test1234",
+            tmp = new Restaurant(name: "Wok", username: "wokfood", password: md5("Test1234"),
                     email:"wok@wok.com.co", description: "Comida asiatica", rating: 2, country: Country.findByName('Colombia'),
                     photo: fileContent2, cuisine: Cuisine.findByName('Cocina Asiatica'), website: "http://wok.com.co/wps/portal/wok", approved: true).save()
 
@@ -338,7 +343,7 @@ class BootStrap {
             File fi3 = new File("web-app/images/f5.jpg");
             byte[] fileContent3 = Files.readAllBytes(fi3.toPath())
 
-            tmp = new Restaurant(name: "Archie's", username: "archies", password: "Test1234",
+            tmp = new Restaurant(name: "Archie's", username: "archies", password: md5("Test1234"),
                     email:"archies@archies.com.co", description: "Comida italiana", rating: 2, country: Country.findByName('Colombia'),
                     photo: fileContent3, cuisine: Cuisine.findByName('Cocina Italiana'), website: "http://www.archies.co/", approved: true).save()
 
@@ -351,7 +356,7 @@ class BootStrap {
             File fi4 = new File("web-app/images/f9.jpg");
             byte[] fileContent4 = Files.readAllBytes(fi4.toPath())
 
-            tmp = new Restaurant(name: "T-Bone", username: "tbone", password: "Test1234",
+            tmp = new Restaurant(name: "T-Bone", username: "tbone", password: md5("Test1234"),
                     email:"t-bone@tbone.com.co", description: "La especialidad son las carnes maduradas hechas al carbón, de donde proviene el nombre del restaurante", rating: 2, country: Country.findByName('Colombia'),
                     photo: fileContent4, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://restaurante-tbone.com.co/", approved: true).save()
 
@@ -366,7 +371,7 @@ class BootStrap {
             File fi5 = new File("web-app/images/f10.jpg");
             byte[] fileContent5 = Files.readAllBytes(fi5.toPath())
 
-            tmp = new Restaurant(name: "L'Arca Gourmet Fashion Food", username: "gourmet", password: "Test1234",
+            tmp = new Restaurant(name: "L'Arca Gourmet Fashion Food", username: "gourmet", password: md5("Test1234"),
                     email:"lgff@gourmet.com.co", description: "Es un restaurante moderno pensado para los amantes de la buena mesa.",country: Country.findByName('Colombia'),
                     photo: fileContent5, cuisine: Cuisine.findByName('Cocina Colombiana'), website: "http://restaurantelarca.com/", approved: true).save()
 
@@ -380,7 +385,7 @@ class BootStrap {
             File fi6 = new File("web-app/images/f11.jpg");
             byte[] fileContent6 = Files.readAllBytes(fi6.toPath())
 
-            tmp = new Restaurant(name: "Criterion", username: "Criterion", password: "Test1234",
+            tmp = new Restaurant(name: "Criterion", username: "Criterion", password: md5("Test1234"),
                     email:"Criterion@criterion.com.co", description: "El restaurante Criterión se encuentra en la exclusiva Zona G conocida por los Capitalinos como un sector de la ciudad de Bogotá con propuestas innovadoras.", country: Country.findByName('Colombia'),
                     photo: fileContent6, cuisine: Cuisine.findByName('Cocina Francesa'), website: "http://www.hermanosrausch.com/", approved: true).save()
 
@@ -394,7 +399,7 @@ class BootStrap {
             File fi7 = new File("web-app/images/tartine.jpg");
             byte[] fileContent7 = Files.readAllBytes(fi7.toPath())
 
-            tmp = new Restaurant(name: "La Tartine", username: "Tartine", password: "Test1234",
+            tmp = new Restaurant(name: "La Tartine", username: "Tartine", password: md5("Test1234"),
                     email:"tartine@tartine.com.co", description: "Restaurante de comida francesa en Bogota.", country: Country.findByName('Colombia'),
                     photo: fileContent7, cuisine: Cuisine.findByName('Cocina Francesa'), website: "https://www.facebook.com/latartinebogota", approved: true).save()
 
@@ -743,13 +748,18 @@ class BootStrap {
         }
 
         if( Admin.count() == 0){
-            new Admin(name:"Juan Camilo", lastname: "Calero", username: "admin1", email: "jccaleroe@unal.edu.co", password: "Test1234").save()
-            new Admin(name:"Andres Felipe", lastname: "De Orcajo",username: "admin2", password: "Test1234", email:"afdev@unal.edu.co").save()
-            new Admin(name:"Oscar Dario", lastname: "Parra", username: "admin4", password: "Test1234", email:"odparraj@unal.edu.co").save()
-            new Admin(name:"Carlos", lastname: "Solorzano", username: "admin3", password: "Test1234", email:"cosolorzanov@unal.edu.co").save()
+            new Admin(name:"Juan Camilo", lastname: "Calero", username: "admin1", email: "jccaleroe@unal.edu.co", password: md5("Test1234")).save()
+            new Admin(name:"Andres Felipe", lastname: "De Orcajo",username: "admin2", password: md5("Test1234"), email:"afdev@unal.edu.co").save()
+            new Admin(name:"Oscar Dario", lastname: "Parra", username: "admin4", password: md5("Test1234"), email:"odparraj@unal.edu.co").save()
+            new Admin(name:"Carlos", lastname: "Solorzano", username: "admin3", password: md5("Test1234"), email:"cosolorzanov@unal.edu.co").save()
         }
     }
     def destroy = {
+    }
+
+
+    String md5(String s){
+        return DigestUtils.md5Hex( s )
     }
 }
 

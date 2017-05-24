@@ -5,6 +5,7 @@ import com.novell.ldap.LDAPAttributeSet
 import com.novell.ldap.LDAPConnection
 import com.novell.ldap.LDAPEntry
 import com.novell.ldap.LDAPException
+import org.apache.commons.codec.digest.DigestUtils
 
 import java.lang.reflect.Array
 
@@ -15,7 +16,7 @@ class RestaurantController {
     def simpleCaptchaService
 
     def save() {
-        Restaurant restaurant = new Restaurant(name: params.nameR, username: params.usernameR, password: params.passwordR,
+        Restaurant restaurant = new Restaurant(name: params.nameR, username: params.usernameR, password: md5(params.passwordR),
                 email: params.emailR, photo: params.photoR.getBytes(), website: params.websiteR, country: Country.findByName(params.countryR),
                 cuisine: Cuisine.findByName(params.cuisine), description: params.description, approved: false)
 
@@ -238,4 +239,9 @@ class RestaurantController {
         }
 
     }
+
+    String md5(String s){
+        return DigestUtils.md5Hex( s )
+    }
+
 }

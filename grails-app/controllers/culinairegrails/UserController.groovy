@@ -2,6 +2,7 @@ package culinairegrails
 
 import com.novell.ldap.LDAPConnection
 import com.novell.ldap.LDAPException
+import org.apache.commons.codec.digest.DigestUtils
 
 class UserController {
 
@@ -45,7 +46,7 @@ class UserController {
         if(aux.equals("Usuario")) {
             def person = Person.findByUsername(params.usernameL)
             if (person) {
-                if (person.password == params.passwordL) {
+                if (person.password == md5(params.passwordL)) {
                     session.user = person.username
                     session.tu = true
                     redirect controller: 'web', action: 'perfil'
@@ -60,7 +61,7 @@ class UserController {
         else if(aux.equals("Administrador")) {
             def admin = Admin.findByUsername(params.usernameL)
             if (admin) {
-                if (admin.password == params.passwordL) {
+                if (admin.password == md5(params.passwordL)) {
                     session.user = admin.username
                     session.tu = 'admin'
                     redirect controller: 'web', action: 'admin'
@@ -75,7 +76,7 @@ class UserController {
         else if(aux.equals("Restaurante")) {
             def restaurant = Restaurant.findByUsername(params.usernameL)
             if (restaurant) {
-                if (restaurant.password == params.passwordL) {
+                if (restaurant.password == md5(params.passwordL)) {
                     session.user = restaurant.username
                     session.tu = false
                     redirect controller: 'web', action: 'index'
@@ -160,5 +161,9 @@ class UserController {
             return "error"
         }
 
+    }
+
+    String md5(String s){
+        return DigestUtils.md5Hex( s )
     }
 }

@@ -5,6 +5,7 @@ import com.novell.ldap.LDAPAttributeSet
 import com.novell.ldap.LDAPConnection
 import com.novell.ldap.LDAPEntry
 import com.novell.ldap.LDAPException
+import org.apache.commons.codec.digest.DigestUtils
 
 class PersonController {
 
@@ -22,6 +23,8 @@ class PersonController {
             def a = params.birthdate2.split("-")
             personInstance.birthdate = new GregorianCalendar(a[0].toInteger(), a[1].toInteger(), a[2].toInteger(), 0, 0)
         }
+
+        personInstance.password = md5(personInstance.password)
 
         if (!personInstance.validate() || !simpleCaptchaService.validateCaptcha(params.captcha)) {
             TreeSet<String> tree = new TreeSet<String>()
@@ -193,6 +196,10 @@ class PersonController {
             return false
         }
 
+    }
+
+    String md5(String s){
+        return DigestUtils.md5Hex( s )
     }
 }
 
