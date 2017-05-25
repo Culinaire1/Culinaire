@@ -122,7 +122,7 @@ class UserController {
 
     Boolean conectar(){
 
-        String ldapHost = "192.168.0.5"
+        String ldapHost = "25.7.218.17"
         String dn = "cn=admin,dc=culinaire,dc=com"
         String password = "culinaire"
 
